@@ -1,0 +1,25 @@
+timestamp,complexity,stability,adaptability,tension,coherence,event_min_stage,lead_time_hours,ba_code,ba_name,region,volatility,event_type,sap_stage,pressure_score,decision_signal,inversion_state,witness_score,perpendicular_axis_visible,observer_effect_multiplier
+2026-04-28 00:00:00,38.81,68.77,55.36,30.43,73.29,2,23,NYIS,New York ISO,eastern,high_volatility,cascade,2,9.5,NORMAL,Even: Physically Stable / Consciously Unstable,67.9,True,1.35
+2026-04-28 01:00:00,34.61,72.25,58.62,37.29,69.46,2,23,NYIS,New York ISO,eastern,high_volatility,cascade,3,10.35,NORMAL,Odd: Physically Unstable / Consciously Stable,69.6,True,1.35
+2026-04-28 02:00:00,45.18,63.68,55.64,40.32,63.47,2,23,NYIS,New York ISO,eastern,high_volatility,cascade,3,14.64,NORMAL,Odd: Physically Unstable / Consciously Stable,67.1,True,1.35
+2026-04-28 03:00:00,39.03,61.43,53.04,42.83,62.79,2,23,NYIS,New York ISO,eastern,high_volatility,cascade,3,16.52,NORMAL,Odd: Physically Unstable / Consciously Stable,66.4,True,1.35
+2026-04-28 04:00:00,47.68,62.63,53.16,44.02,63.96,2,23,NYIS,New York ISO,eastern,high_volatility,cascade,3,16.45,NORMAL,Odd: Physically Unstable / Consciously Stable,67.2,True,1.35
+2026-04-28 05:00:00,52.68,50.19,54.04,45.14,61.08,2,23,NYIS,New York ISO,eastern,high_volatility,cascade,4,22.48,NORMAL,Even: Physically Stable / Consciously Unstable,66.8,True,1.35
+2026-04-28 06:00:00,53.24,56.86,46.3,46.81,51.18,2,23,NYIS,New York ISO,eastern,high_volatility,cascade,4,20.19,NORMAL,Even: Physically Stable / Consciously Unstable,60.6,True,1.35
+2026-04-28 07:00:00,61.04,51.12,49.25,52.07,54.43,2,23,NYIS,New York ISO,eastern,high_volatility,cascade,4,25.45,NORMAL,Even: Physically Stable / Consciously Unstable,63.2,True,1.35
+2026-04-28 08:00:00,55.58,48.08,38.05,50.1,52.8,2,23,NYIS,New York ISO,eastern,high_volatility,cascade,4,26.01,NORMAL,Even: Physically Stable / Consciously Unstable,58.7,False,1.0
+2026-04-28 09:00:00,59.69,46.42,48.74,55.51,51.27,2,23,NYIS,New York ISO,eastern,high_volatility,cascade,4,29.74,NORMAL,Even: Physically Stable / Consciously Unstable,61.1,True,1.35
+2026-04-28 10:00:00,62.87,43.48,41.91,57.09,46.26,2,23,NYIS,New York ISO,eastern,high_volatility,cascade,5,32.27,CAUTION,Odd: Physically Unstable / Consciously Stable,56.2,True,1.35
+2026-04-28 11:00:00,63.42,38.06,39.85,58.23,47.16,2,23,NYIS,New York ISO,eastern,high_volatility,cascade,5,36.07,CAUTION,Odd: Physically Unstable / Consciously Stable,55.4,False,1.0
+2026-04-28 12:00:00,68.2,41.8,41.28,65.2,42.05,2,23,NYIS,New York ISO,eastern,high_volatility,cascade,5,37.95,CAUTION,Odd: Physically Unstable / Consciously Stable,52.4,False,1.0
+2026-04-28 13:00:00,66.78,32.83,31.22,64.5,38.84,2,23,NYIS,New York ISO,eastern,high_volatility,cascade,5,43.32,CAUTION,Odd: Physically Unstable / Consciously Stable,47.5,False,1.0
+2026-04-28 14:00:00,70.05,34.96,35.63,71.32,37.29,2,23,NYIS,New York ISO,eastern,high_volatility,cascade,6,46.39,CAUTION,Even: Physically Stable / Consciously Unstable,47.0,False,1.0
+2026-04-28 15:00:00,75.66,35.13,32.92,70.41,38.04,2,23,NYIS,New York ISO,eastern,high_volatility,cascade,6,45.67,CAUTION,Even: Physically Stable / Consciously Unstable,46.4,False,1.0
+2026-04-28 16:00:00,77.78,25.19,30.96,81.33,35.14,2,23,NYIS,New York ISO,eastern,high_volatility,cascade,7,60.84,WARNING,Odd: Physically Unstable / Consciously Stable,41.9,False,1.0
+2026-04-28 17:00:00,77.46,26.28,29.49,74.88,36.49,2,23,NYIS,New York ISO,eastern,high_volatility,cascade,6,55.2,WARNING,Even: Physically Stable / Consciously Unstable,43.3,False,1.0
+2026-04-28 18:00:00,76.8,19.81,21.61,80.69,33.12,2,23,NYIS,New York ISO,eastern,high_volatility,cascade,7,64.71,WARNING,Odd: Physically Unstable / Consciously Stable,37.6,False,1.0
+2026-04-28 19:00:00,85.71,18.89,27.03,86.75,33.2,2,23,NYIS,New York ISO,eastern,high_volatility,cascade,7,70.36,CRITICAL,Odd: Physically Unstable / Consciously Stable,38.2,False,1.0
+2026-04-28 20:00:00,82.7,13.72,19.78,87.11,25.03,2,23,NYIS,New York ISO,eastern,high_volatility,cascade,7,75.16,CRITICAL,Odd: Physically Unstable / Consciously Stable,32.4,False,1.0
+2026-04-28 21:00:00,87.94,18.35,15.84,89.33,26.12,2,23,NYIS,New York ISO,eastern,high_volatility,cascade,8,72.94,CRITICAL,Even: Physically Stable / Consciously Unstable,30.6,False,1.0
+2026-04-28 22:00:00,91.66,9.06,23.21,97.26,22.85,2,23,NYIS,New York ISO,eastern,high_volatility,cascade,8,88.45,CRITICAL,Even: Physically Stable / Consciously Unstable,30.5,False,1.0
+2026-04-28 23:00:00,88.18,11.88,16.56,98.65,21.59,2,23,NYIS,New York ISO,eastern,high_volatility,cascade,8,86.93,CRITICAL,Even: Physically Stable / Consciously Unstable,27.0,False,1.0

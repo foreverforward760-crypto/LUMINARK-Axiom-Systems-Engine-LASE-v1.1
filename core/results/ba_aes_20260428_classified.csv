@@ -1,0 +1,25 @@
+timestamp,complexity,stability,adaptability,tension,coherence,event_min_stage,lead_time_hours,ba_code,ba_name,region,volatility,event_type,sap_stage,pressure_score,decision_signal,inversion_state,witness_score,perpendicular_axis_visible,observer_effect_multiplier
+2026-04-28 00:00:00,46.19,71.77,61.02,26.07,73.33,1,2,AES,AES Corporation,texas,medium_volatility,oscillation,2,7.36,NORMAL,Even: Physically Stable / Consciously Unstable,69.1,True,1.35
+2026-04-28 01:00:00,36.3,69.73,60.9,37.46,71.24,1,2,AES,AES Corporation,texas,medium_volatility,oscillation,3,11.34,NORMAL,Odd: Physically Unstable / Consciously Stable,71.2,True,1.35
+2026-04-28 02:00:00,31.65,70.9,62.44,26.66,67.45,1,2,AES,AES Corporation,texas,medium_volatility,oscillation,2,7.76,NORMAL,Even: Physically Stable / Consciously Unstable,67.7,True,1.35
+2026-04-28 03:00:00,35.06,75.45,64.49,27.77,73.89,1,2,AES,AES Corporation,texas,medium_volatility,oscillation,2,6.82,NORMAL,Even: Physically Stable / Consciously Unstable,71.1,True,1.35
+2026-04-28 04:00:00,41.73,65.37,58.87,31.11,83.27,1,2,AES,AES Corporation,texas,medium_volatility,oscillation,2,10.77,NORMAL,Even: Physically Stable / Consciously Unstable,73.0,True,1.35
+2026-04-28 05:00:00,37.11,63.74,61.83,29.81,70.16,1,2,AES,AES Corporation,texas,medium_volatility,oscillation,2,10.81,NORMAL,Even: Physically Stable / Consciously Unstable,69.2,True,1.35
+2026-04-28 06:00:00,43.92,69.69,63.12,25.24,64.88,1,2,AES,AES Corporation,texas,medium_volatility,oscillation,2,7.65,NORMAL,Even: Physically Stable / Consciously Unstable,66.8,True,1.35
+2026-04-28 07:00:00,39.68,73.95,59.88,26.72,74.4,1,2,AES,AES Corporation,texas,medium_volatility,oscillation,2,6.96,NORMAL,Even: Physically Stable / Consciously Unstable,69.2,True,1.35
+2026-04-28 08:00:00,39.64,72.01,53.31,34.78,72.85,1,2,AES,AES Corporation,texas,medium_volatility,oscillation,3,9.73,NORMAL,Odd: Physically Unstable / Consciously Stable,68.0,True,1.35
+2026-04-28 09:00:00,38.68,70.3,59.79,31.28,68.47,1,2,AES,AES Corporation,texas,medium_volatility,oscillation,2,9.29,NORMAL,Even: Physically Stable / Consciously Unstable,68.2,True,1.35
+2026-04-28 10:00:00,38.87,63.1,57.0,36.12,70.12,1,2,AES,AES Corporation,texas,medium_volatility,oscillation,3,13.33,NORMAL,Odd: Physically Unstable / Consciously Stable,68.9,True,1.35
+2026-04-28 11:00:00,48.28,69.05,63.77,33.03,65.86,1,2,AES,AES Corporation,texas,medium_volatility,oscillation,2,10.22,NORMAL,Even: Physically Stable / Consciously Unstable,69.3,True,1.35
+2026-04-28 12:00:00,35.69,73.66,54.75,34.2,63.28,1,2,AES,AES Corporation,texas,medium_volatility,oscillation,3,9.01,NORMAL,Odd: Physically Unstable / Consciously Stable,65.1,True,1.35
+2026-04-28 13:00:00,52.72,71.44,65.94,25.98,74.6,1,2,AES,AES Corporation,texas,medium_volatility,oscillation,2,7.42,NORMAL,Even: Physically Stable / Consciously Unstable,71.5,True,1.35
+2026-04-28 14:00:00,36.04,68.95,59.77,31.34,70.19,1,2,AES,AES Corporation,texas,medium_volatility,oscillation,2,9.73,NORMAL,Even: Physically Stable / Consciously Unstable,68.8,True,1.35
+2026-04-28 15:00:00,35.88,61.78,59.65,22.96,75.94,1,2,AES,AES Corporation,texas,medium_volatility,oscillation,2,8.78,NORMAL,Even: Physically Stable / Consciously Unstable,68.7,False,1.35
+2026-04-28 16:00:00,42.43,68.97,57.78,25.93,65.44,1,2,AES,AES Corporation,texas,medium_volatility,oscillation,2,8.05,NORMAL,Even: Physically Stable / Consciously Unstable,65.0,True,1.35
+2026-04-28 17:00:00,42.9,69.42,61.88,26.41,68.17,1,2,AES,AES Corporation,texas,medium_volatility,oscillation,2,8.08,NORMAL,Even: Physically Stable / Consciously Unstable,67.7,True,1.35
+2026-04-28 18:00:00,39.36,69.81,49.98,30.47,75.22,1,2,AES,AES Corporation,texas,medium_volatility,oscillation,2,9.2,NORMAL,Even: Physically Stable / Consciously Unstable,66.4,True,1.35
+2026-04-28 19:00:00,35.37,71.74,57.98,27.42,78.52,1,2,AES,AES Corporation,texas,medium_volatility,oscillation,2,7.75,NORMAL,Even: Physically Stable / Consciously Unstable,70.0,True,1.35
+2026-04-28 20:00:00,31.52,72.44,69.05,28.45,79.44,1,2,AES,AES Corporation,texas,medium_volatility,oscillation,2,7.84,NORMAL,Even: Physically Stable / Consciously Unstable,75.0,True,1.35
+2026-04-28 21:00:00,28.69,75.07,66.27,18.63,69.53,1,2,AES,AES Corporation,texas,medium_volatility,oscillation,1,4.64,NORMAL,Odd: Physically Unstable / Consciously Stable,68.0,False,1.35
+2026-04-28 22:00:00,39.76,59.75,72.68,41.15,72.17,1,2,AES,AES Corporation,texas,medium_volatility,oscillation,3,16.56,NORMAL,Odd: Physically Unstable / Consciously Stable,77.1,True,1.35
+2026-04-28 23:00:00,37.39,65.1,56.22,24.89,69.87,1,2,AES,AES Corporation,texas,medium_volatility,oscillation,2,8.69,NORMAL,Even: Physically Stable / Consciously Unstable,65.7,False,1.35

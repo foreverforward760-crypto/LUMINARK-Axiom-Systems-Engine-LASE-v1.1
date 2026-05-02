@@ -1,0 +1,25 @@
+timestamp,complexity,stability,adaptability,tension,coherence,event_min_stage,lead_time_hours,ba_code,ba_name,region,volatility,event_type,sap_stage,pressure_score,decision_signal,inversion_state,witness_score,perpendicular_axis_visible,observer_effect_multiplier
+2026-04-28 00:00:00,39.21,66.89,64.54,25.64,69.46,1,22,PJM,PJM Interconnection,eastern,medium_volatility,oscillation,2,8.49,NORMAL,Even: Physically Stable / Consciously Unstable,69.0,True,1.35
+2026-04-28 01:00:00,46.28,70.43,59.92,19.12,69.68,1,22,PJM,PJM Interconnection,eastern,medium_volatility,oscillation,1,5.65,NORMAL,Odd: Physically Unstable / Consciously Stable,65.6,False,1.35
+2026-04-28 02:00:00,44.5,72.77,61.29,22.93,70.54,1,22,PJM,PJM Interconnection,eastern,medium_volatility,oscillation,2,6.24,NORMAL,Even: Physically Stable / Consciously Unstable,67.4,False,1.35
+2026-04-28 03:00:00,46.17,62.54,56.5,23.84,70.76,1,22,PJM,PJM Interconnection,eastern,medium_volatility,oscillation,2,8.93,NORMAL,Even: Physically Stable / Consciously Unstable,65.8,False,1.35
+2026-04-28 04:00:00,47.53,66.87,55.26,32.37,66.46,1,22,PJM,PJM Interconnection,eastern,medium_volatility,oscillation,2,10.72,NORMAL,Even: Physically Stable / Consciously Unstable,66.0,True,1.35
+2026-04-28 05:00:00,48.32,78.63,62.4,19.44,73.9,1,22,PJM,PJM Interconnection,eastern,medium_volatility,oscillation,1,4.15,NORMAL,Odd: Physically Unstable / Consciously Stable,68.2,False,1.35
+2026-04-28 06:00:00,46.44,61.19,71.66,22.08,67.1,1,22,PJM,PJM Interconnection,eastern,medium_volatility,oscillation,1,8.57,NORMAL,Odd: Physically Unstable / Consciously Stable,70.2,False,1.35
+2026-04-28 07:00:00,32.74,69.68,55.86,30.75,62.28,1,22,PJM,PJM Interconnection,eastern,medium_volatility,oscillation,2,9.32,NORMAL,Even: Physically Stable / Consciously Unstable,64.3,True,1.35
+2026-04-28 08:00:00,36.23,77.26,52.26,27.81,68.49,1,22,PJM,PJM Interconnection,eastern,medium_volatility,oscillation,2,6.32,NORMAL,Even: Physically Stable / Consciously Unstable,64.3,True,1.35
+2026-04-28 09:00:00,39.45,64.31,60.73,25.69,72.99,1,22,PJM,PJM Interconnection,eastern,medium_volatility,oscillation,2,9.17,NORMAL,Even: Physically Stable / Consciously Unstable,68.8,True,1.35
+2026-04-28 10:00:00,37.56,61.73,53.51,32.77,66.2,1,22,PJM,PJM Interconnection,eastern,medium_volatility,oscillation,2,12.54,NORMAL,Even: Physically Stable / Consciously Unstable,65.3,True,1.35
+2026-04-28 11:00:00,47.08,77.45,68.1,33.03,67.28,1,22,PJM,PJM Interconnection,eastern,medium_volatility,oscillation,2,7.45,NORMAL,Even: Physically Stable / Consciously Unstable,71.5,True,1.35
+2026-04-28 12:00:00,42.69,71.39,47.36,28.98,64.61,1,22,PJM,PJM Interconnection,eastern,medium_volatility,oscillation,2,8.29,NORMAL,Even: Physically Stable / Consciously Unstable,61.3,True,1.35
+2026-04-28 13:00:00,38.49,70.56,72.49,32.87,76.19,1,22,PJM,PJM Interconnection,eastern,medium_volatility,oscillation,2,9.68,NORMAL,Even: Physically Stable / Consciously Unstable,76.4,True,1.35
+2026-04-28 14:00:00,31.16,70.5,61.58,35.41,73.72,1,22,PJM,PJM Interconnection,eastern,medium_volatility,oscillation,3,10.45,NORMAL,Odd: Physically Unstable / Consciously Stable,71.8,True,1.35
+2026-04-28 15:00:00,41.74,75.3,65.84,24.53,59.38,1,22,PJM,PJM Interconnection,eastern,medium_volatility,oscillation,2,6.06,NORMAL,Even: Physically Stable / Consciously Unstable,65.8,False,1.35
+2026-04-28 16:00:00,30.96,72.64,51.86,23.49,61.72,1,22,PJM,PJM Interconnection,eastern,medium_volatility,oscillation,2,6.43,NORMAL,Even: Physically Stable / Consciously Unstable,60.7,False,1.35
+2026-04-28 17:00:00,50.41,79.1,64.43,26.64,74.84,1,22,PJM,PJM Interconnection,eastern,medium_volatility,oscillation,2,5.57,NORMAL,Even: Physically Stable / Consciously Unstable,71.1,True,1.35
+2026-04-28 18:00:00,34.98,71.0,68.25,35.5,74.21,1,22,PJM,PJM Interconnection,eastern,medium_volatility,oscillation,3,10.29,NORMAL,Odd: Physically Unstable / Consciously Stable,74.6,True,1.35
+2026-04-28 19:00:00,42.2,66.83,52.81,37.92,74.94,1,22,PJM,PJM Interconnection,eastern,medium_volatility,oscillation,3,12.58,NORMAL,Odd: Physically Unstable / Consciously Stable,69.3,True,1.35
+2026-04-28 20:00:00,39.52,68.4,51.24,37.96,65.61,1,22,PJM,PJM Interconnection,eastern,medium_volatility,oscillation,3,12.0,NORMAL,Odd: Physically Unstable / Consciously Stable,65.4,True,1.35
+2026-04-28 21:00:00,40.8,76.42,57.45,37.44,73.84,1,22,PJM,PJM Interconnection,eastern,medium_volatility,oscillation,3,8.83,NORMAL,Odd: Physically Unstable / Consciously Stable,70.7,True,1.35
+2026-04-28 22:00:00,45.47,63.67,62.22,26.71,62.67,1,22,PJM,PJM Interconnection,eastern,medium_volatility,oscillation,2,9.7,NORMAL,Even: Physically Stable / Consciously Unstable,66.0,True,1.35
+2026-04-28 23:00:00,46.6,76.26,63.37,33.52,73.71,1,22,PJM,PJM Interconnection,eastern,medium_volatility,oscillation,3,7.96,NORMAL,Odd: Physically Unstable / Consciously Stable,72.0,True,1.35

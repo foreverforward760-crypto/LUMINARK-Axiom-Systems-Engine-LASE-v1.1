@@ -1,0 +1,25 @@
+timestamp,complexity,stability,adaptability,tension,coherence,event_min_stage,lead_time_hours,ba_code,ba_name,region,volatility,event_type,sap_stage,pressure_score,decision_signal,inversion_state,witness_score,perpendicular_axis_visible,observer_effect_multiplier
+2026-04-28 00:00:00,37.27,66.99,58.16,31.64,71.65,2,23,AEP,American Electric Power,eastern,medium_volatility,oscillation,2,10.44,NORMAL,Even: Physically Stable / Consciously Unstable,68.8,True,1.35
+2026-04-28 01:00:00,32.52,79.05,54.89,31.98,69.37,2,23,AEP,American Electric Power,eastern,medium_volatility,oscillation,2,6.7,NORMAL,Even: Physically Stable / Consciously Unstable,66.7,True,1.35
+2026-04-28 02:00:00,44.81,66.67,62.21,37.38,68.39,2,23,AEP,American Electric Power,eastern,medium_volatility,oscillation,3,12.46,NORMAL,Odd: Physically Unstable / Consciously Stable,70.7,True,1.35
+2026-04-28 03:00:00,39.54,63.21,67.09,31.83,75.42,2,23,AEP,American Electric Power,eastern,medium_volatility,oscillation,2,11.71,NORMAL,Even: Physically Stable / Consciously Unstable,73.7,True,1.35
+2026-04-28 04:00:00,37.28,77.28,54.1,24.56,77.61,2,23,AEP,American Electric Power,eastern,medium_volatility,oscillation,2,5.58,NORMAL,Even: Physically Stable / Consciously Unstable,67.4,False,1.35
+2026-04-28 05:00:00,35.75,70.57,57.34,30.89,70.16,2,23,AEP,American Electric Power,eastern,medium_volatility,oscillation,2,9.09,NORMAL,Even: Physically Stable / Consciously Unstable,67.7,True,1.35
+2026-04-28 06:00:00,33.65,80.27,58.0,30.47,75.59,2,23,AEP,American Electric Power,eastern,medium_volatility,oscillation,2,6.01,NORMAL,Even: Physically Stable / Consciously Unstable,69.8,True,1.35
+2026-04-28 07:00:00,34.64,75.55,59.73,34.54,66.53,2,23,AEP,American Electric Power,eastern,medium_volatility,oscillation,3,8.45,NORMAL,Odd: Physically Unstable / Consciously Stable,68.3,True,1.35
+2026-04-28 08:00:00,44.88,70.68,66.79,29.21,67.56,2,23,AEP,American Electric Power,eastern,medium_volatility,oscillation,2,8.56,NORMAL,Even: Physically Stable / Consciously Unstable,70.2,True,1.35
+2026-04-28 09:00:00,35.76,67.97,58.65,25.51,68.41,2,23,AEP,American Electric Power,eastern,medium_volatility,oscillation,2,8.17,NORMAL,Even: Physically Stable / Consciously Unstable,66.3,True,1.35
+2026-04-28 10:00:00,38.17,65.65,58.46,32.94,62.9,2,23,AEP,American Electric Power,eastern,medium_volatility,oscillation,2,11.31,NORMAL,Even: Physically Stable / Consciously Unstable,66.1,True,1.35
+2026-04-28 11:00:00,44.21,69.5,62.82,24.44,70.39,2,23,AEP,American Electric Power,eastern,medium_volatility,oscillation,2,7.45,NORMAL,Even: Physically Stable / Consciously Unstable,68.4,False,1.35
+2026-04-28 12:00:00,33.05,63.02,61.76,34.71,71.05,2,23,AEP,American Electric Power,eastern,medium_volatility,oscillation,3,12.84,NORMAL,Odd: Physically Unstable / Consciously Stable,70.7,True,1.35
+2026-04-28 13:00:00,45.91,63.66,65.38,29.46,74.86,2,23,AEP,American Electric Power,eastern,medium_volatility,oscillation,2,10.71,NORMAL,Even: Physically Stable / Consciously Unstable,72.2,True,1.35
+2026-04-28 14:00:00,39.49,71.21,54.98,24.39,67.67,2,23,AEP,American Electric Power,eastern,medium_volatility,oscillation,2,7.02,NORMAL,Even: Physically Stable / Consciously Unstable,64.3,False,1.35
+2026-04-28 15:00:00,34.58,69.95,61.33,32.42,57.6,2,23,AEP,American Electric Power,eastern,medium_volatility,oscillation,2,9.74,NORMAL,Even: Physically Stable / Consciously Unstable,65.3,True,1.35
+2026-04-28 16:00:00,36.21,73.42,57.79,35.78,68.9,2,23,AEP,American Electric Power,eastern,medium_volatility,oscillation,3,9.51,NORMAL,Odd: Physically Unstable / Consciously Stable,68.7,True,1.35
+2026-04-28 17:00:00,38.57,65.52,65.58,27.48,74.51,2,23,AEP,American Electric Power,eastern,medium_volatility,oscillation,2,9.48,NORMAL,Even: Physically Stable / Consciously Unstable,71.7,True,1.35
+2026-04-28 18:00:00,43.81,72.93,64.15,23.77,67.3,2,23,AEP,American Electric Power,eastern,medium_volatility,oscillation,2,6.43,NORMAL,Even: Physically Stable / Consciously Unstable,67.7,False,1.35
+2026-04-28 19:00:00,39.54,74.52,53.32,28.55,72.26,2,23,AEP,American Electric Power,eastern,medium_volatility,oscillation,2,7.27,NORMAL,Even: Physically Stable / Consciously Unstable,66.3,True,1.35
+2026-04-28 20:00:00,37.19,75.81,70.7,33.03,75.21,2,23,AEP,American Electric Power,eastern,medium_volatility,oscillation,2,7.99,NORMAL,Even: Physically Stable / Consciously Unstable,75.4,True,1.35
+2026-04-28 21:00:00,39.68,63.75,54.33,30.55,67.23,2,23,AEP,American Electric Power,eastern,medium_volatility,oscillation,2,11.07,NORMAL,Even: Physically Stable / Consciously Unstable,65.4,True,1.35
+2026-04-28 22:00:00,36.24,59.85,70.07,33.49,69.31,2,23,AEP,American Electric Power,eastern,medium_volatility,oscillation,3,13.45,NORMAL,Odd: Physically Unstable / Consciously Stable,73.2,True,1.35
+2026-04-28 23:00:00,45.29,68.16,62.13,24.89,71.41,2,23,AEP,American Electric Power,eastern,medium_volatility,oscillation,2,7.92,NORMAL,Even: Physically Stable / Consciously Unstable,68.6,False,1.35

@@ -1,0 +1,987 @@
+{
+  "timestamp": "2026-04-28T22:47:29.856559",
+  "ba_count": 27,
+  "ba_analyses": {
+    "NYIS": {
+      "ba_code": "NYIS",
+      "total_rows": 24,
+      "stage_stats": {
+        "min": 2,
+        "max": 8,
+        "mean": 5.17,
+        "std": 1.81
+      },
+      "pressure_stats": {
+        "min": 9.5,
+        "max": 88.45,
+        "mean": 41.98,
+        "std": 24.59,
+        "p95": 85.16,
+        "p99": 88.1
+      },
+      "signal_distribution": {
+        "NORMAL": 10,
+        "CAUTION": 6,
+        "CRITICAL": 5,
+        "WARNING": 3
+      },
+      "critical_events": 5,
+      "critical_percentage": 20.83,
+      "witness_positions": 0,
+      "observer_effect_active": 10
+    },
+    "PJM": {
+      "ba_code": "PJM",
+      "total_rows": 24,
+      "stage_stats": {
+        "min": 1,
+        "max": 3,
+        "mean": 2.12,
+        "std": 0.61
+      },
+      "pressure_stats": {
+        "min": 4.15,
+        "max": 12.58,
+        "mean": 8.56,
+        "std": 2.27,
+        "p95": 12.46,
+        "p99": 12.57
+      },
+      "signal_distribution": {
+        "NORMAL": 24
+      },
+      "critical_events": 0,
+      "critical_percentage": 0.0,
+      "witness_positions": 0,
+      "observer_effect_active": 24
+    },
+    "MISO": {
+      "ba_code": "MISO",
+      "total_rows": 24,
+      "stage_stats": {
+        "min": 2,
+        "max": 3,
+        "mean": 2.25,
+        "std": 0.44
+      },
+      "pressure_stats": {
+        "min": 6.53,
+        "max": 12.76,
+        "mean": 9.4,
+        "std": 1.77,
+        "p95": 12.37,
+        "p99": 12.7
+      },
+      "signal_distribution": {
+        "NORMAL": 24
+      },
+      "critical_events": 0,
+      "critical_percentage": 0.0,
+      "witness_positions": 0,
+      "observer_effect_active": 24
+    },
+    "TVA": {
+      "ba_code": "TVA",
+      "total_rows": 24,
+      "stage_stats": {
+        "min": 2,
+        "max": 3,
+        "mean": 2.38,
+        "std": 0.49
+      },
+      "pressure_stats": {
+        "min": 5.78,
+        "max": 11.1,
+        "mean": 9.17,
+        "std": 1.65,
+        "p95": 11.08,
+        "p99": 11.1
+      },
+      "signal_distribution": {
+        "NORMAL": 24
+      },
+      "critical_events": 0,
+      "critical_percentage": 0.0,
+      "witness_positions": 0,
+      "observer_effect_active": 24
+    },
+    "SERC": {
+      "ba_code": "SERC",
+      "total_rows": 24,
+      "stage_stats": {
+        "min": 1,
+        "max": 3,
+        "mean": 2.21,
+        "std": 0.51
+      },
+      "pressure_stats": {
+        "min": 5.54,
+        "max": 13.76,
+        "mean": 9.27,
+        "std": 2.45,
+        "p95": 13.56,
+        "p99": 13.72
+      },
+      "signal_distribution": {
+        "NORMAL": 24
+      },
+      "critical_events": 0,
+      "critical_percentage": 0.0,
+      "witness_positions": 0,
+      "observer_effect_active": 24
+    },
+    "DUK": {
+      "ba_code": "DUK",
+      "total_rows": 24,
+      "stage_stats": {
+        "min": 1,
+        "max": 3,
+        "mean": 2.21,
+        "std": 0.59
+      },
+      "pressure_stats": {
+        "min": 4.17,
+        "max": 13.38,
+        "mean": 8.83,
+        "std": 2.35,
+        "p95": 12.97,
+        "p99": 13.34
+      },
+      "signal_distribution": {
+        "NORMAL": 24
+      },
+      "critical_events": 0,
+      "critical_percentage": 0.0,
+      "witness_positions": 0,
+      "observer_effect_active": 24
+    },
+    "WECC": {
+      "ba_code": "WECC",
+      "total_rows": 24,
+      "stage_stats": {
+        "min": 2,
+        "max": 8,
+        "mean": 5.08,
+        "std": 1.84
+      },
+      "pressure_stats": {
+        "min": 10.4,
+        "max": 86.54,
+        "mean": 42.01,
+        "std": 24.48,
+        "p95": 83.68,
+        "p99": 86.32
+      },
+      "signal_distribution": {
+        "NORMAL": 9,
+        "CAUTION": 6,
+        "WARNING": 5,
+        "CRITICAL": 4
+      },
+      "critical_events": 4,
+      "critical_percentage": 16.67,
+      "witness_positions": 0,
+      "observer_effect_active": 11
+    },
+    "CAISO": {
+      "ba_code": "CAISO",
+      "total_rows": 24,
+      "stage_stats": {
+        "min": 1,
+        "max": 7,
+        "mean": 4.0,
+        "std": 2.5
+      },
+      "pressure_stats": {
+        "min": 4.21,
+        "max": 56.07,
+        "mean": 24.87,
+        "std": 18.26,
+        "p95": 55.33,
+        "p99": 55.97
+      },
+      "signal_distribution": {
+        "NORMAL": 14,
+        "CAUTION": 10
+      },
+      "critical_events": 0,
+      "critical_percentage": 0.0,
+      "witness_positions": 0,
+      "observer_effect_active": 7
+    },
+    "SPP": {
+      "ba_code": "SPP",
+      "total_rows": 24,
+      "stage_stats": {
+        "min": 2,
+        "max": 3,
+        "mean": 2.12,
+        "std": 0.34
+      },
+      "pressure_stats": {
+        "min": 5.85,
+        "max": 12.33,
+        "mean": 8.88,
+        "std": 1.59,
+        "p95": 11.4,
+        "p99": 12.13
+      },
+      "signal_distribution": {
+        "NORMAL": 24
+      },
+      "critical_events": 0,
+      "critical_percentage": 0.0,
+      "witness_positions": 0,
+      "observer_effect_active": 24
+    },
+    "BPA": {
+      "ba_code": "BPA",
+      "total_rows": 24,
+      "stage_stats": {
+        "min": 1,
+        "max": 3,
+        "mean": 2.0,
+        "std": 0.59
+      },
+      "pressure_stats": {
+        "min": 5.13,
+        "max": 14.06,
+        "mean": 7.92,
+        "std": 2.22,
+        "p95": 12.12,
+        "p99": 13.67
+      },
+      "signal_distribution": {
+        "NORMAL": 24
+      },
+      "critical_events": 0,
+      "critical_percentage": 0.0,
+      "witness_positions": 0,
+      "observer_effect_active": 24
+    },
+    "ERCOT": {
+      "ba_code": "ERCOT",
+      "total_rows": 24,
+      "stage_stats": {
+        "min": 0,
+        "max": 7,
+        "mean": 3.96,
+        "std": 2.56
+      },
+      "pressure_stats": {
+        "min": 3.37,
+        "max": 57.91,
+        "mean": 25.22,
+        "std": 18.96,
+        "p95": 57.62,
+        "p99": 57.9
+      },
+      "signal_distribution": {
+        "NORMAL": 15,
+        "CAUTION": 9
+      },
+      "critical_events": 0,
+      "critical_percentage": 0.0,
+      "witness_positions": 0,
+      "observer_effect_active": 7
+    },
+    "NEISO": {
+      "ba_code": "NEISO",
+      "total_rows": 24,
+      "stage_stats": {
+        "min": 1,
+        "max": 3,
+        "mean": 2.29,
+        "std": 0.55
+      },
+      "pressure_stats": {
+        "min": 4.51,
+        "max": 15.39,
+        "mean": 9.52,
+        "std": 2.58,
+        "p95": 14.38,
+        "p99": 15.19
+      },
+      "signal_distribution": {
+        "NORMAL": 24
+      },
+      "critical_events": 0,
+      "critical_percentage": 0.0,
+      "witness_positions": 0,
+      "observer_effect_active": 24
+    },
+    "PSEG": {
+      "ba_code": "PSEG",
+      "total_rows": 24,
+      "stage_stats": {
+        "min": 1,
+        "max": 3,
+        "mean": 2.25,
+        "std": 0.53
+      },
+      "pressure_stats": {
+        "min": 5.31,
+        "max": 13.64,
+        "mean": 8.44,
+        "std": 1.85,
+        "p95": 11.09,
+        "p99": 13.08
+      },
+      "signal_distribution": {
+        "NORMAL": 24
+      },
+      "critical_events": 0,
+      "critical_percentage": 0.0,
+      "witness_positions": 0,
+      "observer_effect_active": 24
+    },
+    "CONED": {
+      "ba_code": "CONED",
+      "total_rows": 24,
+      "stage_stats": {
+        "min": 1,
+        "max": 3,
+        "mean": 2.25,
+        "std": 0.61
+      },
+      "pressure_stats": {
+        "min": 5.17,
+        "max": 16.26,
+        "mean": 9.43,
+        "std": 2.66,
+        "p95": 13.41,
+        "p99": 15.62
+      },
+      "signal_distribution": {
+        "NORMAL": 24
+      },
+      "critical_events": 0,
+      "critical_percentage": 0.0,
+      "witness_positions": 0,
+      "observer_effect_active": 24
+    },
+    "NYSEG": {
+      "ba_code": "NYSEG",
+      "total_rows": 24,
+      "stage_stats": {
+        "min": 2,
+        "max": 3,
+        "mean": 2.25,
+        "std": 0.44
+      },
+      "pressure_stats": {
+        "min": 4.18,
+        "max": 13.06,
+        "mean": 9.24,
+        "std": 1.86,
+        "p95": 11.71,
+        "p99": 12.76
+      },
+      "signal_distribution": {
+        "NORMAL": 24
+      },
+      "critical_events": 0,
+      "critical_percentage": 0.0,
+      "witness_positions": 0,
+      "observer_effect_active": 24
+    },
+    "PECO": {
+      "ba_code": "PECO",
+      "total_rows": 24,
+      "stage_stats": {
+        "min": 1,
+        "max": 3,
+        "mean": 2.25,
+        "std": 0.61
+      },
+      "pressure_stats": {
+        "min": 5.62,
+        "max": 14.68,
+        "mean": 9.46,
+        "std": 2.31,
+        "p95": 13.43,
+        "p99": 14.43
+      },
+      "signal_distribution": {
+        "NORMAL": 24
+      },
+      "critical_events": 0,
+      "critical_percentage": 0.0,
+      "witness_positions": 0,
+      "observer_effect_active": 24
+    },
+    "AEP": {
+      "ba_code": "AEP",
+      "total_rows": 24,
+      "stage_stats": {
+        "min": 2,
+        "max": 3,
+        "mean": 2.21,
+        "std": 0.41
+      },
+      "pressure_stats": {
+        "min": 5.58,
+        "max": 13.45,
+        "mean": 9.14,
+        "std": 2.23,
+        "p95": 12.78,
+        "p99": 13.31
+      },
+      "signal_distribution": {
+        "NORMAL": 24
+      },
+      "critical_events": 0,
+      "critical_percentage": 0.0,
+      "witness_positions": 0,
+      "observer_effect_active": 24
+    },
+    "FIRSTENERGY": {
+      "ba_code": "FIRSTENERGY",
+      "total_rows": 24,
+      "stage_stats": {
+        "min": 1,
+        "max": 3,
+        "mean": 2.29,
+        "std": 0.55
+      },
+      "pressure_stats": {
+        "min": 4.0,
+        "max": 14.94,
+        "mean": 8.86,
+        "std": 2.32,
+        "p95": 12.36,
+        "p99": 14.41
+      },
+      "signal_distribution": {
+        "NORMAL": 24
+      },
+      "critical_events": 0,
+      "critical_percentage": 0.0,
+      "witness_positions": 0,
+      "observer_effect_active": 24
+    },
+    "NWE": {
+      "ba_code": "NWE",
+      "total_rows": 24,
+      "stage_stats": {
+        "min": 2,
+        "max": 3,
+        "mean": 2.29,
+        "std": 0.46
+      },
+      "pressure_stats": {
+        "min": 5.74,
+        "max": 12.88,
+        "mean": 9.38,
+        "std": 1.9,
+        "p95": 12.69,
+        "p99": 12.85
+      },
+      "signal_distribution": {
+        "NORMAL": 24
+      },
+      "critical_events": 0,
+      "critical_percentage": 0.0,
+      "witness_positions": 0,
+      "observer_effect_active": 24
+    },
+    "PGE": {
+      "ba_code": "PGE",
+      "total_rows": 24,
+      "stage_stats": {
+        "min": 1,
+        "max": 3,
+        "mean": 2.04,
+        "std": 0.36
+      },
+      "pressure_stats": {
+        "min": 3.7,
+        "max": 11.89,
+        "mean": 8.23,
+        "std": 1.82,
+        "p95": 10.52,
+        "p99": 11.59
+      },
+      "signal_distribution": {
+        "NORMAL": 24
+      },
+      "critical_events": 0,
+      "critical_percentage": 0.0,
+      "witness_positions": 0,
+      "observer_effect_active": 24
+    },
+    "SCE": {
+      "ba_code": "SCE",
+      "total_rows": 24,
+      "stage_stats": {
+        "min": 3,
+        "max": 7,
+        "mean": 5.25,
+        "std": 1.39
+      },
+      "pressure_stats": {
+        "min": 5.42,
+        "max": 30.64,
+        "mean": 16.52,
+        "std": 7.71,
+        "p95": 29.68,
+        "p99": 30.53
+      },
+      "signal_distribution": {
+        "NORMAL": 22,
+        "CAUTION": 2
+      },
+      "critical_events": 0,
+      "critical_percentage": 0.0,
+      "witness_positions": 0,
+      "observer_effect_active": 0
+    },
+    "SDGE": {
+      "ba_code": "SDGE",
+      "total_rows": 24,
+      "stage_stats": {
+        "min": 2,
+        "max": 3,
+        "mean": 2.17,
+        "std": 0.38
+      },
+      "pressure_stats": {
+        "min": 6.22,
+        "max": 13.65,
+        "mean": 9.95,
+        "std": 2.04,
+        "p95": 12.49,
+        "p99": 13.39
+      },
+      "signal_distribution": {
+        "NORMAL": 24
+      },
+      "critical_events": 0,
+      "critical_percentage": 0.0,
+      "witness_positions": 0,
+      "observer_effect_active": 24
+    },
+    "AES": {
+      "ba_code": "AES",
+      "total_rows": 24,
+      "stage_stats": {
+        "min": 1,
+        "max": 3,
+        "mean": 2.17,
+        "std": 0.48
+      },
+      "pressure_stats": {
+        "min": 4.64,
+        "max": 16.56,
+        "mean": 9.07,
+        "std": 2.39,
+        "p95": 13.03,
+        "p99": 15.82
+      },
+      "signal_distribution": {
+        "NORMAL": 24
+      },
+      "critical_events": 0,
+      "critical_percentage": 0.0,
+      "witness_positions": 0,
+      "observer_effect_active": 24
+    },
+    "XCEL": {
+      "ba_code": "XCEL",
+      "total_rows": 24,
+      "stage_stats": {
+        "min": 1,
+        "max": 3,
+        "mean": 2.21,
+        "std": 0.51
+      },
+      "pressure_stats": {
+        "min": 3.27,
+        "max": 11.32,
+        "mean": 9.31,
+        "std": 1.68,
+        "p95": 11.1,
+        "p99": 11.27
+      },
+      "signal_distribution": {
+        "NORMAL": 24
+      },
+      "critical_events": 0,
+      "critical_percentage": 0.0,
+      "witness_positions": 0,
+      "observer_effect_active": 24
+    },
+    "OGE": {
+      "ba_code": "OGE",
+      "total_rows": 24,
+      "stage_stats": {
+        "min": 2,
+        "max": 3,
+        "mean": 2.17,
+        "std": 0.38
+      },
+      "pressure_stats": {
+        "min": 5.71,
+        "max": 14.9,
+        "mean": 8.59,
+        "std": 2.4,
+        "p95": 12.51,
+        "p99": 14.39
+      },
+      "signal_distribution": {
+        "NORMAL": 24
+      },
+      "critical_events": 0,
+      "critical_percentage": 0.0,
+      "witness_positions": 0,
+      "observer_effect_active": 24
+    },
+    "AMEREN": {
+      "ba_code": "AMEREN",
+      "total_rows": 24,
+      "stage_stats": {
+        "min": 1,
+        "max": 3,
+        "mean": 2.29,
+        "std": 0.55
+      },
+      "pressure_stats": {
+        "min": 5.7,
+        "max": 13.14,
+        "mean": 9.23,
+        "std": 1.91,
+        "p95": 12.48,
+        "p99": 13.01
+      },
+      "signal_distribution": {
+        "NORMAL": 24
+      },
+      "critical_events": 0,
+      "critical_percentage": 0.0,
+      "witness_positions": 0,
+      "observer_effect_active": 24
+    },
+    "ALLIANT": {
+      "ba_code": "ALLIANT",
+      "total_rows": 24,
+      "stage_stats": {
+        "min": 1,
+        "max": 3,
+        "mean": 2.12,
+        "std": 0.54
+      },
+      "pressure_stats": {
+        "min": 4.51,
+        "max": 14.68,
+        "mean": 9.22,
+        "std": 2.57,
+        "p95": 14.43,
+        "p99": 14.63
+      },
+      "signal_distribution": {
+        "NORMAL": 24
+      },
+      "critical_events": 0,
+      "critical_percentage": 0.0,
+      "witness_positions": 0,
+      "observer_effect_active": 24
+    }
+  },
+  "regional_baselines": {
+    "eastern": {
+      "ba_count": 6,
+      "pressure_mean_avg": 14.53,
+      "pressure_mean_std": 12.28,
+      "critical_percentage_avg": 3.47,
+      "critical_percentage_std": 7.76,
+      "threshold_warning": 26.81,
+      "threshold_critical": 39.09
+    },
+    "western": {
+      "ba_count": 8,
+      "pressure_mean_avg": 15.97,
+      "pressure_mean_std": 11.25,
+      "critical_percentage_avg": 2.08,
+      "critical_percentage_std": 5.51,
+      "threshold_warning": 27.22,
+      "threshold_critical": 38.47
+    },
+    "texas": {
+      "ba_count": 2,
+      "pressure_mean_avg": 17.14,
+      "pressure_mean_std": 8.07,
+      "critical_percentage_avg": 0.0,
+      "critical_percentage_std": 0.0,
+      "threshold_warning": 25.22,
+      "threshold_critical": 33.3
+    },
+    "central": {
+      "ba_count": 11,
+      "pressure_mean_avg": 9.13,
+      "pressure_mean_std": 0.34,
+      "critical_percentage_avg": 0.0,
+      "critical_percentage_std": 0.0,
+      "threshold_warning": 9.47,
+      "threshold_critical": 9.81
+    }
+  },
+  "failure_signatures": {
+    "cascade_failure": {
+      "description": "Rapid stage progression with high pressure escalation",
+      "indicators": {
+        "stage_progression_rate": ">1 stage per hour",
+        "pressure_escalation": ">10 points per hour",
+        "adaptability_decline": ">5 points per hour"
+      },
+      "lead_time_range": "1-4 hours",
+      "intervention_priority": "CRITICAL"
+    },
+    "oscillation_instability": {
+      "description": "Repeated high-tension cycles with unstable equilibrium",
+      "indicators": {
+        "tension_oscillation_amplitude": ">30 points",
+        "cycle_frequency": "4-8 hour cycles",
+        "coherence_degradation": "progressive"
+      },
+      "lead_time_range": "6-12 hours",
+      "intervention_priority": "HIGH"
+    },
+    "brittleness_risk": {
+      "description": "High stability masking low adaptability (Tumbling Inversion)",
+      "indicators": {
+        "stability": ">80",
+        "adaptability": "<40",
+        "stage_parity": "even",
+        "crystallization_risk": "high"
+      },
+      "lead_time_range": "8-24 hours",
+      "intervention_priority": "MEDIUM"
+    }
+  },
+  "risk_matrix": {
+    "NYIS": {
+      "risk_level": "HIGH",
+      "pressure_mean": 41.98,
+      "critical_percentage": 20.83,
+      "max_stage_observed": 8,
+      "monitoring_frequency": "hourly",
+      "intervention_threshold": 50
+    },
+    "PJM": {
+      "risk_level": "LOW",
+      "pressure_mean": 8.56,
+      "critical_percentage": 0.0,
+      "max_stage_observed": 3,
+      "monitoring_frequency": "daily",
+      "intervention_threshold": 70
+    },
+    "MISO": {
+      "risk_level": "LOW",
+      "pressure_mean": 9.4,
+      "critical_percentage": 0.0,
+      "max_stage_observed": 3,
+      "monitoring_frequency": "daily",
+      "intervention_threshold": 70
+    },
+    "TVA": {
+      "risk_level": "LOW",
+      "pressure_mean": 9.17,
+      "critical_percentage": 0.0,
+      "max_stage_observed": 3,
+      "monitoring_frequency": "daily",
+      "intervention_threshold": 70
+    },
+    "SERC": {
+      "risk_level": "LOW",
+      "pressure_mean": 9.27,
+      "critical_percentage": 0.0,
+      "max_stage_observed": 3,
+      "monitoring_frequency": "daily",
+      "intervention_threshold": 70
+    },
+    "DUK": {
+      "risk_level": "LOW",
+      "pressure_mean": 8.83,
+      "critical_percentage": 0.0,
+      "max_stage_observed": 3,
+      "monitoring_frequency": "daily",
+      "intervention_threshold": 70
+    },
+    "WECC": {
+      "risk_level": "HIGH",
+      "pressure_mean": 42.01,
+      "critical_percentage": 16.67,
+      "max_stage_observed": 8,
+      "monitoring_frequency": "hourly",
+      "intervention_threshold": 50
+    },
+    "CAISO": {
+      "risk_level": "MEDIUM",
+      "pressure_mean": 24.87,
+      "critical_percentage": 0.0,
+      "max_stage_observed": 7,
+      "monitoring_frequency": "daily",
+      "intervention_threshold": 70
+    },
+    "SPP": {
+      "risk_level": "LOW",
+      "pressure_mean": 8.88,
+      "critical_percentage": 0.0,
+      "max_stage_observed": 3,
+      "monitoring_frequency": "daily",
+      "intervention_threshold": 70
+    },
+    "BPA": {
+      "risk_level": "LOW",
+      "pressure_mean": 7.92,
+      "critical_percentage": 0.0,
+      "max_stage_observed": 3,
+      "monitoring_frequency": "daily",
+      "intervention_threshold": 70
+    },
+    "ERCOT": {
+      "risk_level": "MEDIUM",
+      "pressure_mean": 25.22,
+      "critical_percentage": 0.0,
+      "max_stage_observed": 7,
+      "monitoring_frequency": "daily",
+      "intervention_threshold": 70
+    },
+    "NEISO": {
+      "risk_level": "LOW",
+      "pressure_mean": 9.52,
+      "critical_percentage": 0.0,
+      "max_stage_observed": 3,
+      "monitoring_frequency": "daily",
+      "intervention_threshold": 70
+    },
+    "PSEG": {
+      "risk_level": "LOW",
+      "pressure_mean": 8.44,
+      "critical_percentage": 0.0,
+      "max_stage_observed": 3,
+      "monitoring_frequency": "daily",
+      "intervention_threshold": 70
+    },
+    "CONED": {
+      "risk_level": "LOW",
+      "pressure_mean": 9.43,
+      "critical_percentage": 0.0,
+      "max_stage_observed": 3,
+      "monitoring_frequency": "daily",
+      "intervention_threshold": 70
+    },
+    "NYSEG": {
+      "risk_level": "LOW",
+      "pressure_mean": 9.24,
+      "critical_percentage": 0.0,
+      "max_stage_observed": 3,
+      "monitoring_frequency": "daily",
+      "intervention_threshold": 70
+    },
+    "PECO": {
+      "risk_level": "LOW",
+      "pressure_mean": 9.46,
+      "critical_percentage": 0.0,
+      "max_stage_observed": 3,
+      "monitoring_frequency": "daily",
+      "intervention_threshold": 70
+    },
+    "AEP": {
+      "risk_level": "LOW",
+      "pressure_mean": 9.14,
+      "critical_percentage": 0.0,
+      "max_stage_observed": 3,
+      "monitoring_frequency": "daily",
+      "intervention_threshold": 70
+    },
+    "FIRSTENERGY": {
+      "risk_level": "LOW",
+      "pressure_mean": 8.86,
+      "critical_percentage": 0.0,
+      "max_stage_observed": 3,
+      "monitoring_frequency": "daily",
+      "intervention_threshold": 70
+    },
+    "NWE": {
+      "risk_level": "LOW",
+      "pressure_mean": 9.38,
+      "critical_percentage": 0.0,
+      "max_stage_observed": 3,
+      "monitoring_frequency": "daily",
+      "intervention_threshold": 70
+    },
+    "PGE": {
+      "risk_level": "LOW",
+      "pressure_mean": 8.23,
+      "critical_percentage": 0.0,
+      "max_stage_observed": 3,
+      "monitoring_frequency": "daily",
+      "intervention_threshold": 70
+    },
+    "SCE": {
+      "risk_level": "MEDIUM",
+      "pressure_mean": 16.52,
+      "critical_percentage": 0.0,
+      "max_stage_observed": 7,
+      "monitoring_frequency": "daily",
+      "intervention_threshold": 70
+    },
+    "SDGE": {
+      "risk_level": "LOW",
+      "pressure_mean": 9.95,
+      "critical_percentage": 0.0,
+      "max_stage_observed": 3,
+      "monitoring_frequency": "daily",
+      "intervention_threshold": 70
+    },
+    "AES": {
+      "risk_level": "LOW",
+      "pressure_mean": 9.07,
+      "critical_percentage": 0.0,
+      "max_stage_observed": 3,
+      "monitoring_frequency": "daily",
+      "intervention_threshold": 70
+    },
+    "XCEL": {
+      "risk_level": "LOW",
+      "pressure_mean": 9.31,
+      "critical_percentage": 0.0,
+      "max_stage_observed": 3,
+      "monitoring_frequency": "daily",
+      "intervention_threshold": 70
+    },
+    "OGE": {
+      "risk_level": "LOW",
+      "pressure_mean": 8.59,
+      "critical_percentage": 0.0,
+      "max_stage_observed": 3,
+      "monitoring_frequency": "daily",
+      "intervention_threshold": 70
+    },
+    "AMEREN": {
+      "risk_level": "LOW",
+      "pressure_mean": 9.23,
+      "critical_percentage": 0.0,
+      "max_stage_observed": 3,
+      "monitoring_frequency": "daily",
+      "intervention_threshold": 70
+    },
+    "ALLIANT": {
+      "risk_level": "LOW",
+      "pressure_mean": 9.22,
+      "critical_percentage": 0.0,
+      "max_stage_observed": 3,
+      "monitoring_frequency": "daily",
+      "intervention_threshold": 70
+    }
+  },
+  "global_thresholds": {
+    "pressure_warning": 40,
+    "pressure_critical": 70,
+    "stage_warning": 5,
+    "stage_critical": 7,
+    "critical_event_percentage_warning": 15,
+    "critical_event_percentage_critical": 30
+  }
+}

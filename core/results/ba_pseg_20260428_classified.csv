@@ -1,0 +1,25 @@
+timestamp,complexity,stability,adaptability,tension,coherence,event_min_stage,lead_time_hours,ba_code,ba_name,region,volatility,event_type,sap_stage,pressure_score,decision_signal,inversion_state,witness_score,perpendicular_axis_visible,observer_effect_multiplier
+2026-04-28 00:00:00,35.59,70.5,63.09,25.5,69.39,1,7,PSEG,Public Service Enterprise Group,eastern,low_volatility,cascade,2,7.52,NORMAL,Even: Physically Stable / Consciously Unstable,68.4,True,1.35
+2026-04-28 01:00:00,41.45,76.8,55.75,27.46,59.62,1,7,PSEG,Public Service Enterprise Group,eastern,low_volatility,cascade,2,6.37,NORMAL,Even: Physically Stable / Consciously Unstable,62.5,True,1.35
+2026-04-28 02:00:00,46.09,67.14,64.73,31.73,81.67,1,7,PSEG,Public Service Enterprise Group,eastern,low_volatility,cascade,2,10.43,NORMAL,Even: Physically Stable / Consciously Unstable,74.9,True,1.35
+2026-04-28 03:00:00,41.08,74.18,54.9,30.55,68.27,1,7,PSEG,Public Service Enterprise Group,eastern,low_volatility,cascade,2,7.89,NORMAL,Even: Physically Stable / Consciously Unstable,66.0,True,1.35
+2026-04-28 04:00:00,36.36,76.5,57.2,34.29,75.3,1,7,PSEG,Public Service Enterprise Group,eastern,low_volatility,cascade,3,8.06,NORMAL,Odd: Physically Unstable / Consciously Stable,70.3,True,1.35
+2026-04-28 05:00:00,34.76,71.29,67.39,34.14,70.16,1,7,PSEG,Public Service Enterprise Group,eastern,low_volatility,cascade,3,9.8,NORMAL,Odd: Physically Unstable / Consciously Stable,72.5,True,1.35
+2026-04-28 06:00:00,38.92,67.68,61.01,34.67,67.4,1,7,PSEG,Public Service Enterprise Group,eastern,low_volatility,cascade,3,11.21,NORMAL,Odd: Physically Unstable / Consciously Stable,69.2,True,1.35
+2026-04-28 07:00:00,46.22,73.47,51.71,31.16,71.37,1,7,PSEG,Public Service Enterprise Group,eastern,low_volatility,cascade,2,8.27,NORMAL,Even: Physically Stable / Consciously Unstable,66.0,True,1.35
+2026-04-28 08:00:00,32.35,77.82,60.62,35.2,69.32,1,7,PSEG,Public Service Enterprise Group,eastern,low_volatility,cascade,3,7.81,NORMAL,Odd: Physically Unstable / Consciously Stable,69.8,True,1.35
+2026-04-28 09:00:00,44.16,76.49,57.38,22.57,70.39,1,7,PSEG,Public Service Enterprise Group,eastern,low_volatility,cascade,2,5.31,NORMAL,Even: Physically Stable / Consciously Unstable,65.7,False,1.35
+2026-04-28 10:00:00,46.69,73.13,67.4,38.85,74.94,1,7,PSEG,Public Service Enterprise Group,eastern,low_volatility,cascade,3,10.44,NORMAL,Odd: Physically Unstable / Consciously Stable,75.4,True,1.35
+2026-04-28 11:00:00,39.24,72.92,54.65,28.59,66.8,1,7,PSEG,Public Service Enterprise Group,eastern,low_volatility,cascade,2,7.74,NORMAL,Even: Physically Stable / Consciously Unstable,64.9,True,1.35
+2026-04-28 12:00:00,41.25,67.84,61.9,27.62,75.36,1,7,PSEG,Public Service Enterprise Group,eastern,low_volatility,cascade,2,8.88,NORMAL,Even: Physically Stable / Consciously Unstable,70.5,True,1.35
+2026-04-28 13:00:00,34.77,67.21,66.71,24.27,63.86,1,7,PSEG,Public Service Enterprise Group,eastern,low_volatility,cascade,2,7.96,NORMAL,Even: Physically Stable / Consciously Unstable,67.6,False,1.35
+2026-04-28 14:00:00,35.74,76.13,60.55,31.02,72.0,1,7,PSEG,Public Service Enterprise Group,eastern,low_volatility,cascade,2,7.4,NORMAL,Even: Physically Stable / Consciously Unstable,69.7,True,1.35
+2026-04-28 15:00:00,29.91,72.48,58.57,36.81,78.55,1,7,PSEG,Public Service Enterprise Group,eastern,low_volatility,cascade,3,10.13,NORMAL,Odd: Physically Unstable / Consciously Stable,72.6,True,1.35
+2026-04-28 16:00:00,35.96,71.84,54.34,22.01,64.71,1,7,PSEG,Public Service Enterprise Group,eastern,low_volatility,cascade,1,6.2,NORMAL,Odd: Physically Unstable / Consciously Stable,62.4,False,1.35
+2026-04-28 17:00:00,34.52,72.99,64.6,28.66,68.25,1,7,PSEG,Public Service Enterprise Group,eastern,low_volatility,cascade,2,7.74,NORMAL,Even: Physically Stable / Consciously Unstable,69.4,True,1.35
+2026-04-28 18:00:00,37.62,66.84,60.85,24.79,65.68,1,7,PSEG,Public Service Enterprise Group,eastern,low_volatility,cascade,2,8.22,NORMAL,Even: Physically Stable / Consciously Unstable,66.0,False,1.35
+2026-04-28 19:00:00,33.27,77.93,64.37,28.62,78.42,1,7,PSEG,Public Service Enterprise Group,eastern,low_volatility,cascade,2,6.32,NORMAL,Even: Physically Stable / Consciously Unstable,72.9,True,1.35
+2026-04-28 20:00:00,41.78,63.14,56.49,37.01,70.14,1,7,PSEG,Public Service Enterprise Group,eastern,low_volatility,cascade,3,13.64,NORMAL,Odd: Physically Unstable / Consciously Stable,68.9,True,1.35
+2026-04-28 21:00:00,45.01,63.31,61.3,26.68,70.38,1,7,PSEG,Public Service Enterprise Group,eastern,low_volatility,cascade,2,9.79,NORMAL,Even: Physically Stable / Consciously Unstable,68.3,True,1.35
+2026-04-28 22:00:00,33.35,74.31,49.13,27.32,74.95,1,7,PSEG,Public Service Enterprise Group,eastern,low_volatility,cascade,2,7.02,NORMAL,Even: Physically Stable / Consciously Unstable,65.2,True,1.35
+2026-04-28 23:00:00,36.54,68.67,54.59,26.9,76.02,1,7,PSEG,Public Service Enterprise Group,eastern,low_volatility,cascade,2,8.43,NORMAL,Even: Physically Stable / Consciously Unstable,67.7,True,1.35

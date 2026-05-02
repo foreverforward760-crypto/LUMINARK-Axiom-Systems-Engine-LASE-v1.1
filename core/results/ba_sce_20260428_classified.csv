@@ -1,0 +1,25 @@
+timestamp,complexity,stability,adaptability,tension,coherence,event_min_stage,lead_time_hours,ba_code,ba_name,region,volatility,event_type,sap_stage,pressure_score,decision_signal,inversion_state,witness_score,perpendicular_axis_visible,observer_effect_multiplier
+2026-04-28 00:00:00,61.35,85.15,28.95,36.49,58.27,3,23,SCE,Southern California Edison,western,high_volatility,brittleness,3,5.42,NORMAL,Odd: Physically Unstable / Consciously Stable,53.6,False,1.0
+2026-04-28 01:00:00,65.38,82.1,34.9,42.5,58.43,3,23,SCE,Southern California Edison,western,high_volatility,brittleness,3,7.61,NORMAL,Odd: Physically Unstable / Consciously Stable,57.5,False,1.0
+2026-04-28 02:00:00,59.63,83.72,33.39,45.32,52.19,3,23,SCE,Southern California Edison,western,high_volatility,brittleness,4,7.38,NORMAL,Even: Physically Stable / Consciously Unstable,55.5,False,1.0
+2026-04-28 03:00:00,60.58,86.96,28.76,51.97,60.79,3,23,SCE,Southern California Edison,western,high_volatility,brittleness,4,6.78,NORMAL,Even: Physically Stable / Consciously Unstable,57.3,False,1.0
+2026-04-28 04:00:00,63.81,80.78,34.0,51.76,54.08,3,23,SCE,Southern California Edison,western,high_volatility,brittleness,4,9.95,NORMAL,Even: Physically Stable / Consciously Unstable,57.1,False,1.0
+2026-04-28 05:00:00,65.53,81.45,31.34,48.68,56.12,3,23,SCE,Southern California Edison,western,high_volatility,brittleness,4,9.03,NORMAL,Even: Physically Stable / Consciously Unstable,56.8,False,1.0
+2026-04-28 06:00:00,71.94,81.15,26.17,51.09,48.98,3,23,SCE,Southern California Edison,western,high_volatility,brittleness,4,9.63,NORMAL,Even: Physically Stable / Consciously Unstable,52.3,False,1.0
+2026-04-28 07:00:00,72.04,81.5,30.47,51.77,48.12,3,23,SCE,Southern California Edison,western,high_volatility,brittleness,4,9.58,NORMAL,Even: Physically Stable / Consciously Unstable,53.6,False,1.0
+2026-04-28 08:00:00,71.96,76.46,28.56,52.39,46.4,3,23,SCE,Southern California Edison,western,high_volatility,brittleness,4,12.33,NORMAL,Even: Physically Stable / Consciously Unstable,52.1,False,1.0
+2026-04-28 09:00:00,68.05,72.11,29.15,60.28,44.63,3,23,SCE,Southern California Edison,western,high_volatility,brittleness,5,16.81,NORMAL,Odd: Physically Unstable / Consciously Stable,49.7,False,1.0
+2026-04-28 10:00:00,72.15,76.3,25.06,54.69,46.48,3,23,SCE,Southern California Edison,western,high_volatility,brittleness,4,12.96,NORMAL,Even: Physically Stable / Consciously Unstable,50.1,False,1.0
+2026-04-28 11:00:00,73.73,80.17,26.77,60.63,49.12,3,23,SCE,Southern California Edison,western,high_volatility,brittleness,5,12.02,NORMAL,Odd: Physically Unstable / Consciously Stable,50.2,False,1.0
+2026-04-28 12:00:00,78.76,78.9,23.09,69.94,43.37,3,23,SCE,Southern California Edison,western,high_volatility,brittleness,6,14.76,NORMAL,Even: Physically Stable / Consciously Unstable,44.4,False,1.0
+2026-04-28 13:00:00,77.24,69.15,24.02,72.54,45.02,3,23,SCE,Southern California Edison,western,high_volatility,brittleness,6,22.38,NORMAL,Even: Physically Stable / Consciously Unstable,44.7,False,1.0
+2026-04-28 14:00:00,81.23,73.73,17.09,70.85,44.44,3,23,SCE,Southern California Edison,western,high_volatility,brittleness,6,18.61,NORMAL,Even: Physically Stable / Consciously Unstable,42.2,False,1.0
+2026-04-28 15:00:00,77.08,70.63,18.89,70.08,41.49,3,23,SCE,Southern California Edison,western,high_volatility,brittleness,6,20.58,NORMAL,Even: Physically Stable / Consciously Unstable,42.1,False,1.0
+2026-04-28 16:00:00,83.43,68.67,20.87,69.76,40.89,3,23,SCE,Southern California Edison,western,high_volatility,brittleness,6,21.86,NORMAL,Even: Physically Stable / Consciously Unstable,42.7,False,1.0
+2026-04-28 17:00:00,79.01,66.59,12.0,71.28,38.71,3,23,SCE,Southern California Edison,western,high_volatility,brittleness,6,23.81,NORMAL,Even: Physically Stable / Consciously Unstable,38.0,False,1.0
+2026-04-28 18:00:00,84.23,71.55,13.09,77.93,34.61,3,23,SCE,Southern California Edison,western,high_volatility,brittleness,7,22.17,NORMAL,Odd: Physically Unstable / Consciously Stable,35.4,False,1.0
+2026-04-28 19:00:00,84.76,70.1,15.11,77.88,34.32,3,23,SCE,Southern California Edison,western,high_volatility,brittleness,7,23.29,NORMAL,Odd: Physically Unstable / Consciously Stable,36.1,False,1.0
+2026-04-28 20:00:00,82.66,75.07,13.76,86.5,32.6,3,23,SCE,Southern California Edison,western,high_volatility,brittleness,7,21.56,NORMAL,Odd: Physically Unstable / Consciously Stable,32.8,False,1.0
+2026-04-28 21:00:00,86.14,68.63,14.17,86.22,33.38,3,23,SCE,Southern California Edison,western,high_volatility,brittleness,7,27.05,NORMAL,Odd: Physically Unstable / Consciously Stable,33.3,False,1.0
+2026-04-28 22:00:00,86.82,65.03,9.31,86.21,32.36,3,23,SCE,Southern California Edison,western,high_volatility,brittleness,7,30.15,CAUTION,Odd: Physically Unstable / Consciously Stable,31.0,False,1.0
+2026-04-28 23:00:00,93.82,64.51,13.13,86.34,32.5,3,23,SCE,Southern California Edison,western,high_volatility,brittleness,7,30.64,CAUTION,Odd: Physically Unstable / Consciously Stable,32.5,False,1.0

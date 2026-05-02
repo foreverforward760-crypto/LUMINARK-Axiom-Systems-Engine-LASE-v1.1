@@ -1,0 +1,25 @@
+timestamp,complexity,stability,adaptability,tension,coherence,event_min_stage,lead_time_hours,ba_code,ba_name,region,volatility,event_type,sap_stage,pressure_score,decision_signal,inversion_state,witness_score,perpendicular_axis_visible,observer_effect_multiplier
+2026-04-28 00:00:00,33.82,78.38,55.64,33.22,66.68,1,11,NEISO,New England ISO,eastern,medium_volatility,brittleness,2,7.18,NORMAL,Even: Physically Stable / Consciously Unstable,66.4,True,1.35
+2026-04-28 01:00:00,41.96,64.62,53.54,27.0,66.73,1,11,NEISO,New England ISO,eastern,medium_volatility,brittleness,2,9.55,NORMAL,Even: Physically Stable / Consciously Unstable,64.0,True,1.35
+2026-04-28 02:00:00,41.22,69.16,64.43,32.3,61.7,1,11,NEISO,New England ISO,eastern,medium_volatility,brittleness,2,9.96,NORMAL,Even: Physically Stable / Consciously Unstable,67.9,True,1.35
+2026-04-28 03:00:00,31.76,80.89,53.97,33.65,66.31,1,11,NEISO,New England ISO,eastern,medium_volatility,brittleness,3,6.43,NORMAL,Odd: Physically Unstable / Consciously Stable,65.7,True,1.35
+2026-04-28 04:00:00,38.68,73.99,57.74,30.59,74.09,1,11,NEISO,New England ISO,eastern,medium_volatility,brittleness,2,7.96,NORMAL,Even: Physically Stable / Consciously Unstable,69.2,True,1.35
+2026-04-28 05:00:00,31.12,84.5,53.42,29.1,68.34,1,11,NEISO,New England ISO,eastern,medium_volatility,brittleness,2,4.51,NORMAL,Even: Physically Stable / Consciously Unstable,65.1,True,1.35
+2026-04-28 06:00:00,50.4,71.13,60.79,35.68,72.71,1,11,NEISO,New England ISO,eastern,medium_volatility,brittleness,3,10.3,NORMAL,Odd: Physically Unstable / Consciously Stable,71.2,True,1.35
+2026-04-28 07:00:00,39.79,63.99,68.94,23.51,77.21,1,11,NEISO,New England ISO,eastern,medium_volatility,brittleness,2,8.47,NORMAL,Even: Physically Stable / Consciously Unstable,73.0,False,1.35
+2026-04-28 08:00:00,31.3,75.74,60.73,39.65,64.98,1,11,NEISO,New England ISO,eastern,medium_volatility,brittleness,3,9.62,NORMAL,Odd: Physically Unstable / Consciously Stable,69.4,True,1.35
+2026-04-28 09:00:00,41.27,72.99,61.9,29.88,66.45,1,11,NEISO,New England ISO,eastern,medium_volatility,brittleness,2,8.07,NORMAL,Even: Physically Stable / Consciously Unstable,68.0,True,1.35
+2026-04-28 10:00:00,37.49,70.15,59.24,27.83,66.37,1,11,NEISO,New England ISO,eastern,medium_volatility,brittleness,2,8.31,NORMAL,Even: Physically Stable / Consciously Unstable,66.4,True,1.35
+2026-04-28 11:00:00,31.03,70.89,62.07,34.5,65.0,1,11,NEISO,New England ISO,eastern,medium_volatility,brittleness,3,10.04,NORMAL,Odd: Physically Unstable / Consciously Stable,68.7,True,1.35
+2026-04-28 12:00:00,37.66,63.66,61.05,21.58,61.2,1,11,NEISO,New England ISO,eastern,medium_volatility,brittleness,1,7.84,NORMAL,Odd: Physically Unstable / Consciously Stable,63.7,False,1.35
+2026-04-28 13:00:00,44.65,71.56,65.33,33.09,72.58,1,11,NEISO,New England ISO,eastern,medium_volatility,brittleness,2,9.41,NORMAL,Even: Physically Stable / Consciously Unstable,72.3,True,1.35
+2026-04-28 14:00:00,37.84,60.52,65.1,38.97,71.28,1,11,NEISO,New England ISO,eastern,medium_volatility,brittleness,3,15.39,NORMAL,Odd: Physically Unstable / Consciously Stable,73.2,True,1.35
+2026-04-28 15:00:00,45.54,70.52,62.39,31.25,70.52,1,11,NEISO,New England ISO,eastern,medium_volatility,brittleness,2,9.21,NORMAL,Even: Physically Stable / Consciously Unstable,70.0,True,1.35
+2026-04-28 16:00:00,36.78,69.76,59.37,24.14,72.74,1,11,NEISO,New England ISO,eastern,medium_volatility,brittleness,2,7.3,NORMAL,Even: Physically Stable / Consciously Unstable,67.7,False,1.35
+2026-04-28 17:00:00,47.32,69.41,64.42,27.45,78.14,1,11,NEISO,New England ISO,eastern,medium_volatility,brittleness,2,8.4,NORMAL,Even: Physically Stable / Consciously Unstable,72.5,True,1.35
+2026-04-28 18:00:00,37.83,66.32,66.74,39.67,78.48,1,11,NEISO,New England ISO,eastern,medium_volatility,brittleness,3,13.36,NORMAL,Odd: Physically Unstable / Consciously Stable,76.6,True,1.35
+2026-04-28 19:00:00,35.05,69.9,59.59,31.17,72.16,1,11,NEISO,New England ISO,eastern,medium_volatility,brittleness,2,9.38,NORMAL,Even: Physically Stable / Consciously Unstable,69.4,True,1.35
+2026-04-28 20:00:00,45.0,61.46,63.23,35.19,65.53,1,11,NEISO,New England ISO,eastern,medium_volatility,brittleness,3,13.56,NORMAL,Odd: Physically Unstable / Consciously Stable,69.5,True,1.35
+2026-04-28 21:00:00,34.77,61.97,56.56,29.99,55.8,1,11,NEISO,New England ISO,eastern,medium_volatility,brittleness,2,11.41,NORMAL,Even: Physically Stable / Consciously Unstable,62.2,True,1.35
+2026-04-28 22:00:00,36.11,71.67,57.33,29.27,73.15,1,11,NEISO,New England ISO,eastern,medium_volatility,brittleness,2,8.29,NORMAL,Even: Physically Stable / Consciously Unstable,68.4,True,1.35
+2026-04-28 23:00:00,46.75,60.9,53.67,37.15,69.42,1,11,NEISO,New England ISO,eastern,medium_volatility,brittleness,3,14.53,NORMAL,Odd: Physically Unstable / Consciously Stable,67.6,True,1.35

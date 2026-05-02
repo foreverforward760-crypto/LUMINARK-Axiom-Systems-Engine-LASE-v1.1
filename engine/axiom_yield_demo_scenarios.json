@@ -1,0 +1,101 @@
+[
+  {
+    "scenario": "Cascade Failure Signature",
+    "context": "Carrier shows 98% on-time, zero complaints, 3 active loads ($47K). Every standard system shows green. Axiom Yield flags Stage 8 crystallization \u2014 24-hour failure window.",
+    "result": {
+      "carrier_id": "MC-448821",
+      "stage": 8,
+      "stage_name": "VESSEL OF GROUNDING",
+      "yield_score": 39.1,
+      "risk_level": "HIGH",
+      "signal_code": "S8_CRYSTALLIZATION",
+      "signal_label": "Crystallized Stability",
+      "recommended_action": "Do not assign new high-value or time-sensitive loads. Carrier appears fully stable but has lost all adaptive capacity. Any disruption \u2014 weather, traffic, equipment \u2014 will produce immediate failure with no recovery buffer.",
+      "load_assignment_blocked": true,
+      "immediate_intervention": false,
+      "predictive_window_hours": 24,
+      "pattern_description": "Carrier is showing maximum stability with near-zero flexibility. This pattern precedes sudden brittle failure \u2014 the system looks healthy on every standard metric, which is the warning sign.",
+      "broker_note": "Yield Score 39 \u2014 CARRIER LOOKS STABLE BUT IS NOT. Stage 8 Crystallization detected. 24-hour failure window active. Protect your loads now."
+    }
+  },
+  {
+    "scenario": "Crystallized Stability",
+    "context": "Carrier scores perfectly on all conventional metrics. Axiom Yield detects absolute rigidity \u2014 zero adaptive capacity. Any disruption (weather, traffic, equipment) will cause immediate failure.",
+    "result": {
+      "carrier_id": "MC-771034",
+      "stage": 8,
+      "stage_name": "VESSEL OF GROUNDING",
+      "yield_score": 39.0,
+      "risk_level": "HIGH",
+      "signal_code": "S8_CRYSTALLIZATION",
+      "signal_label": "Crystallized Stability",
+      "recommended_action": "Do not assign new high-value or time-sensitive loads. Carrier appears fully stable but has lost all adaptive capacity. Any disruption \u2014 weather, traffic, equipment \u2014 will produce immediate failure with no recovery buffer.",
+      "load_assignment_blocked": true,
+      "immediate_intervention": false,
+      "predictive_window_hours": 24,
+      "pattern_description": "Carrier is showing maximum stability with near-zero flexibility. This pattern precedes sudden brittle failure \u2014 the system looks healthy on every standard metric, which is the warning sign.",
+      "broker_note": "Yield Score 39 \u2014 CARRIER LOOKS STABLE BUT IS NOT. Stage 8 Crystallization detected. 24-hour failure window active. Protect your loads now."
+    }
+  },
+  {
+    "scenario": "Bifurcation Lock",
+    "context": "Carrier's standard risk score shows 'moderate delay risk.' Axiom Yield detects Bifurcation Lock \u2014 carrier cannot advance or retreat. 6-hour failure window. Emergency load recovery required.",
+    "result": {
+      "carrier_id": "MC-229057",
+      "stage": 5,
+      "stage_name": "DYNAMO OF WILL",
+      "yield_score": 0.0,
+      "risk_level": "CRITICAL",
+      "signal_code": "S5_LOCK",
+      "signal_label": "Bifurcation Lock",
+      "recommended_action": "Remove from all active assignments immediately. Carrier is locked \u2014 cannot advance or safely retreat. Initiate emergency load recovery. Do not reassign until full system reset is confirmed.",
+      "load_assignment_blocked": true,
+      "immediate_intervention": true,
+      "predictive_window_hours": 6,
+      "pattern_description": "Carrier has entered a bifurcation lock: maximum tension with no adaptive capacity remaining. Neither forward progress nor safe pullback is possible. This is the highest-risk state in the system.",
+      "broker_note": "Yield Score 0 \u2014 BIFURCATION LOCK. Highest-risk state. Emergency load recovery required. 6-hour failure window.",
+      "bifurcation_path": "LOCK",
+      "bifurcation_label": "Bifurcation Lock \u2014 Crisis"
+    }
+  },
+  {
+    "scenario": "Recovery Arc Confirmed",
+    "context": "Carrier had a difficult 48 hours. Standard systems say hold. Axiom Yield detects Stage 5 Path A \u2014 recovery arc confirmed. Safe to reassign standard loads. Performance will improve.",
+    "result": {
+      "carrier_id": "MC-584310",
+      "stage": 5,
+      "stage_name": "DYNAMO OF WILL",
+      "yield_score": 100.0,
+      "risk_level": "STABLE",
+      "signal_code": "S5_ADVANCE",
+      "signal_label": "Recovery Trajectory",
+      "recommended_action": "Carrier is on a confirmed recovery arc. Safe to assign standard and moderate-priority loads. Performance improvement expected over next 24-48 hours.",
+      "load_assignment_blocked": false,
+      "immediate_intervention": false,
+      "predictive_window_hours": null,
+      "pattern_description": "System has passed the critical choice point and is moving toward integration and stability.",
+      "broker_note": "Yield Score 100 \u2014 Recovery arc confirmed. Assign standard loads.",
+      "bifurcation_path": "ADVANCE",
+      "bifurcation_label": "Recovery Arc \u2014 Advancing"
+    }
+  },
+  {
+    "scenario": "Silent Tension Buildup \u2014 48-Hour Warning",
+    "context": "Carrier has been reliable for 6 months. No violations. No complaints. Axiom Yield detects Stage 7 tension accumulation pattern \u2014 early Stage 8 approach. 48-hour predictive window. Reduce assignment now before standard systems see anything.",
+    "result": {
+      "carrier_id": "MC-103782",
+      "stage": 7,
+      "stage_name": "LENS OF DISTILLATION",
+      "yield_score": 55.0,
+      "risk_level": "MODERATE",
+      "signal_code": "MONITOR",
+      "signal_label": "Monitor",
+      "recommended_action": "Assign standard loads. Monitor for changes in the next 12\u201324 hours.",
+      "load_assignment_blocked": false,
+      "immediate_intervention": false,
+      "predictive_window_hours": null,
+      "pattern_description": "System is in a transitional phase. No immediate action required.",
+      "broker_note": "Yield Score 55 \u2014 Transitional. Monitor and assign standard loads."
+    }
+  }
+]

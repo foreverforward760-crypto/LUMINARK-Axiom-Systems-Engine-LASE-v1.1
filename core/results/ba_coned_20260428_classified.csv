@@ -1,0 +1,25 @@
+timestamp,complexity,stability,adaptability,tension,coherence,event_min_stage,lead_time_hours,ba_code,ba_name,region,volatility,event_type,sap_stage,pressure_score,decision_signal,inversion_state,witness_score,perpendicular_axis_visible,observer_effect_multiplier
+2026-04-28 00:00:00,43.22,72.99,69.31,33.24,70.0,1,10,CONED,Consolidated Edison,eastern,medium_volatility,oscillation,2,8.98,NORMAL,Even: Physically Stable / Consciously Unstable,73.0,True,1.35
+2026-04-28 01:00:00,38.84,69.76,62.01,35.7,77.36,1,10,CONED,Consolidated Edison,eastern,medium_volatility,oscillation,3,10.8,NORMAL,Odd: Physically Unstable / Consciously Stable,73.3,True,1.35
+2026-04-28 02:00:00,43.83,70.09,53.36,22.51,70.75,1,10,CONED,Consolidated Edison,eastern,medium_volatility,oscillation,2,6.73,NORMAL,Even: Physically Stable / Consciously Unstable,64.2,False,1.35
+2026-04-28 03:00:00,36.41,67.69,64.48,36.05,66.3,1,10,CONED,Consolidated Edison,eastern,medium_volatility,oscillation,3,11.65,NORMAL,Odd: Physically Unstable / Consciously Stable,70.5,True,1.35
+2026-04-28 04:00:00,28.45,75.24,72.66,33.91,68.85,1,10,CONED,Consolidated Edison,eastern,medium_volatility,oscillation,3,8.4,NORMAL,Odd: Physically Unstable / Consciously Stable,74.1,True,1.35
+2026-04-28 05:00:00,42.93,74.99,58.28,27.84,63.76,1,10,CONED,Consolidated Edison,eastern,medium_volatility,oscillation,2,6.96,NORMAL,Even: Physically Stable / Consciously Unstable,65.1,True,1.35
+2026-04-28 06:00:00,33.68,71.97,62.01,25.45,63.05,1,10,CONED,Consolidated Edison,eastern,medium_volatility,oscillation,2,7.13,NORMAL,Even: Physically Stable / Consciously Unstable,65.7,True,1.35
+2026-04-28 07:00:00,34.85,72.07,65.14,32.36,74.17,1,10,CONED,Consolidated Edison,eastern,medium_volatility,oscillation,2,9.04,NORMAL,Even: Physically Stable / Consciously Unstable,72.6,True,1.35
+2026-04-28 08:00:00,45.28,71.77,63.55,42.35,69.52,1,10,CONED,Consolidated Edison,eastern,medium_volatility,oscillation,3,11.96,NORMAL,Odd: Physically Unstable / Consciously Stable,72.8,True,1.35
+2026-04-28 09:00:00,41.34,68.56,43.04,26.86,66.55,1,10,CONED,Consolidated Edison,eastern,medium_volatility,oscillation,2,8.44,NORMAL,Even: Physically Stable / Consciously Unstable,59.7,True,1.35
+2026-04-28 10:00:00,43.15,67.82,59.34,32.82,70.25,1,10,CONED,Consolidated Edison,eastern,medium_volatility,oscillation,2,10.56,NORMAL,Even: Physically Stable / Consciously Unstable,69.0,True,1.35
+2026-04-28 11:00:00,34.83,72.54,61.61,30.69,65.56,1,10,CONED,Consolidated Edison,eastern,medium_volatility,oscillation,2,8.43,NORMAL,Even: Physically Stable / Consciously Unstable,67.8,True,1.35
+2026-04-28 12:00:00,34.05,62.71,64.06,27.43,68.78,1,10,CONED,Consolidated Edison,eastern,medium_volatility,oscillation,2,10.23,NORMAL,Even: Physically Stable / Consciously Unstable,69.1,True,1.35
+2026-04-28 13:00:00,45.96,75.16,62.39,20.81,86.11,1,10,CONED,Consolidated Edison,eastern,medium_volatility,oscillation,1,5.17,NORMAL,Odd: Physically Unstable / Consciously Stable,72.8,False,1.35
+2026-04-28 14:00:00,44.01,66.15,61.12,38.76,61.4,1,10,CONED,Consolidated Edison,eastern,medium_volatility,oscillation,3,13.12,NORMAL,Odd: Physically Unstable / Consciously Stable,68.1,True,1.35
+2026-04-28 15:00:00,40.44,73.89,63.8,21.29,72.47,1,10,CONED,Consolidated Edison,eastern,medium_volatility,oscillation,1,5.56,NORMAL,Odd: Physically Unstable / Consciously Stable,68.7,False,1.35
+2026-04-28 16:00:00,42.41,77.75,61.47,32.31,69.68,1,10,CONED,Consolidated Edison,eastern,medium_volatility,oscillation,2,7.19,NORMAL,Even: Physically Stable / Consciously Unstable,69.6,True,1.35
+2026-04-28 17:00:00,42.62,62.2,59.52,25.44,67.07,1,10,CONED,Consolidated Edison,eastern,medium_volatility,oscillation,2,9.62,NORMAL,Even: Physically Stable / Consciously Unstable,66.1,True,1.35
+2026-04-28 18:00:00,41.42,56.73,59.41,37.58,72.67,1,10,CONED,Consolidated Edison,eastern,medium_volatility,oscillation,3,16.26,NORMAL,Odd: Physically Unstable / Consciously Stable,71.1,True,1.35
+2026-04-28 19:00:00,36.91,67.51,59.68,41.43,72.93,1,10,CONED,Consolidated Edison,eastern,medium_volatility,oscillation,3,13.46,NORMAL,Odd: Physically Unstable / Consciously Stable,72.3,True,1.35
+2026-04-28 20:00:00,41.43,62.73,63.45,31.28,70.35,1,10,CONED,Consolidated Edison,eastern,medium_volatility,oscillation,2,11.66,NORMAL,Even: Physically Stable / Consciously Unstable,70.3,True,1.35
+2026-04-28 21:00:00,41.82,69.83,60.66,27.37,70.62,1,10,CONED,Consolidated Edison,eastern,medium_volatility,oscillation,2,8.26,NORMAL,Even: Physically Stable / Consciously Unstable,68.3,True,1.35
+2026-04-28 22:00:00,40.82,73.42,53.39,34.75,69.9,1,10,CONED,Consolidated Edison,eastern,medium_volatility,oscillation,3,9.24,NORMAL,Odd: Physically Unstable / Consciously Stable,67.0,True,1.35
+2026-04-28 23:00:00,40.86,71.64,67.98,26.1,69.87,1,10,CONED,Consolidated Edison,eastern,medium_volatility,oscillation,2,7.4,NORMAL,Even: Physically Stable / Consciously Unstable,70.7,True,1.35

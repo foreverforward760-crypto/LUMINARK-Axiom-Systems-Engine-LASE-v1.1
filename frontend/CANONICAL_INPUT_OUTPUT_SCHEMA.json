@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Luminark Canonical I/O",
+  "type": "object",
+  "properties": {
+    "input": {
+      "type": "object",
+      "required": ["severity", "turbulence", "adaptability"],
+      "properties": {
+        "severity": {"type": "number", "minimum": 0, "maximum": 10},
+        "turbulence": {"type": "number", "minimum": 0, "maximum": 10},
+        "adaptability": {"type": "number", "minimum": 0, "maximum": 10}
+      }
+    },
+    "output": {
+      "type": "object",
+      "required": ["stage", "trap_score", "consensus", "alert_level", "yunus_protocol", "signature_matches"],
+      "properties": {
+        "stage": {"type": "object"},
+        "trap_score": {"type": "number"},
+        "consensus": {"type": "object"},
+        "alert_level": {"type": "string"},
+        "yunus_protocol": {"type": "boolean"},
+        "signature_matches": {"type": "array"}
+      }
+    }
+  }
+}

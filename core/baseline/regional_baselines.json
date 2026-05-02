@@ -1,0 +1,38 @@
+{
+  "eastern": {
+    "ba_count": 6,
+    "pressure_mean_avg": 14.53,
+    "pressure_mean_std": 12.28,
+    "critical_percentage_avg": 3.47,
+    "critical_percentage_std": 7.76,
+    "threshold_warning": 26.81,
+    "threshold_critical": 39.09
+  },
+  "western": {
+    "ba_count": 8,
+    "pressure_mean_avg": 15.97,
+    "pressure_mean_std": 11.25,
+    "critical_percentage_avg": 2.08,
+    "critical_percentage_std": 5.51,
+    "threshold_warning": 27.22,
+    "threshold_critical": 38.47
+  },
+  "texas": {
+    "ba_count": 2,
+    "pressure_mean_avg": 17.14,
+    "pressure_mean_std": 8.07,
+    "critical_percentage_avg": 0.0,
+    "critical_percentage_std": 0.0,
+    "threshold_warning": 25.22,
+    "threshold_critical": 33.3
+  },
+  "central": {
+    "ba_count": 11,
+    "pressure_mean_avg": 9.13,
+    "pressure_mean_std": 0.34,
+    "critical_percentage_avg": 0.0,
+    "critical_percentage_std": 0.0,
+    "threshold_warning": 9.47,
+    "threshold_critical": 9.81
+  }
+}

@@ -1,0 +1,25 @@
+timestamp,complexity,stability,adaptability,tension,coherence,event_min_stage,lead_time_hours,ba_code,ba_name,region,volatility,event_type,sap_stage,pressure_score,decision_signal,inversion_state,witness_score,perpendicular_axis_visible,observer_effect_multiplier
+2026-04-28 00:00:00,33.82,69.91,58.81,36.39,75.69,1,9,PECO,PECO Energy,eastern,low_volatility,cascade,3,10.95,NORMAL,Odd: Physically Unstable / Consciously Stable,71.6,True,1.35
+2026-04-28 01:00:00,39.98,70.81,64.32,26.29,68.81,1,9,PECO,PECO Energy,eastern,low_volatility,cascade,2,7.67,NORMAL,Even: Physically Stable / Consciously Unstable,68.9,True,1.35
+2026-04-28 02:00:00,53.37,77.01,54.92,28.6,67.35,1,9,PECO,PECO Energy,eastern,low_volatility,cascade,2,6.58,NORMAL,Even: Physically Stable / Consciously Unstable,65.2,True,1.35
+2026-04-28 03:00:00,38.87,63.43,55.79,23.35,74.12,1,9,PECO,PECO Energy,eastern,low_volatility,cascade,2,8.54,NORMAL,Even: Physically Stable / Consciously Unstable,66.6,False,1.35
+2026-04-28 04:00:00,38.31,68.54,69.09,37.04,73.41,1,9,PECO,PECO Energy,eastern,low_volatility,cascade,3,11.65,NORMAL,Odd: Physically Unstable / Consciously Stable,75.1,True,1.35
+2026-04-28 05:00:00,33.6,61.42,60.38,29.08,76.18,1,9,PECO,PECO Energy,eastern,low_volatility,cascade,2,11.22,NORMAL,Even: Physically Stable / Consciously Unstable,70.6,True,1.35
+2026-04-28 06:00:00,37.03,71.44,53.87,25.95,67.61,1,9,PECO,PECO Energy,eastern,low_volatility,cascade,2,7.41,NORMAL,Even: Physically Stable / Consciously Unstable,64.2,True,1.35
+2026-04-28 07:00:00,29.05,63.45,66.93,34.38,74.48,1,9,PECO,PECO Energy,eastern,low_volatility,cascade,3,12.57,NORMAL,Odd: Physically Unstable / Consciously Stable,73.9,True,1.35
+2026-04-28 08:00:00,51.19,74.39,53.26,39.65,64.33,1,9,PECO,PECO Energy,eastern,low_volatility,cascade,3,10.15,NORMAL,Odd: Physically Unstable / Consciously Stable,66.2,True,1.35
+2026-04-28 09:00:00,47.51,63.94,54.0,32.26,65.93,1,9,PECO,PECO Energy,eastern,low_volatility,cascade,2,11.63,NORMAL,Even: Physically Stable / Consciously Unstable,65.2,True,1.35
+2026-04-28 10:00:00,40.92,62.55,60.83,26.14,68.35,1,9,PECO,PECO Energy,eastern,low_volatility,cascade,2,9.79,NORMAL,Even: Physically Stable / Consciously Unstable,67.3,True,1.35
+2026-04-28 11:00:00,44.22,74.82,64.91,29.23,77.4,1,9,PECO,PECO Energy,eastern,low_volatility,cascade,2,7.36,NORMAL,Even: Physically Stable / Consciously Unstable,72.9,True,1.35
+2026-04-28 12:00:00,38.53,68.77,51.05,26.58,77.77,1,9,PECO,PECO Energy,eastern,low_volatility,cascade,2,8.3,NORMAL,Even: Physically Stable / Consciously Unstable,66.8,True,1.35
+2026-04-28 13:00:00,38.52,71.95,60.45,38.62,73.95,1,9,PECO,PECO Energy,eastern,low_volatility,cascade,3,10.83,NORMAL,Odd: Physically Unstable / Consciously Stable,72.2,True,1.35
+2026-04-28 14:00:00,41.82,63.68,59.83,19.6,63.25,1,9,PECO,PECO Energy,eastern,low_volatility,cascade,1,7.12,NORMAL,Odd: Physically Unstable / Consciously Stable,63.5,False,1.35
+2026-04-28 15:00:00,38.95,75.93,57.46,39.88,83.15,1,9,PECO,PECO Energy,eastern,low_volatility,cascade,3,9.6,NORMAL,Odd: Physically Unstable / Consciously Stable,74.6,True,1.35
+2026-04-28 16:00:00,46.88,71.08,49.21,29.86,69.58,1,9,PECO,PECO Energy,eastern,low_volatility,cascade,2,8.64,NORMAL,Even: Physically Stable / Consciously Unstable,64.0,True,1.35
+2026-04-28 17:00:00,41.67,65.1,64.43,38.9,66.03,1,9,PECO,PECO Energy,eastern,low_volatility,cascade,3,13.58,NORMAL,Odd: Physically Unstable / Consciously Stable,71.1,True,1.35
+2026-04-28 18:00:00,37.74,65.72,58.32,22.94,65.33,1,9,PECO,PECO Energy,eastern,low_volatility,cascade,2,7.86,NORMAL,Even: Physically Stable / Consciously Unstable,64.4,False,1.35
+2026-04-28 19:00:00,41.78,66.0,56.01,28.86,66.78,1,9,PECO,PECO Energy,eastern,low_volatility,cascade,2,9.81,NORMAL,Even: Physically Stable / Consciously Unstable,65.5,True,1.35
+2026-04-28 20:00:00,32.62,60.17,56.98,36.86,66.04,1,9,PECO,PECO Energy,eastern,low_volatility,cascade,3,14.68,NORMAL,Odd: Physically Unstable / Consciously Stable,67.6,True,1.35
+2026-04-28 21:00:00,37.08,63.92,57.01,21.59,76.94,1,9,PECO,PECO Energy,eastern,low_volatility,cascade,1,7.79,NORMAL,Odd: Physically Unstable / Consciously Stable,67.6,False,1.35
+2026-04-28 22:00:00,28.62,80.87,68.02,29.4,67.6,1,9,PECO,PECO Energy,eastern,low_volatility,cascade,2,5.62,NORMAL,Even: Physically Stable / Consciously Unstable,70.7,True,1.35
+2026-04-28 23:00:00,41.0,72.24,66.82,28.15,71.96,1,9,PECO,PECO Energy,eastern,low_volatility,cascade,2,7.81,NORMAL,Even: Physically Stable / Consciously Unstable,71.5,True,1.35

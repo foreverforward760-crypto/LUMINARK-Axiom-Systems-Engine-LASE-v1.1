@@ -1,0 +1,25 @@
+timestamp,complexity,stability,adaptability,tension,coherence,event_min_stage,lead_time_hours,ba_code,ba_name,region,volatility,event_type,sap_stage,pressure_score,decision_signal,inversion_state,witness_score,perpendicular_axis_visible,observer_effect_multiplier
+2026-04-28 00:00:00,43.89,70.66,61.74,23.77,69.34,1,21,Alliant,Alliant Energy,central,low_volatility,brittleness,2,6.97,NORMAL,Even: Physically Stable / Consciously Unstable,67.4,False,1.35
+2026-04-28 01:00:00,44.53,68.09,57.66,30.96,68.72,1,21,Alliant,Alliant Energy,central,low_volatility,brittleness,2,9.88,NORMAL,Even: Physically Stable / Consciously Unstable,67.4,True,1.35
+2026-04-28 02:00:00,50.54,64.75,64.02,18.4,66.71,1,21,Alliant,Alliant Energy,central,low_volatility,brittleness,1,6.49,NORMAL,Odd: Physically Unstable / Consciously Stable,66.1,False,1.35
+2026-04-28 03:00:00,36.39,65.62,60.55,29.54,70.45,1,21,Alliant,Alliant Energy,central,low_volatility,brittleness,2,10.16,NORMAL,Even: Physically Stable / Consciously Unstable,68.8,True,1.35
+2026-04-28 04:00:00,43.88,83.2,54.8,26.82,63.27,1,21,Alliant,Alliant Energy,central,low_volatility,brittleness,2,4.51,NORMAL,Even: Physically Stable / Consciously Unstable,63.3,True,1.35
+2026-04-28 05:00:00,42.79,82.51,50.03,33.42,75.38,1,21,Alliant,Alliant Energy,central,low_volatility,brittleness,3,5.85,NORMAL,Odd: Physically Unstable / Consciously Stable,67.2,True,1.35
+2026-04-28 06:00:00,33.19,63.06,58.99,39.2,68.19,1,21,Alliant,Alliant Energy,central,low_volatility,brittleness,3,14.48,NORMAL,Odd: Physically Unstable / Consciously Stable,69.8,True,1.35
+2026-04-28 07:00:00,37.96,69.97,55.19,27.29,76.88,1,21,Alliant,Alliant Energy,central,low_volatility,brittleness,2,8.2,NORMAL,Even: Physically Stable / Consciously Unstable,68.3,True,1.35
+2026-04-28 08:00:00,39.33,68.05,65.17,31.41,61.42,1,21,Alliant,Alliant Energy,central,low_volatility,brittleness,2,10.04,NORMAL,Even: Physically Stable / Consciously Unstable,67.9,True,1.35
+2026-04-28 09:00:00,41.07,66.43,62.1,29.14,74.24,1,21,Alliant,Alliant Energy,central,low_volatility,brittleness,2,9.78,NORMAL,Even: Physically Stable / Consciously Unstable,70.6,True,1.35
+2026-04-28 10:00:00,39.15,66.44,69.18,25.8,72.23,1,21,Alliant,Alliant Energy,central,low_volatility,brittleness,2,8.66,NORMAL,Even: Physically Stable / Consciously Unstable,71.9,True,1.35
+2026-04-28 11:00:00,36.73,69.31,59.11,32.01,67.63,1,21,Alliant,Alliant Energy,central,low_volatility,brittleness,2,9.82,NORMAL,Even: Physically Stable / Consciously Unstable,67.8,True,1.35
+2026-04-28 12:00:00,35.34,59.67,68.18,36.41,71.05,1,21,Alliant,Alliant Energy,central,low_volatility,brittleness,3,14.68,NORMAL,Odd: Physically Unstable / Consciously Stable,73.7,True,1.35
+2026-04-28 13:00:00,44.63,63.93,59.54,30.78,61.71,1,21,Alliant,Alliant Energy,central,low_volatility,brittleness,2,11.1,NORMAL,Even: Physically Stable / Consciously Unstable,65.6,True,1.35
+2026-04-28 14:00:00,46.13,61.73,57.42,22.94,61.48,1,21,Alliant,Alliant Energy,central,low_volatility,brittleness,2,8.78,NORMAL,Even: Physically Stable / Consciously Unstable,62.7,False,1.35
+2026-04-28 15:00:00,29.45,73.58,65.67,28.59,70.17,1,21,Alliant,Alliant Energy,central,low_volatility,brittleness,2,7.55,NORMAL,Even: Physically Stable / Consciously Unstable,70.5,True,1.35
+2026-04-28 16:00:00,29.29,68.57,58.3,28.34,69.53,1,21,Alliant,Alliant Energy,central,low_volatility,brittleness,2,8.91,NORMAL,Even: Physically Stable / Consciously Unstable,67.2,True,1.35
+2026-04-28 17:00:00,44.6,73.63,67.36,30.33,61.21,1,21,Alliant,Alliant Energy,central,low_volatility,brittleness,2,8.0,NORMAL,Even: Physically Stable / Consciously Unstable,68.5,True,1.35
+2026-04-28 18:00:00,34.88,67.03,57.11,31.89,62.85,1,21,Alliant,Alliant Energy,central,low_volatility,brittleness,2,10.51,NORMAL,Even: Physically Stable / Consciously Unstable,65.3,True,1.35
+2026-04-28 19:00:00,34.01,74.82,60.4,33.45,61.9,1,21,Alliant,Alliant Energy,central,low_volatility,brittleness,3,8.42,NORMAL,Odd: Physically Unstable / Consciously Stable,66.7,True,1.35
+2026-04-28 20:00:00,38.54,72.73,66.73,29.85,69.27,1,21,Alliant,Alliant Energy,central,low_volatility,brittleness,2,8.14,NORMAL,Even: Physically Stable / Consciously Unstable,70.9,True,1.35
+2026-04-28 21:00:00,37.04,61.03,57.31,36.3,68.42,1,21,Alliant,Alliant Energy,central,low_volatility,brittleness,3,14.15,NORMAL,Odd: Physically Unstable / Consciously Stable,68.4,True,1.35
+2026-04-28 22:00:00,39.78,68.61,53.41,31.15,70.29,1,21,Alliant,Alliant Energy,central,low_volatility,brittleness,2,9.78,NORMAL,Even: Physically Stable / Consciously Unstable,66.3,True,1.35
+2026-04-28 23:00:00,36.17,70.56,62.47,21.46,61.47,1,21,Alliant,Alliant Energy,central,low_volatility,brittleness,1,6.32,NORMAL,Odd: Physically Unstable / Consciously Stable,64.4,False,1.35

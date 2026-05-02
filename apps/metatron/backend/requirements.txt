@@ -1,0 +1,9 @@
+fastapi>=0.111.0
+uvicorn[standard]>=0.29.0
+pydantic>=2.7.0
+numpy>=1.26.0
+httpx>=0.27.0          # async HTTP for future market-data calls
+python-dotenv>=1.0.0   # load PLAID_* env vars from .env
+
+# Optional – uncomment when you have Plaid credentials
+# plaid-python>=14.0.0

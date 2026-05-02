@@ -1,0 +1,25 @@
+timestamp,complexity,stability,adaptability,tension,coherence,event_min_stage,lead_time_hours,ba_code,ba_name,region,volatility,event_type,sap_stage,pressure_score,decision_signal,inversion_state,witness_score,perpendicular_axis_visible,observer_effect_multiplier
+2026-04-28 00:00:00,39.59,75.56,64.54,37.23,73.95,1,14,FirstEnergy,FirstEnergy Corp,eastern,medium_volatility,brittleness,3,9.1,NORMAL,Odd: Physically Unstable / Consciously Stable,73.5,True,1.35
+2026-04-28 01:00:00,45.86,64.05,71.5,29.94,68.03,1,14,FirstEnergy,FirstEnergy Corp,eastern,medium_volatility,brittleness,2,10.76,NORMAL,Even: Physically Stable / Consciously Unstable,72.4,True,1.35
+2026-04-28 02:00:00,35.12,68.18,57.63,31.07,65.62,1,14,FirstEnergy,FirstEnergy Corp,eastern,medium_volatility,brittleness,2,9.89,NORMAL,Even: Physically Stable / Consciously Unstable,66.3,True,1.35
+2026-04-28 03:00:00,40.11,67.55,58.15,27.7,65.7,1,14,FirstEnergy,FirstEnergy Corp,eastern,medium_volatility,brittleness,2,8.99,NORMAL,Even: Physically Stable / Consciously Unstable,65.7,True,1.35
+2026-04-28 04:00:00,44.3,69.44,57.94,33.62,74.45,1,14,FirstEnergy,FirstEnergy Corp,eastern,medium_volatility,brittleness,3,10.27,NORMAL,Odd: Physically Unstable / Consciously Stable,70.1,True,1.35
+2026-04-28 05:00:00,35.4,66.49,55.0,27.08,71.23,1,14,FirstEnergy,FirstEnergy Corp,eastern,medium_volatility,brittleness,2,9.07,NORMAL,Even: Physically Stable / Consciously Unstable,66.2,True,1.35
+2026-04-28 06:00:00,39.34,71.65,53.25,24.7,68.89,1,14,FirstEnergy,FirstEnergy Corp,eastern,medium_volatility,brittleness,2,7.0,NORMAL,Even: Physically Stable / Consciously Unstable,64.1,False,1.35
+2026-04-28 07:00:00,47.35,61.29,54.78,38.6,62.36,1,14,FirstEnergy,FirstEnergy Corp,eastern,medium_volatility,brittleness,3,14.94,NORMAL,Odd: Physically Unstable / Consciously Stable,65.9,True,1.35
+2026-04-28 08:00:00,44.96,77.94,65.45,43.89,75.94,1,14,FirstEnergy,FirstEnergy Corp,eastern,medium_volatility,brittleness,3,9.68,NORMAL,Odd: Physically Unstable / Consciously Stable,76.2,True,1.35
+2026-04-28 09:00:00,36.47,77.12,55.97,21.02,66.72,1,14,FirstEnergy,FirstEnergy Corp,eastern,medium_volatility,brittleness,1,4.81,NORMAL,Odd: Physically Unstable / Consciously Stable,63.5,False,1.35
+2026-04-28 10:00:00,38.69,75.51,51.22,26.67,67.83,1,14,FirstEnergy,FirstEnergy Corp,eastern,medium_volatility,brittleness,2,6.53,NORMAL,Even: Physically Stable / Consciously Unstable,63.4,True,1.35
+2026-04-28 11:00:00,37.41,60.32,63.8,24.62,73.11,1,14,FirstEnergy,FirstEnergy Corp,eastern,medium_volatility,brittleness,2,9.77,NORMAL,Even: Physically Stable / Consciously Unstable,69.8,False,1.35
+2026-04-28 12:00:00,37.57,72.82,65.02,26.53,73.06,1,14,FirstEnergy,FirstEnergy Corp,eastern,medium_volatility,brittleness,2,7.21,NORMAL,Even: Physically Stable / Consciously Unstable,70.7,True,1.35
+2026-04-28 13:00:00,42.89,68.88,56.84,29.52,72.67,1,14,FirstEnergy,FirstEnergy Corp,eastern,medium_volatility,brittleness,2,9.19,NORMAL,Even: Physically Stable / Consciously Unstable,68.1,True,1.35
+2026-04-28 14:00:00,40.75,65.17,57.43,22.8,62.46,1,14,FirstEnergy,FirstEnergy Corp,eastern,medium_volatility,brittleness,2,7.94,NORMAL,Even: Physically Stable / Consciously Unstable,63.0,False,1.35
+2026-04-28 15:00:00,36.33,83.43,53.01,24.11,77.31,1,14,FirstEnergy,FirstEnergy Corp,eastern,medium_volatility,brittleness,2,4.0,NORMAL,Even: Physically Stable / Consciously Unstable,66.8,False,1.35
+2026-04-28 16:00:00,35.09,70.17,65.49,31.91,74.33,1,14,FirstEnergy,FirstEnergy Corp,eastern,medium_volatility,brittleness,2,9.52,NORMAL,Even: Physically Stable / Consciously Unstable,72.7,True,1.35
+2026-04-28 17:00:00,34.56,75.59,65.21,32.68,67.91,1,14,FirstEnergy,FirstEnergy Corp,eastern,medium_volatility,brittleness,2,7.98,NORMAL,Even: Physically Stable / Consciously Unstable,70.5,True,1.35
+2026-04-28 18:00:00,29.74,69.98,60.11,36.22,75.16,1,14,FirstEnergy,FirstEnergy Corp,eastern,medium_volatility,brittleness,3,10.87,NORMAL,Odd: Physically Unstable / Consciously Stable,71.9,True,1.35
+2026-04-28 19:00:00,40.41,76.31,65.71,35.02,69.27,1,14,FirstEnergy,FirstEnergy Corp,eastern,medium_volatility,brittleness,3,8.3,NORMAL,Odd: Physically Unstable / Consciously Stable,71.8,True,1.35
+2026-04-28 20:00:00,34.5,76.56,67.29,33.21,79.14,1,14,FirstEnergy,FirstEnergy Corp,eastern,medium_volatility,brittleness,2,7.78,NORMAL,Even: Physically Stable / Consciously Unstable,75.4,True,1.35
+2026-04-28 21:00:00,36.7,74.2,61.73,37.38,65.08,1,14,FirstEnergy,FirstEnergy Corp,eastern,medium_volatility,brittleness,3,9.64,NORMAL,Odd: Physically Unstable / Consciously Stable,69.3,True,1.35
+2026-04-28 22:00:00,40.64,71.62,55.05,23.79,77.0,1,14,FirstEnergy,FirstEnergy Corp,eastern,medium_volatility,brittleness,2,6.75,NORMAL,Even: Physically Stable / Consciously Unstable,67.4,False,1.35
+2026-04-28 23:00:00,37.66,62.6,59.24,33.75,68.44,1,14,FirstEnergy,FirstEnergy Corp,eastern,medium_volatility,brittleness,3,12.62,NORMAL,Odd: Physically Unstable / Consciously Stable,68.6,True,1.35

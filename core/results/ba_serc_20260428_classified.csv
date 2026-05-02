@@ -1,0 +1,25 @@
+timestamp,complexity,stability,adaptability,tension,coherence,event_min_stage,lead_time_hours,ba_code,ba_name,region,volatility,event_type,sap_stage,pressure_score,decision_signal,inversion_state,witness_score,perpendicular_axis_visible,observer_effect_multiplier
+2026-04-28 00:00:00,35.09,64.56,58.7,31.5,68.72,1,14,SERC,SERC Reliability Corporation,eastern,medium_volatility,oscillation,2,11.16,NORMAL,Even: Physically Stable / Consciously Unstable,67.9,True,1.35
+2026-04-28 01:00:00,39.58,65.82,53.23,23.18,72.74,1,14,SERC,SERC Reliability Corporation,eastern,medium_volatility,oscillation,2,7.92,NORMAL,Even: Physically Stable / Consciously Unstable,65.0,False,1.35
+2026-04-28 02:00:00,39.19,68.69,62.24,23.05,69.57,1,14,SERC,SERC Reliability Corporation,eastern,medium_volatility,oscillation,2,7.22,NORMAL,Even: Physically Stable / Consciously Unstable,67.5,False,1.35
+2026-04-28 03:00:00,38.26,64.57,60.71,30.19,75.94,1,14,SERC,SERC Reliability Corporation,eastern,medium_volatility,oscillation,2,10.7,NORMAL,Even: Physically Stable / Consciously Unstable,70.9,True,1.35
+2026-04-28 04:00:00,39.34,70.17,64.45,23.55,70.31,1,14,SERC,SERC Reliability Corporation,eastern,medium_volatility,oscillation,2,7.02,NORMAL,Even: Physically Stable / Consciously Unstable,68.8,False,1.35
+2026-04-28 05:00:00,31.75,73.27,63.23,28.22,72.0,1,14,SERC,SERC Reliability Corporation,eastern,medium_volatility,oscillation,2,7.54,NORMAL,Even: Physically Stable / Consciously Unstable,70.0,True,1.35
+2026-04-28 06:00:00,36.09,68.03,57.74,43.04,68.24,1,14,SERC,SERC Reliability Corporation,eastern,medium_volatility,oscillation,3,13.76,NORMAL,Odd: Physically Unstable / Consciously Stable,70.2,True,1.35
+2026-04-28 07:00:00,49.24,77.35,66.57,28.61,67.6,1,14,SERC,SERC Reliability Corporation,eastern,medium_volatility,oscillation,2,6.48,NORMAL,Even: Physically Stable / Consciously Unstable,69.9,True,1.35
+2026-04-28 08:00:00,45.74,69.96,58.83,29.64,76.81,1,14,SERC,SERC Reliability Corporation,eastern,medium_volatility,oscillation,2,8.9,NORMAL,Even: Physically Stable / Consciously Unstable,70.3,True,1.35
+2026-04-28 09:00:00,37.33,74.83,51.69,22.02,65.69,1,14,SERC,SERC Reliability Corporation,eastern,medium_volatility,oscillation,1,5.54,NORMAL,Odd: Physically Unstable / Consciously Stable,61.7,False,1.35
+2026-04-28 10:00:00,31.5,73.79,71.96,28.15,68.52,1,14,SERC,SERC Reliability Corporation,eastern,medium_volatility,oscillation,2,7.38,NORMAL,Even: Physically Stable / Consciously Unstable,72.3,True,1.35
+2026-04-28 11:00:00,36.97,70.1,64.64,27.19,65.56,1,14,SERC,SERC Reliability Corporation,eastern,medium_volatility,oscillation,2,8.13,NORMAL,Even: Physically Stable / Consciously Unstable,68.1,True,1.35
+2026-04-28 12:00:00,40.88,70.75,67.12,31.26,63.17,1,14,SERC,SERC Reliability Corporation,eastern,medium_volatility,oscillation,2,9.14,NORMAL,Even: Physically Stable / Consciously Unstable,69.3,True,1.35
+2026-04-28 13:00:00,49.14,61.36,49.8,35.16,64.44,1,14,SERC,SERC Reliability Corporation,eastern,medium_volatility,oscillation,3,13.59,NORMAL,Odd: Physically Unstable / Consciously Stable,63.8,True,1.35
+2026-04-28 14:00:00,37.71,71.27,58.6,29.7,72.4,1,14,SERC,SERC Reliability Corporation,eastern,medium_volatility,oscillation,2,8.53,NORMAL,Even: Physically Stable / Consciously Unstable,68.7,True,1.35
+2026-04-28 15:00:00,33.93,66.94,53.74,31.16,63.81,1,14,SERC,SERC Reliability Corporation,eastern,medium_volatility,oscillation,2,10.3,NORMAL,Even: Physically Stable / Consciously Unstable,64.1,True,1.35
+2026-04-28 16:00:00,38.14,75.6,65.64,35.95,71.75,1,14,SERC,SERC Reliability Corporation,eastern,medium_volatility,oscillation,3,8.77,NORMAL,Odd: Physically Unstable / Consciously Stable,72.9,True,1.35
+2026-04-28 17:00:00,37.22,64.34,56.98,26.38,67.42,1,14,SERC,SERC Reliability Corporation,eastern,medium_volatility,oscillation,2,9.41,NORMAL,Even: Physically Stable / Consciously Unstable,65.5,True,1.35
+2026-04-28 18:00:00,36.97,64.85,69.32,33.71,68.89,1,14,SERC,SERC Reliability Corporation,eastern,medium_volatility,oscillation,3,11.85,NORMAL,Odd: Physically Unstable / Consciously Stable,72.8,True,1.35
+2026-04-28 19:00:00,47.45,64.08,62.08,26.88,64.83,1,14,SERC,SERC Reliability Corporation,eastern,medium_volatility,oscillation,2,9.66,NORMAL,Even: Physically Stable / Consciously Unstable,66.7,True,1.35
+2026-04-28 20:00:00,38.8,76.81,59.1,30.77,70.19,1,14,SERC,SERC Reliability Corporation,eastern,medium_volatility,oscillation,2,7.14,NORMAL,Even: Physically Stable / Consciously Unstable,68.4,True,1.35
+2026-04-28 21:00:00,41.9,75.58,69.12,25.05,78.53,1,14,SERC,SERC Reliability Corporation,eastern,medium_volatility,oscillation,2,6.12,NORMAL,Even: Physically Stable / Consciously Unstable,73.9,True,1.35
+2026-04-28 22:00:00,42.08,66.81,64.66,40.41,72.1,1,14,SERC,SERC Reliability Corporation,eastern,medium_volatility,oscillation,3,13.41,NORMAL,Odd: Physically Unstable / Consciously Stable,73.7,True,1.35
+2026-04-28 23:00:00,37.31,66.21,65.4,38.02,62.15,1,14,SERC,SERC Reliability Corporation,eastern,medium_volatility,oscillation,3,12.85,NORMAL,Odd: Physically Unstable / Consciously Stable,69.9,True,1.35

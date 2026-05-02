@@ -1,0 +1,25 @@
+timestamp,complexity,stability,adaptability,tension,coherence,event_min_stage,lead_time_hours,sap_stage,pressure_score,decision_signal,inversion_state,witness_score,perpendicular_axis_visible,observer_effect_multiplier
+2021-02-10 00:00:00,85,15,20,90,40,0,4,8,76.5,CRITICAL,Even: Physically Stable / Consciously Unstable,37.0,False,1.0
+2021-02-10 01:00:00,88,12,18,92,38,0,3,8,80.96,CRITICAL,Even: Physically Stable / Consciously Unstable,35.0,False,1.0
+2021-02-10 02:00:00,90,10,15,95,35,0,2,8,85.5,CRITICAL,Even: Physically Stable / Consciously Unstable,32.0,False,1.0
+2021-02-10 03:00:00,92,8,12,97,32,0,1,8,89.24,CRITICAL,Even: Physically Stable / Consciously Unstable,29.2,False,1.0
+2021-02-10 04:00:00,95,5,8,99,28,1,0,8,94.05,CRITICAL,Even: Physically Stable / Consciously Unstable,25.8,False,1.0
+2021-02-10 05:00:00,98,3,5,100,25,2,-1,9,97.0,CRITICAL,Odd: Physically Unstable / Consciously Stable,23.2,False,1.0
+2021-02-10 06:00:00,96,7,10,98,30,1,0,8,91.14,CRITICAL,Even: Physically Stable / Consciously Unstable,27.5,False,1.0
+2021-02-10 07:00:00,92,12,15,95,35,0,1,8,83.6,CRITICAL,Even: Physically Stable / Consciously Unstable,32.0,False,1.0
+2021-02-10 08:00:00,88,18,22,90,40,0,2,8,73.8,CRITICAL,Even: Physically Stable / Consciously Unstable,37.8,False,1.0
+2021-02-10 09:00:00,82,25,30,85,45,0,3,7,63.75,WARNING,Odd: Physically Unstable / Consciously Stable,44.0,False,1.0
+2021-02-10 10:00:00,75,35,40,75,50,0,4,6,48.75,CAUTION,Even: Physically Stable / Consciously Unstable,52.2,False,1.0
+2021-02-10 11:00:00,70,45,50,65,55,0,5,5,35.75,CAUTION,Odd: Physically Unstable / Consciously Stable,60.5,True,1.35
+2021-02-10 12:00:00,65,55,60,55,60,0,6,4,24.75,NORMAL,Even: Physically Stable / Consciously Unstable,68.8,True,1.35
+2021-02-10 13:00:00,60,65,70,45,65,0,7,4,15.75,NORMAL,Even: Physically Stable / Consciously Unstable,74.5,True,1.35
+2021-02-10 14:00:00,55,75,80,35,70,0,8,3,8.75,NORMAL,Odd: Physically Unstable / Consciously Stable,77.8,True,1.35
+2021-02-10 15:00:00,50,85,90,25,75,0,9,2,3.75,NORMAL,Even: Physically Stable / Consciously Unstable,81.0,False,1.35
+2021-02-10 16:00:00,48,87,92,22,77,0,10,1,2.86,NORMAL,Odd: Physically Unstable / Consciously Stable,81.8,False,1.35
+2021-02-10 17:00:00,50,85,90,25,75,0,9,2,3.75,NORMAL,Even: Physically Stable / Consciously Unstable,81.0,False,1.35
+2021-02-10 18:00:00,55,80,85,30,72,0,8,2,6.0,NORMAL,Even: Physically Stable / Consciously Unstable,79.2,True,1.35
+2021-02-10 19:00:00,60,75,80,35,70,0,7,3,8.75,NORMAL,Odd: Physically Unstable / Consciously Stable,77.8,True,1.35
+2021-02-10 20:00:00,65,70,75,40,68,0,6,3,12.0,NORMAL,Odd: Physically Unstable / Consciously Stable,76.3,True,1.35
+2021-02-10 21:00:00,70,65,70,45,65,0,5,4,15.75,NORMAL,Even: Physically Stable / Consciously Unstable,74.5,True,1.35
+2021-02-10 22:00:00,75,60,65,50,62,0,4,4,20.0,NORMAL,Even: Physically Stable / Consciously Unstable,72.7,True,1.35
+2021-02-10 23:00:00,80,55,60,55,60,0,3,4,24.75,NORMAL,Even: Physically Stable / Consciously Unstable,68.8,True,1.35

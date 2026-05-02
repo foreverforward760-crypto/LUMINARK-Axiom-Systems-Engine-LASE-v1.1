@@ -1,0 +1,1155 @@
+{
+  "timestamp": "2026-04-28T22:56:05.378693",
+  "dataset": "NYIS",
+  "total_rows": 24,
+  "stage_8_events": 3,
+  "stage_7_events": 4,
+  "stage_5_events": 4,
+  "witness_positions_detected": 10,
+  "observer_effects_active": 0,
+  "observer_witness_mismatches": 0,
+  "v_value_statistics": {
+    "mean": 2.753,
+    "max": 4.226,
+    "min": 1.526,
+    "std": 0.84
+  },
+  "key_findings": [
+    "Stage 8 (Illusion of Permanence) reached: 3 instances",
+    "Observer Effect active: 0 instances (triggered by V-value > 5.0)",
+    "Witness Position gateway: 10 instances (requires Witness Score \u2265 55)",
+    "Discrepancy: 0 cases where Observer Effect active WITHOUT Witness Position",
+    "Root Cause: Observer Effect triggered by Lyapunov instability (high entropy/energy/velocity)",
+    "Patent Implication: Two independent mechanisms for intervention - Witness gateway AND Lyapunov V-value"
+  ],
+  "row_audits": [
+    {
+      "row_index": 0,
+      "timestamp": "2026-04-28 00:00",
+      "nsdt_vector": {
+        "complexity": 38.81,
+        "stability": 68.77,
+        "adaptability": 55.36,
+        "tension": 30.43,
+        "coherence": 73.29
+      },
+      "stage": 2,
+      "witness_position": {
+        "witness_score": 67.9,
+        "score_component_adaptability": 22.14,
+        "score_component_coherence": 25.65,
+        "score_component_tension": 20.11,
+        "condition_witness_score_gte_55": true,
+        "condition_adaptability_gte_40": true,
+        "condition_tension_lt_a_plus_30": true,
+        "is_witness": true,
+        "perpendicular_axis_visible": true,
+        "observer_effect_multiplier": 1.35
+      },
+      "observer_effect": {
+        "entropy": 0.267,
+        "energy": 0.346,
+        "velocity": 0.196,
+        "v_value": 1.526,
+        "v_value_gt_5": false,
+        "observer_effect_active": false,
+        "observer_effect_multiplier": 1.0
+      },
+      "tumbling_inversion": {
+        "stage_parity": "even",
+        "is_even_stage": true,
+        "stability": 68.77,
+        "adaptability": 55.36,
+        "brittleness_risk": false,
+        "inversion_state": "Physically Stable / Consciously Unstable"
+      },
+      "discrepancy_analysis": {
+        "witness_detected": true,
+        "observer_active": false,
+        "mismatch": false,
+        "explanation": "Observer Effect triggered by high V-value (Lyapunov instability) independent of Witness Position gateway"
+      }
+    },
+    {
+      "row_index": 1,
+      "timestamp": "2026-04-28 01:00",
+      "nsdt_vector": {
+        "complexity": 34.61,
+        "stability": 72.25,
+        "adaptability": 58.62,
+        "tension": 37.29,
+        "coherence": 69.46
+      },
+      "stage": 3,
+      "witness_position": {
+        "witness_score": 69.58,
+        "score_component_adaptability": 23.45,
+        "score_component_coherence": 24.31,
+        "score_component_tension": 21.82,
+        "condition_witness_score_gte_55": true,
+        "condition_adaptability_gte_40": true,
+        "condition_tension_lt_a_plus_30": true,
+        "is_witness": true,
+        "perpendicular_axis_visible": true,
+        "observer_effect_multiplier": 1.35
+      },
+      "observer_effect": {
+        "entropy": 0.305,
+        "energy": 0.36,
+        "velocity": 0.127,
+        "v_value": 1.563,
+        "v_value_gt_5": false,
+        "observer_effect_active": false,
+        "observer_effect_multiplier": 1.0
+      },
+      "tumbling_inversion": {
+        "stage_parity": "odd",
+        "is_even_stage": false,
+        "stability": 72.25,
+        "adaptability": 58.62,
+        "brittleness_risk": false,
+        "inversion_state": "Physically Unstable / Consciously Stable"
+      },
+      "discrepancy_analysis": {
+        "witness_detected": true,
+        "observer_active": false,
+        "mismatch": false,
+        "explanation": "Observer Effect triggered by high V-value (Lyapunov instability) independent of Witness Position gateway"
+      }
+    },
+    {
+      "row_index": 2,
+      "timestamp": "2026-04-28 02:00",
+      "nsdt_vector": {
+        "complexity": 45.18,
+        "stability": 63.68,
+        "adaptability": 55.64,
+        "tension": 40.32,
+        "coherence": 63.47
+      },
+      "stage": 3,
+      "witness_position": {
+        "witness_score": 67.05,
+        "score_component_adaptability": 22.26,
+        "score_component_coherence": 22.21,
+        "score_component_tension": 22.58,
+        "condition_witness_score_gte_55": true,
+        "condition_adaptability_gte_40": true,
+        "condition_tension_lt_a_plus_30": true,
+        "is_witness": true,
+        "perpendicular_axis_visible": true,
+        "observer_effect_multiplier": 1.35
+      },
+      "observer_effect": {
+        "entropy": 0.365,
+        "energy": 0.427,
+        "velocity": 0.097,
+        "v_value": 1.799,
+        "v_value_gt_5": false,
+        "observer_effect_active": false,
+        "observer_effect_multiplier": 1.0
+      },
+      "tumbling_inversion": {
+        "stage_parity": "odd",
+        "is_even_stage": false,
+        "stability": 63.68,
+        "adaptability": 55.64,
+        "brittleness_risk": false,
+        "inversion_state": "Physically Unstable / Consciously Stable"
+      },
+      "discrepancy_analysis": {
+        "witness_detected": true,
+        "observer_active": false,
+        "mismatch": false,
+        "explanation": "Observer Effect triggered by high V-value (Lyapunov instability) independent of Witness Position gateway"
+      }
+    },
+    {
+      "row_index": 3,
+      "timestamp": "2026-04-28 03:00",
+      "nsdt_vector": {
+        "complexity": 39.03,
+        "stability": 61.43,
+        "adaptability": 53.04,
+        "tension": 42.83,
+        "coherence": 62.79
+      },
+      "stage": 3,
+      "witness_position": {
+        "witness_score": 66.4,
+        "score_component_adaptability": 21.22,
+        "score_component_coherence": 21.98,
+        "score_component_tension": 23.21,
+        "condition_witness_score_gte_55": true,
+        "condition_adaptability_gte_40": true,
+        "condition_tension_lt_a_plus_30": true,
+        "is_witness": true,
+        "perpendicular_axis_visible": true,
+        "observer_effect_multiplier": 1.35
+      },
+      "observer_effect": {
+        "entropy": 0.372,
+        "energy": 0.409,
+        "velocity": 0.072,
+        "v_value": 1.753,
+        "v_value_gt_5": false,
+        "observer_effect_active": false,
+        "observer_effect_multiplier": 1.0
+      },
+      "tumbling_inversion": {
+        "stage_parity": "odd",
+        "is_even_stage": false,
+        "stability": 61.43,
+        "adaptability": 53.04,
+        "brittleness_risk": false,
+        "inversion_state": "Physically Unstable / Consciously Stable"
+      },
+      "discrepancy_analysis": {
+        "witness_detected": true,
+        "observer_active": false,
+        "mismatch": false,
+        "explanation": "Observer Effect triggered by high V-value (Lyapunov instability) independent of Witness Position gateway"
+      }
+    },
+    {
+      "row_index": 4,
+      "timestamp": "2026-04-28 04:00",
+      "nsdt_vector": {
+        "complexity": 47.68,
+        "stability": 62.63,
+        "adaptability": 53.16,
+        "tension": 44.02,
+        "coherence": 63.96
+      },
+      "stage": 3,
+      "witness_position": {
+        "witness_score": 67.16,
+        "score_component_adaptability": 21.26,
+        "score_component_coherence": 22.39,
+        "score_component_tension": 23.51,
+        "condition_witness_score_gte_55": true,
+        "condition_adaptability_gte_40": true,
+        "condition_tension_lt_a_plus_30": true,
+        "is_witness": true,
+        "perpendicular_axis_visible": true,
+        "observer_effect_multiplier": 1.35
+      },
+      "observer_effect": {
+        "entropy": 0.36,
+        "energy": 0.459,
+        "velocity": 0.06,
+        "v_value": 1.798,
+        "v_value_gt_5": false,
+        "observer_effect_active": false,
+        "observer_effect_multiplier": 1.0
+      },
+      "tumbling_inversion": {
+        "stage_parity": "odd",
+        "is_even_stage": false,
+        "stability": 62.63,
+        "adaptability": 53.16,
+        "brittleness_risk": false,
+        "inversion_state": "Physically Unstable / Consciously Stable"
+      },
+      "discrepancy_analysis": {
+        "witness_detected": true,
+        "observer_active": false,
+        "mismatch": false,
+        "explanation": "Observer Effect triggered by high V-value (Lyapunov instability) independent of Witness Position gateway"
+      }
+    },
+    {
+      "row_index": 5,
+      "timestamp": "2026-04-28 05:00",
+      "nsdt_vector": {
+        "complexity": 52.68,
+        "stability": 50.19,
+        "adaptability": 54.04,
+        "tension": 45.14,
+        "coherence": 61.08
+      },
+      "stage": 4,
+      "witness_position": {
+        "witness_score": 66.78,
+        "score_component_adaptability": 21.62,
+        "score_component_coherence": 21.38,
+        "score_component_tension": 23.79,
+        "condition_witness_score_gte_55": true,
+        "condition_adaptability_gte_40": true,
+        "condition_tension_lt_a_plus_30": true,
+        "is_witness": true,
+        "perpendicular_axis_visible": true,
+        "observer_effect_multiplier": 1.35
+      },
+      "observer_effect": {
+        "entropy": 0.389,
+        "energy": 0.489,
+        "velocity": 0.049,
+        "v_value": 1.912,
+        "v_value_gt_5": false,
+        "observer_effect_active": false,
+        "observer_effect_multiplier": 1.0
+      },
+      "tumbling_inversion": {
+        "stage_parity": "even",
+        "is_even_stage": true,
+        "stability": 50.19,
+        "adaptability": 54.04,
+        "brittleness_risk": false,
+        "inversion_state": "Physically Stable / Consciously Unstable"
+      },
+      "discrepancy_analysis": {
+        "witness_detected": true,
+        "observer_active": false,
+        "mismatch": false,
+        "explanation": "Observer Effect triggered by high V-value (Lyapunov instability) independent of Witness Position gateway"
+      }
+    },
+    {
+      "row_index": 6,
+      "timestamp": "2026-04-28 06:00",
+      "nsdt_vector": {
+        "complexity": 53.24,
+        "stability": 56.86,
+        "adaptability": 46.3,
+        "tension": 46.81,
+        "coherence": 51.18
+      },
+      "stage": 4,
+      "witness_position": {
+        "witness_score": 60.64,
+        "score_component_adaptability": 18.52,
+        "score_component_coherence": 17.91,
+        "score_component_tension": 24.2,
+        "condition_witness_score_gte_55": true,
+        "condition_adaptability_gte_40": true,
+        "condition_tension_lt_a_plus_30": true,
+        "is_witness": true,
+        "perpendicular_axis_visible": true,
+        "observer_effect_multiplier": 1.35
+      },
+      "observer_effect": {
+        "entropy": 0.488,
+        "energy": 0.5,
+        "velocity": 0.032,
+        "v_value": 2.159,
+        "v_value_gt_5": false,
+        "observer_effect_active": false,
+        "observer_effect_multiplier": 1.0
+      },
+      "tumbling_inversion": {
+        "stage_parity": "even",
+        "is_even_stage": true,
+        "stability": 56.86,
+        "adaptability": 46.3,
+        "brittleness_risk": false,
+        "inversion_state": "Physically Stable / Consciously Unstable"
+      },
+      "discrepancy_analysis": {
+        "witness_detected": true,
+        "observer_active": false,
+        "mismatch": false,
+        "explanation": "Observer Effect triggered by high V-value (Lyapunov instability) independent of Witness Position gateway"
+      }
+    },
+    {
+      "row_index": 7,
+      "timestamp": "2026-04-28 07:00",
+      "nsdt_vector": {
+        "complexity": 61.04,
+        "stability": 51.12,
+        "adaptability": 49.25,
+        "tension": 52.07,
+        "coherence": 54.43
+      },
+      "stage": 4,
+      "witness_position": {
+        "witness_score": 63.23,
+        "score_component_adaptability": 19.7,
+        "score_component_coherence": 19.05,
+        "score_component_tension": 24.48,
+        "condition_witness_score_gte_55": true,
+        "condition_adaptability_gte_40": true,
+        "condition_tension_lt_a_plus_30": true,
+        "is_witness": true,
+        "perpendicular_axis_visible": true,
+        "observer_effect_multiplier": 1.35
+      },
+      "observer_effect": {
+        "entropy": 0.456,
+        "energy": 0.566,
+        "velocity": 0.021,
+        "v_value": 2.182,
+        "v_value_gt_5": false,
+        "observer_effect_active": false,
+        "observer_effect_multiplier": 1.0
+      },
+      "tumbling_inversion": {
+        "stage_parity": "even",
+        "is_even_stage": true,
+        "stability": 51.12,
+        "adaptability": 49.25,
+        "brittleness_risk": false,
+        "inversion_state": "Physically Stable / Consciously Unstable"
+      },
+      "discrepancy_analysis": {
+        "witness_detected": true,
+        "observer_active": false,
+        "mismatch": false,
+        "explanation": "Observer Effect triggered by high V-value (Lyapunov instability) independent of Witness Position gateway"
+      }
+    },
+    {
+      "row_index": 8,
+      "timestamp": "2026-04-28 08:00",
+      "nsdt_vector": {
+        "complexity": 55.58,
+        "stability": 48.08,
+        "adaptability": 38.05,
+        "tension": 50.1,
+        "coherence": 52.8
+      },
+      "stage": 4,
+      "witness_position": {
+        "witness_score": 58.67,
+        "score_component_adaptability": 15.22,
+        "score_component_coherence": 18.48,
+        "score_component_tension": 24.98,
+        "condition_witness_score_gte_55": true,
+        "condition_adaptability_gte_40": false,
+        "condition_tension_lt_a_plus_30": true,
+        "is_witness": false,
+        "perpendicular_axis_visible": false,
+        "observer_effect_multiplier": 1.0
+      },
+      "observer_effect": {
+        "entropy": 0.472,
+        "energy": 0.528,
+        "velocity": 0.001,
+        "v_value": 2.132,
+        "v_value_gt_5": false,
+        "observer_effect_active": false,
+        "observer_effect_multiplier": 1.0
+      },
+      "tumbling_inversion": {
+        "stage_parity": "even",
+        "is_even_stage": true,
+        "stability": 48.08,
+        "adaptability": 38.05,
+        "brittleness_risk": false,
+        "inversion_state": "Physically Stable / Consciously Unstable"
+      },
+      "discrepancy_analysis": {
+        "witness_detected": false,
+        "observer_active": false,
+        "mismatch": false,
+        "explanation": "Observer Effect triggered by high V-value (Lyapunov instability) independent of Witness Position gateway"
+      }
+    },
+    {
+      "row_index": 9,
+      "timestamp": "2026-04-28 09:00",
+      "nsdt_vector": {
+        "complexity": 59.69,
+        "stability": 46.42,
+        "adaptability": 48.74,
+        "tension": 55.51,
+        "coherence": 51.27
+      },
+      "stage": 4,
+      "witness_position": {
+        "witness_score": 61.06,
+        "score_component_adaptability": 19.5,
+        "score_component_coherence": 17.94,
+        "score_component_tension": 23.62,
+        "condition_witness_score_gte_55": true,
+        "condition_adaptability_gte_40": true,
+        "condition_tension_lt_a_plus_30": true,
+        "is_witness": true,
+        "perpendicular_axis_visible": true,
+        "observer_effect_multiplier": 1.35
+      },
+      "observer_effect": {
+        "entropy": 0.487,
+        "energy": 0.576,
+        "velocity": 0.055,
+        "v_value": 2.321,
+        "v_value_gt_5": false,
+        "observer_effect_active": false,
+        "observer_effect_multiplier": 1.0
+      },
+      "tumbling_inversion": {
+        "stage_parity": "even",
+        "is_even_stage": true,
+        "stability": 46.42,
+        "adaptability": 48.74,
+        "brittleness_risk": false,
+        "inversion_state": "Physically Stable / Consciously Unstable"
+      },
+      "discrepancy_analysis": {
+        "witness_detected": true,
+        "observer_active": false,
+        "mismatch": false,
+        "explanation": "Observer Effect triggered by high V-value (Lyapunov instability) independent of Witness Position gateway"
+      }
+    },
+    {
+      "row_index": 10,
+      "timestamp": "2026-04-28 10:00",
+      "nsdt_vector": {
+        "complexity": 62.87,
+        "stability": 43.48,
+        "adaptability": 41.91,
+        "tension": 57.09,
+        "coherence": 46.26
+      },
+      "stage": 5,
+      "witness_position": {
+        "witness_score": 56.18,
+        "score_component_adaptability": 16.76,
+        "score_component_coherence": 16.19,
+        "score_component_tension": 23.23,
+        "condition_witness_score_gte_55": true,
+        "condition_adaptability_gte_40": true,
+        "condition_tension_lt_a_plus_30": true,
+        "is_witness": true,
+        "perpendicular_axis_visible": true,
+        "observer_effect_multiplier": 1.35
+      },
+      "observer_effect": {
+        "entropy": 0.537,
+        "energy": 0.6,
+        "velocity": 0.071,
+        "v_value": 2.508,
+        "v_value_gt_5": false,
+        "observer_effect_active": false,
+        "observer_effect_multiplier": 1.0
+      },
+      "tumbling_inversion": {
+        "stage_parity": "odd",
+        "is_even_stage": false,
+        "stability": 43.48,
+        "adaptability": 41.91,
+        "brittleness_risk": false,
+        "inversion_state": "Physically Unstable / Consciously Stable"
+      },
+      "discrepancy_analysis": {
+        "witness_detected": true,
+        "observer_active": false,
+        "mismatch": false,
+        "explanation": "Observer Effect triggered by high V-value (Lyapunov instability) independent of Witness Position gateway"
+      }
+    },
+    {
+      "row_index": 11,
+      "timestamp": "2026-04-28 11:00",
+      "nsdt_vector": {
+        "complexity": 63.42,
+        "stability": 38.06,
+        "adaptability": 39.85,
+        "tension": 58.23,
+        "coherence": 47.16
+      },
+      "stage": 5,
+      "witness_position": {
+        "witness_score": 55.39,
+        "score_component_adaptability": 15.94,
+        "score_component_coherence": 16.51,
+        "score_component_tension": 22.94,
+        "condition_witness_score_gte_55": true,
+        "condition_adaptability_gte_40": false,
+        "condition_tension_lt_a_plus_30": true,
+        "is_witness": false,
+        "perpendicular_axis_visible": false,
+        "observer_effect_multiplier": 1.0
+      },
+      "observer_effect": {
+        "entropy": 0.528,
+        "energy": 0.608,
+        "velocity": 0.082,
+        "v_value": 2.515,
+        "v_value_gt_5": false,
+        "observer_effect_active": false,
+        "observer_effect_multiplier": 1.0
+      },
+      "tumbling_inversion": {
+        "stage_parity": "odd",
+        "is_even_stage": false,
+        "stability": 38.06,
+        "adaptability": 39.85,
+        "brittleness_risk": false,
+        "inversion_state": "Physically Unstable / Consciously Stable"
+      },
+      "discrepancy_analysis": {
+        "witness_detected": false,
+        "observer_active": false,
+        "mismatch": false,
+        "explanation": "Observer Effect triggered by high V-value (Lyapunov instability) independent of Witness Position gateway"
+      }
+    },
+    {
+      "row_index": 12,
+      "timestamp": "2026-04-28 12:00",
+      "nsdt_vector": {
+        "complexity": 68.2,
+        "stability": 41.8,
+        "adaptability": 41.28,
+        "tension": 65.2,
+        "coherence": 42.05
+      },
+      "stage": 5,
+      "witness_position": {
+        "witness_score": 52.43,
+        "score_component_adaptability": 16.51,
+        "score_component_coherence": 14.72,
+        "score_component_tension": 21.2,
+        "condition_witness_score_gte_55": false,
+        "condition_adaptability_gte_40": true,
+        "condition_tension_lt_a_plus_30": true,
+        "is_witness": false,
+        "perpendicular_axis_visible": false,
+        "observer_effect_multiplier": 1.0
+      },
+      "observer_effect": {
+        "entropy": 0.58,
+        "energy": 0.667,
+        "velocity": 0.152,
+        "v_value": 2.832,
+        "v_value_gt_5": false,
+        "observer_effect_active": false,
+        "observer_effect_multiplier": 1.0
+      },
+      "tumbling_inversion": {
+        "stage_parity": "odd",
+        "is_even_stage": false,
+        "stability": 41.8,
+        "adaptability": 41.28,
+        "brittleness_risk": false,
+        "inversion_state": "Physically Unstable / Consciously Stable"
+      },
+      "discrepancy_analysis": {
+        "witness_detected": false,
+        "observer_active": false,
+        "mismatch": false,
+        "explanation": "Observer Effect triggered by high V-value (Lyapunov instability) independent of Witness Position gateway"
+      }
+    },
+    {
+      "row_index": 13,
+      "timestamp": "2026-04-28 13:00",
+      "nsdt_vector": {
+        "complexity": 66.78,
+        "stability": 32.83,
+        "adaptability": 31.22,
+        "tension": 64.5,
+        "coherence": 38.84
+      },
+      "stage": 5,
+      "witness_position": {
+        "witness_score": 47.46,
+        "score_component_adaptability": 12.49,
+        "score_component_coherence": 13.59,
+        "score_component_tension": 21.38,
+        "condition_witness_score_gte_55": false,
+        "condition_adaptability_gte_40": false,
+        "condition_tension_lt_a_plus_30": false,
+        "is_witness": false,
+        "perpendicular_axis_visible": false,
+        "observer_effect_multiplier": 1.0
+      },
+      "observer_effect": {
+        "entropy": 0.612,
+        "energy": 0.656,
+        "velocity": 0.145,
+        "v_value": 2.885,
+        "v_value_gt_5": false,
+        "observer_effect_active": false,
+        "observer_effect_multiplier": 1.0
+      },
+      "tumbling_inversion": {
+        "stage_parity": "odd",
+        "is_even_stage": false,
+        "stability": 32.83,
+        "adaptability": 31.22,
+        "brittleness_risk": false,
+        "inversion_state": "Physically Unstable / Consciously Stable"
+      },
+      "discrepancy_analysis": {
+        "witness_detected": false,
+        "observer_active": false,
+        "mismatch": false,
+        "explanation": "Observer Effect triggered by high V-value (Lyapunov instability) independent of Witness Position gateway"
+      }
+    },
+    {
+      "row_index": 14,
+      "timestamp": "2026-04-28 14:00",
+      "nsdt_vector": {
+        "complexity": 70.05,
+        "stability": 34.96,
+        "adaptability": 35.63,
+        "tension": 71.32,
+        "coherence": 37.29
+      },
+      "stage": 6,
+      "witness_position": {
+        "witness_score": 46.97,
+        "score_component_adaptability": 14.25,
+        "score_component_coherence": 13.05,
+        "score_component_tension": 19.67,
+        "condition_witness_score_gte_55": false,
+        "condition_adaptability_gte_40": false,
+        "condition_tension_lt_a_plus_30": false,
+        "is_witness": false,
+        "perpendicular_axis_visible": false,
+        "observer_effect_multiplier": 1.0
+      },
+      "observer_effect": {
+        "entropy": 0.627,
+        "energy": 0.707,
+        "velocity": 0.213,
+        "v_value": 3.096,
+        "v_value_gt_5": false,
+        "observer_effect_active": false,
+        "observer_effect_multiplier": 1.0
+      },
+      "tumbling_inversion": {
+        "stage_parity": "even",
+        "is_even_stage": true,
+        "stability": 34.96,
+        "adaptability": 35.63,
+        "brittleness_risk": false,
+        "inversion_state": "Physically Stable / Consciously Unstable"
+      },
+      "discrepancy_analysis": {
+        "witness_detected": false,
+        "observer_active": false,
+        "mismatch": false,
+        "explanation": "Observer Effect triggered by high V-value (Lyapunov instability) independent of Witness Position gateway"
+      }
+    },
+    {
+      "row_index": 15,
+      "timestamp": "2026-04-28 15:00",
+      "nsdt_vector": {
+        "complexity": 75.66,
+        "stability": 35.13,
+        "adaptability": 32.92,
+        "tension": 70.41,
+        "coherence": 38.04
+      },
+      "stage": 6,
+      "witness_position": {
+        "witness_score": 46.38,
+        "score_component_adaptability": 13.17,
+        "score_component_coherence": 13.31,
+        "score_component_tension": 19.9,
+        "condition_witness_score_gte_55": false,
+        "condition_adaptability_gte_40": false,
+        "condition_tension_lt_a_plus_30": false,
+        "is_witness": false,
+        "perpendicular_axis_visible": false,
+        "observer_effect_multiplier": 1.0
+      },
+      "observer_effect": {
+        "entropy": 0.62,
+        "energy": 0.73,
+        "velocity": 0.204,
+        "v_value": 3.109,
+        "v_value_gt_5": false,
+        "observer_effect_active": false,
+        "observer_effect_multiplier": 1.0
+      },
+      "tumbling_inversion": {
+        "stage_parity": "even",
+        "is_even_stage": true,
+        "stability": 35.13,
+        "adaptability": 32.92,
+        "brittleness_risk": false,
+        "inversion_state": "Physically Stable / Consciously Unstable"
+      },
+      "discrepancy_analysis": {
+        "witness_detected": false,
+        "observer_active": false,
+        "mismatch": false,
+        "explanation": "Observer Effect triggered by high V-value (Lyapunov instability) independent of Witness Position gateway"
+      }
+    },
+    {
+      "row_index": 16,
+      "timestamp": "2026-04-28 16:00",
+      "nsdt_vector": {
+        "complexity": 77.78,
+        "stability": 25.19,
+        "adaptability": 30.96,
+        "tension": 81.33,
+        "coherence": 35.14
+      },
+      "stage": 7,
+      "witness_position": {
+        "witness_score": 41.85,
+        "score_component_adaptability": 12.38,
+        "score_component_coherence": 12.3,
+        "score_component_tension": 17.17,
+        "condition_witness_score_gte_55": false,
+        "condition_adaptability_gte_40": false,
+        "condition_tension_lt_a_plus_30": false,
+        "is_witness": false,
+        "perpendicular_axis_visible": false,
+        "observer_effect_multiplier": 1.0
+      },
+      "observer_effect": {
+        "entropy": 0.649,
+        "energy": 0.796,
+        "velocity": 0.313,
+        "v_value": 3.429,
+        "v_value_gt_5": false,
+        "observer_effect_active": false,
+        "observer_effect_multiplier": 1.0
+      },
+      "tumbling_inversion": {
+        "stage_parity": "odd",
+        "is_even_stage": false,
+        "stability": 25.19,
+        "adaptability": 30.96,
+        "brittleness_risk": false,
+        "inversion_state": "Physically Unstable / Consciously Stable"
+      },
+      "discrepancy_analysis": {
+        "witness_detected": false,
+        "observer_active": false,
+        "mismatch": false,
+        "explanation": "Observer Effect triggered by high V-value (Lyapunov instability) independent of Witness Position gateway"
+      }
+    },
+    {
+      "row_index": 17,
+      "timestamp": "2026-04-28 17:00",
+      "nsdt_vector": {
+        "complexity": 77.46,
+        "stability": 26.28,
+        "adaptability": 29.49,
+        "tension": 74.88,
+        "coherence": 36.49
+      },
+      "stage": 6,
+      "witness_position": {
+        "witness_score": 43.35,
+        "score_component_adaptability": 11.8,
+        "score_component_coherence": 12.77,
+        "score_component_tension": 18.78,
+        "condition_witness_score_gte_55": false,
+        "condition_adaptability_gte_40": false,
+        "condition_tension_lt_a_plus_30": false,
+        "is_witness": false,
+        "perpendicular_axis_visible": false,
+        "observer_effect_multiplier": 1.0
+      },
+      "observer_effect": {
+        "entropy": 0.635,
+        "energy": 0.762,
+        "velocity": 0.249,
+        "v_value": 3.257,
+        "v_value_gt_5": false,
+        "observer_effect_active": false,
+        "observer_effect_multiplier": 1.0
+      },
+      "tumbling_inversion": {
+        "stage_parity": "even",
+        "is_even_stage": true,
+        "stability": 26.28,
+        "adaptability": 29.49,
+        "brittleness_risk": false,
+        "inversion_state": "Physically Stable / Consciously Unstable"
+      },
+      "discrepancy_analysis": {
+        "witness_detected": false,
+        "observer_active": false,
+        "mismatch": false,
+        "explanation": "Observer Effect triggered by high V-value (Lyapunov instability) independent of Witness Position gateway"
+      }
+    },
+    {
+      "row_index": 18,
+      "timestamp": "2026-04-28 18:00",
+      "nsdt_vector": {
+        "complexity": 76.8,
+        "stability": 19.81,
+        "adaptability": 21.61,
+        "tension": 80.69,
+        "coherence": 33.12
+      },
+      "stage": 7,
+      "witness_position": {
+        "witness_score": 37.56,
+        "score_component_adaptability": 8.64,
+        "score_component_coherence": 11.59,
+        "score_component_tension": 17.33,
+        "condition_witness_score_gte_55": false,
+        "condition_adaptability_gte_40": false,
+        "condition_tension_lt_a_plus_30": false,
+        "is_witness": false,
+        "perpendicular_axis_visible": false,
+        "observer_effect_multiplier": 1.0
+      },
+      "observer_effect": {
+        "entropy": 0.669,
+        "energy": 0.787,
+        "velocity": 0.307,
+        "v_value": 3.458,
+        "v_value_gt_5": false,
+        "observer_effect_active": false,
+        "observer_effect_multiplier": 1.0
+      },
+      "tumbling_inversion": {
+        "stage_parity": "odd",
+        "is_even_stage": false,
+        "stability": 19.81,
+        "adaptability": 21.61,
+        "brittleness_risk": false,
+        "inversion_state": "Physically Unstable / Consciously Stable"
+      },
+      "discrepancy_analysis": {
+        "witness_detected": false,
+        "observer_active": false,
+        "mismatch": false,
+        "explanation": "Observer Effect triggered by high V-value (Lyapunov instability) independent of Witness Position gateway"
+      }
+    },
+    {
+      "row_index": 19,
+      "timestamp": "2026-04-28 19:00",
+      "nsdt_vector": {
+        "complexity": 85.71,
+        "stability": 18.89,
+        "adaptability": 27.03,
+        "tension": 86.75,
+        "coherence": 33.2
+      },
+      "stage": 7,
+      "witness_position": {
+        "witness_score": 38.24,
+        "score_component_adaptability": 10.81,
+        "score_component_coherence": 11.62,
+        "score_component_tension": 15.81,
+        "condition_witness_score_gte_55": false,
+        "condition_adaptability_gte_40": false,
+        "condition_tension_lt_a_plus_30": false,
+        "is_witness": false,
+        "perpendicular_axis_visible": false,
+        "observer_effect_multiplier": 1.0
+      },
+      "observer_effect": {
+        "entropy": 0.668,
+        "energy": 0.862,
+        "velocity": 0.367,
+        "v_value": 3.663,
+        "v_value_gt_5": false,
+        "observer_effect_active": false,
+        "observer_effect_multiplier": 1.0
+      },
+      "tumbling_inversion": {
+        "stage_parity": "odd",
+        "is_even_stage": false,
+        "stability": 18.89,
+        "adaptability": 27.03,
+        "brittleness_risk": false,
+        "inversion_state": "Physically Unstable / Consciously Stable"
+      },
+      "discrepancy_analysis": {
+        "witness_detected": false,
+        "observer_active": false,
+        "mismatch": false,
+        "explanation": "Observer Effect triggered by high V-value (Lyapunov instability) independent of Witness Position gateway"
+      }
+    },
+    {
+      "row_index": 20,
+      "timestamp": "2026-04-28 20:00",
+      "nsdt_vector": {
+        "complexity": 82.7,
+        "stability": 13.72,
+        "adaptability": 19.78,
+        "tension": 87.11,
+        "coherence": 25.03
+      },
+      "stage": 7,
+      "witness_position": {
+        "witness_score": 32.39,
+        "score_component_adaptability": 7.91,
+        "score_component_coherence": 8.76,
+        "score_component_tension": 15.72,
+        "condition_witness_score_gte_55": false,
+        "condition_adaptability_gte_40": false,
+        "condition_tension_lt_a_plus_30": false,
+        "is_witness": false,
+        "perpendicular_axis_visible": false,
+        "observer_effect_multiplier": 1.0
+      },
+      "observer_effect": {
+        "entropy": 0.75,
+        "energy": 0.849,
+        "velocity": 0.371,
+        "v_value": 3.848,
+        "v_value_gt_5": false,
+        "observer_effect_active": false,
+        "observer_effect_multiplier": 1.0
+      },
+      "tumbling_inversion": {
+        "stage_parity": "odd",
+        "is_even_stage": false,
+        "stability": 13.72,
+        "adaptability": 19.78,
+        "brittleness_risk": false,
+        "inversion_state": "Physically Unstable / Consciously Stable"
+      },
+      "discrepancy_analysis": {
+        "witness_detected": false,
+        "observer_active": false,
+        "mismatch": false,
+        "explanation": "Observer Effect triggered by high V-value (Lyapunov instability) independent of Witness Position gateway"
+      }
+    },
+    {
+      "row_index": 21,
+      "timestamp": "2026-04-28 21:00",
+      "nsdt_vector": {
+        "complexity": 87.94,
+        "stability": 18.35,
+        "adaptability": 15.84,
+        "tension": 89.33,
+        "coherence": 26.12
+      },
+      "stage": 8,
+      "witness_position": {
+        "witness_score": 30.65,
+        "score_component_adaptability": 6.34,
+        "score_component_coherence": 9.14,
+        "score_component_tension": 15.17,
+        "condition_witness_score_gte_55": false,
+        "condition_adaptability_gte_40": false,
+        "condition_tension_lt_a_plus_30": false,
+        "is_witness": false,
+        "perpendicular_axis_visible": false,
+        "observer_effect_multiplier": 1.0
+      },
+      "observer_effect": {
+        "entropy": 0.739,
+        "energy": 0.886,
+        "velocity": 0.393,
+        "v_value": 3.914,
+        "v_value_gt_5": false,
+        "observer_effect_active": false,
+        "observer_effect_multiplier": 1.0
+      },
+      "tumbling_inversion": {
+        "stage_parity": "even",
+        "is_even_stage": true,
+        "stability": 18.35,
+        "adaptability": 15.84,
+        "brittleness_risk": false,
+        "inversion_state": "Physically Stable / Consciously Unstable"
+      },
+      "discrepancy_analysis": {
+        "witness_detected": false,
+        "observer_active": false,
+        "mismatch": false,
+        "explanation": "Observer Effect triggered by high V-value (Lyapunov instability) independent of Witness Position gateway"
+      }
+    },
+    {
+      "row_index": 22,
+      "timestamp": "2026-04-28 22:00",
+      "nsdt_vector": {
+        "complexity": 91.66,
+        "stability": 9.06,
+        "adaptability": 23.21,
+        "tension": 97.26,
+        "coherence": 22.85
+      },
+      "stage": 8,
+      "witness_position": {
+        "witness_score": 30.47,
+        "score_component_adaptability": 9.28,
+        "score_component_coherence": 8.0,
+        "score_component_tension": 13.18,
+        "condition_witness_score_gte_55": false,
+        "condition_adaptability_gte_40": false,
+        "condition_tension_lt_a_plus_30": false,
+        "is_witness": false,
+        "perpendicular_axis_visible": false,
+        "observer_effect_multiplier": 1.0
+      },
+      "observer_effect": {
+        "entropy": 0.772,
+        "energy": 0.945,
+        "velocity": 0.473,
+        "v_value": 4.196,
+        "v_value_gt_5": false,
+        "observer_effect_active": false,
+        "observer_effect_multiplier": 1.0
+      },
+      "tumbling_inversion": {
+        "stage_parity": "even",
+        "is_even_stage": true,
+        "stability": 9.06,
+        "adaptability": 23.21,
+        "brittleness_risk": false,
+        "inversion_state": "Physically Stable / Consciously Unstable"
+      },
+      "discrepancy_analysis": {
+        "witness_detected": false,
+        "observer_active": false,
+        "mismatch": false,
+        "explanation": "Observer Effect triggered by high V-value (Lyapunov instability) independent of Witness Position gateway"
+      }
+    },
+    {
+      "row_index": 23,
+      "timestamp": "2026-04-28 23:00",
+      "nsdt_vector": {
+        "complexity": 88.18,
+        "stability": 11.88,
+        "adaptability": 16.56,
+        "tension": 98.65,
+        "coherence": 21.59
+      },
+      "stage": 8,
+      "witness_position": {
+        "witness_score": 27.02,
+        "score_component_adaptability": 6.62,
+        "score_component_coherence": 7.56,
+        "score_component_tension": 12.84,
+        "condition_witness_score_gte_55": false,
+        "condition_adaptability_gte_40": false,
+        "condition_tension_lt_a_plus_30": false,
+        "is_witness": false,
+        "perpendicular_axis_visible": false,
+        "observer_effect_multiplier": 1.0
+      },
+      "observer_effect": {
+        "entropy": 0.784,
+        "energy": 0.934,
+        "velocity": 0.487,
+        "v_value": 4.226,
+        "v_value_gt_5": false,
+        "observer_effect_active": false,
+        "observer_effect_multiplier": 1.0
+      },
+      "tumbling_inversion": {
+        "stage_parity": "even",
+        "is_even_stage": true,
+        "stability": 11.88,
+        "adaptability": 16.56,
+        "brittleness_risk": false,
+        "inversion_state": "Physically Stable / Consciously Unstable"
+      },
+      "discrepancy_analysis": {
+        "witness_detected": false,
+        "observer_active": false,
+        "mismatch": false,
+        "explanation": "Observer Effect triggered by high V-value (Lyapunov instability) independent of Witness Position gateway"
+      }
+    }
+  ]
+}

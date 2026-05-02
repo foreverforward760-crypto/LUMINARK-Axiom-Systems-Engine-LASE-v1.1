@@ -1,0 +1,25 @@
+timestamp,complexity,stability,adaptability,tension,coherence,event_min_stage,lead_time_hours,ba_code,ba_name,region,volatility,event_type,sap_stage,pressure_score,decision_signal,inversion_state,witness_score,perpendicular_axis_visible,observer_effect_multiplier
+2026-04-28 00:00:00,42.83,62.76,56.77,29.77,69.54,2,23,TVA,Tennessee Valley Authority,eastern,low_volatility,cascade,2,11.09,NORMAL,Even: Physically Stable / Consciously Unstable,67.0,True,1.35
+2026-04-28 01:00:00,47.8,73.08,49.43,27.42,74.12,2,23,TVA,Tennessee Valley Authority,eastern,low_volatility,cascade,2,7.38,NORMAL,Even: Physically Stable / Consciously Unstable,65.1,True,1.35
+2026-04-28 02:00:00,36.02,78.85,51.15,34.07,71.87,2,23,TVA,Tennessee Valley Authority,eastern,low_volatility,cascade,3,7.21,NORMAL,Odd: Physically Unstable / Consciously Stable,66.6,True,1.35
+2026-04-28 03:00:00,43.98,78.41,60.58,26.75,66.16,2,23,TVA,Tennessee Valley Authority,eastern,low_volatility,cascade,2,5.78,NORMAL,Even: Physically Stable / Consciously Unstable,66.6,True,1.35
+2026-04-28 04:00:00,45.99,69.62,61.58,33.73,63.52,2,23,TVA,Tennessee Valley Authority,eastern,low_volatility,cascade,3,10.25,NORMAL,Odd: Physically Unstable / Consciously Stable,67.8,True,1.35
+2026-04-28 05:00:00,39.35,68.88,54.01,26.69,68.08,2,23,TVA,Tennessee Valley Authority,eastern,low_volatility,cascade,2,8.31,NORMAL,Even: Physically Stable / Consciously Unstable,64.6,True,1.35
+2026-04-28 06:00:00,32.48,70.4,61.25,35.6,70.32,2,23,TVA,Tennessee Valley Authority,eastern,low_volatility,cascade,3,10.54,NORMAL,Odd: Physically Unstable / Consciously Stable,70.5,True,1.35
+2026-04-28 07:00:00,38.79,80.17,55.75,30.21,78.76,2,23,TVA,Tennessee Valley Authority,eastern,low_volatility,cascade,2,5.99,NORMAL,Even: Physically Stable / Consciously Unstable,69.9,True,1.35
+2026-04-28 08:00:00,35.29,68.99,55.31,35.55,66.63,2,23,TVA,Tennessee Valley Authority,eastern,low_volatility,cascade,3,11.02,NORMAL,Odd: Physically Unstable / Consciously Stable,66.8,True,1.35
+2026-04-28 09:00:00,37.67,70.13,67.53,28.51,72.88,2,23,TVA,Tennessee Valley Authority,eastern,low_volatility,cascade,2,8.52,NORMAL,Even: Physically Stable / Consciously Unstable,72.1,True,1.35
+2026-04-28 10:00:00,44.14,72.53,56.71,29.94,62.9,2,23,TVA,Tennessee Valley Authority,eastern,low_volatility,cascade,2,8.22,NORMAL,Even: Physically Stable / Consciously Unstable,64.7,True,1.35
+2026-04-28 11:00:00,45.29,68.62,64.57,33.04,69.73,2,23,TVA,Tennessee Valley Authority,eastern,low_volatility,cascade,2,10.37,NORMAL,Even: Physically Stable / Consciously Unstable,71.0,True,1.35
+2026-04-28 12:00:00,39.54,66.76,69.39,33.39,73.06,2,23,TVA,Tennessee Valley Authority,eastern,low_volatility,cascade,3,11.1,NORMAL,Odd: Physically Unstable / Consciously Stable,74.2,True,1.35
+2026-04-28 13:00:00,37.82,69.41,48.73,33.84,61.89,2,23,TVA,Tennessee Valley Authority,eastern,low_volatility,cascade,3,10.35,NORMAL,Odd: Physically Unstable / Consciously Stable,62.1,True,1.35
+2026-04-28 14:00:00,35.36,68.14,59.76,33.81,73.21,2,23,TVA,Tennessee Valley Authority,eastern,low_volatility,cascade,3,10.77,NORMAL,Odd: Physically Unstable / Consciously Stable,70.5,True,1.35
+2026-04-28 15:00:00,42.95,68.33,59.16,26.24,62.8,2,23,TVA,Tennessee Valley Authority,eastern,low_volatility,cascade,2,8.31,NORMAL,Even: Physically Stable / Consciously Unstable,64.7,True,1.35
+2026-04-28 16:00:00,40.7,72.58,58.36,28.29,62.92,2,23,TVA,Tennessee Valley Authority,eastern,low_volatility,cascade,2,7.76,NORMAL,Even: Physically Stable / Consciously Unstable,64.9,True,1.35
+2026-04-28 17:00:00,41.54,68.17,59.61,33.18,66.48,2,23,TVA,Tennessee Valley Authority,eastern,low_volatility,cascade,2,10.56,NORMAL,Even: Physically Stable / Consciously Unstable,67.9,True,1.35
+2026-04-28 18:00:00,32.92,70.93,63.02,35.19,70.48,2,23,TVA,Tennessee Valley Authority,eastern,low_volatility,cascade,3,10.23,NORMAL,Odd: Physically Unstable / Consciously Stable,71.2,True,1.35
+2026-04-28 19:00:00,36.74,70.21,58.13,34.64,66.94,2,23,TVA,Tennessee Valley Authority,eastern,low_volatility,cascade,3,10.32,NORMAL,Odd: Physically Unstable / Consciously Stable,67.8,True,1.35
+2026-04-28 20:00:00,43.25,68.26,59.06,30.52,74.98,2,23,TVA,Tennessee Valley Authority,eastern,low_volatility,cascade,2,9.69,NORMAL,Even: Physically Stable / Consciously Unstable,70.0,True,1.35
+2026-04-28 21:00:00,31.91,63.95,55.44,29.05,61.61,2,23,TVA,Tennessee Valley Authority,eastern,low_volatility,cascade,2,10.47,NORMAL,Even: Physically Stable / Consciously Unstable,63.5,True,1.35
+2026-04-28 22:00:00,35.56,70.66,60.27,27.71,69.33,2,23,TVA,Tennessee Valley Authority,eastern,low_volatility,cascade,2,8.13,NORMAL,Even: Physically Stable / Consciously Unstable,67.8,True,1.35
+2026-04-28 23:00:00,42.37,74.5,66.89,30.01,73.64,2,23,TVA,Tennessee Valley Authority,eastern,low_volatility,cascade,2,7.65,NORMAL,Even: Physically Stable / Consciously Unstable,72.5,True,1.35
