@@ -2,7 +2,7 @@
 ## Meridian Axiom Alignment Technologies (MAAT)
 ### Stanfield's Axiom of Perpetuity (SAP) Framework — Unified Repository
 
-**Version:** LUMINARK Axiom Systems Engine v1.0  
+**Version:** LUMINARK Axiom Systems Engine v1.1  
 **Assembled:** May 2, 2026  
 **Inventor:** Richard L. Stanfield, Chief Science Officer  
 **Contact:** LuminarkMeridian@gmail.com
@@ -17,10 +17,27 @@ This is not a new build. It is a **governed consolidation** — every file trace
 
 ---
 
+## The Five-Step Integration Pipeline (LASE v1.1)
+
+The LUMINARK Axiom Systems Engine follows a strict five-step pipeline that ingests raw domain data and transforms it into classified, actionable intelligence. Every step is auditable, repeatable, and governed by the canonical SAP engine.
+
+| Step | Name | Action | Key Component |
+|------|------|--------|---------------|
+| 1 | **Ingestion & Normalization** | Raw inputs (grid frequency, financial signals, carrier ELD, behavioral telemetry) are normalized into the NSDT vector space [N, S, D, T, C] ∈ [0, 100]. | `core/nsdt_calculator.py`, `core/sap_domain_bridge.py` |
+| 2 | **Stage Classification** | The normalized NSDT vector is routed through the 10-stage SAP Bayesian classifier, yielding stage (0–9), posterior distribution, and Tumbling Inversion stability flag. | `core/build1_overwatch_strict/nsdt_engine_v65.py`, `core/build4_unified_field/nsdt_engine_v8.py` |
+| 3 | **Energy Layer Transformation** | The stage-specific energy field (Stage 8 Dual-Chamber Trap with 1.45× amplifier, Stage 5 bifurcation) computes TrapScore, gradient, and potential yield windows. | `engine/sap_energy_layer.py` |
+| 4 | **Signal Translation** | The engine's internal state is converted into domain-facing signals: carrier risk advisories, grid stress alerts, biometric protocols, portfolio behavioral flags. | `engine/sap_signal_translator.py`, `engine/axiom_yield_scenarios.py` |
+| 5 | **Output & Adaptive Calibration** | Final signals are delivered via product application endpoints and the system self-calibrates against validated baseline data to close the feedback loop. | `apps/axiom_yield/`, `apps/guardian/`, `apps/metatron/`, `runtime/calibration/`, `frontend/` |
+
+This pipeline ensures every LASE deployment — from logistics to consciousness research — adheres to a single, verifiable integration path governed by the SAP mathematical framework.
+
+
+---
+
 ## Repository Structure
 
 ```
-Monster/
+LASE/
 ├── core/                          ← CANONICAL SAP ENGINE (source of truth)
 │   ├── luminark/                  SAP package: sap_types, inversion_analyzer,
 │   │                              nsdt_calculator, recalibration, dissolution,

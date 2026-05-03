@@ -51,7 +51,7 @@ logger = logging.getLogger(__name__)
 # ── Locate runtime/calibration/ relative to LASE repo root ───────────────────
 _HERE      = os.path.dirname(os.path.abspath(__file__))
 _CORE_ROOT = _HERE                                          # core/ = here
-_LASE_ROOT = os.path.dirname(_CORE_ROOT)                   # Monster/ parent
+_LASE_ROOT = os.path.dirname(_CORE_ROOT)                   # LASE/ parent
 _CALIB_DIR = os.path.join(_LASE_ROOT, "runtime", "calibration")
 if _CALIB_DIR not in sys.path:
     sys.path.insert(0, _CALIB_DIR)

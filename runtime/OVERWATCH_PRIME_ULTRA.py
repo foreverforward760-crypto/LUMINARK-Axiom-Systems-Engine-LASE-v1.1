@@ -90,7 +90,7 @@ STAGE_LABELS = {
     5: ("DYNAMO OF WILL",             "Pre-Stress Warning",  "▪ Approaching operational limits — BILATERAL THRESHOLD — MONITOR"),
     6: ("NEXUS OF HARMONY",           "Adaptive Stress",     "▪ System compensating — synergy under load — WATCH CLOSELY"),
     7: ("LENS OF DISTILLATION",       "Failure Trajectory",  "▪ Cascading risk — forced reckoning — INTERVENE NOW"),
-    8: ("VESSEL OF GROUNDING",        "FALSE HELL",          "▪ Adaptation blocked — Permanence Trap — EMERGENCY PROTOCOL"),
+    8: ("VESSEL OF GROUNDING",        "Permanence Trap",     "▪ Adaptation blocked — Permanence Trap — EMERGENCY PROTOCOL"),
     9: ("TRANSPARENCY OF THE GUIDE",  "Terminal/Renewal",    "▪ Conscious dissolution — teaching, transmission, return to 0ᴮ"),
 }
 
@@ -133,7 +133,7 @@ SAP_INFRA_METADATA = {
     8: {"geometry": "octagon",  "resonance": None,
         "infra_signature":  "Permanence trap — system frozen, adaptation fully blocked",
         "operator_note":    "CRITICAL: High stability MASKS hidden brittleness. Inversion Principle active.",
-        "sap_origin":       "VESSEL OF GROUNDING (FALSE HELL): Omniscience trap — certainty without openness, Permanence Trap"},
+        "sap_origin":       "VESSEL OF GROUNDING — Stage 8 Dual-Chamber Trap: Omniscience trap — certainty without openness, Permanence Trap"},
     9: {"geometry": "nonagon",  "resonance": "COMPLETION_POINT (369) — full cycle, dissolution/rebirth",
         "infra_signature":  "Terminal failure OR forced restoration — the cycle completes",
         "operator_note":    "VOID: Either full controlled shutdown and rebuild, or catastrophic failure.",

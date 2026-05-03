@@ -1,5 +1,5 @@
 # MONSTER_MANIFEST.md
-## LUMINARK Monster Build — Component Inventory
+## LUMINARK Axiom Systems Engine (LASE) — Component Inventory
 ### Generated: May 2, 2026
 
 ---
@@ -32,7 +32,7 @@
 ## Deprecated Terms — Confirmed Absent
 
 The following terms must not exist anywhere in this repo.
-Run: `grep -r "false_hell\|False Hell\|FALSE_HELL\|False Heaven\|F-HELL" Monster/`
+Run: `grep -r "false_hell\|False Hell\|FALSE_HELL\|False Heaven\|F-HELL" LASE/`
 Expected result: zero matches (excluding documentation flagging them as deprecated).
 
 ---

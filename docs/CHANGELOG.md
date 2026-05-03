@@ -1,7 +1,43 @@
 # CHANGELOG
 
-All notable changes to **LuminarkHybridEngine** are recorded here.
+All notable changes to the **LUMINARK Axiom Systems Engine (LASE)** are recorded here.
 Format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
+
+---
+
+## [LASE v1.1] — 2026-05-03
+
+### Added
+- Formal **Five-Step Integration** pipeline, now fully documented in README:
+  Ingestion & Normalization → Stage Classification → Energy Layer Transformation → Signal Translation → Output & Adaptive Calibration.
+- `engine/sap_energy_layer.py` v2.0 — canonical Stage 8 Dual-Chamber Trap (1.45× amplifier), Stage 5 bifurcation with Middle Path detection.
+- `engine/sap_signal_translator.py` v1.0 — universal domain signal translator (logistics, grid, guardian, biometric, finance).
+- `engine/axiom_yield_scenarios.py` — five buyer-facing demo scenarios including Cascade Failure.
+- `apps/axiom_yield/main.py` v2.0 — wired to canonical luminark.core engine + sap_signal_translator.
+- `apps/metatron/app/sap_stage_engine.py` v2.0 — deprecated hand-rolled heuristics replaced with canonical EngineFactory delegation.
+- `runtime/calibration/axiom_calibration_bridge.py` v1.0 — adaptive centroid learning layer wired to EngineFactory.
+- `docs/MONSTER_TO_LASE_TRANSITION.md` — migration guide from Monster v1.0.
+
+### Changed
+- **Rebranded** from Monster v1.0 to **LUMINARK Axiom Systems Engine (LASE)** v1.1.
+- Repository tree root now documented as `LASE/` (previously `Monster/`).
+- Version string updated from v1.0 → v1.1.
+- `MONSTER_MANIFEST.md` header updated to LASE nomenclature.
+- `runtime/OVERWATCH_PRIME_ULTRA.py` — deprecated label `FALSE HELL` (line 93) replaced with canonical `Permanence Trap`; `sap_origin` field updated to `VESSEL OF GROUNDING — Stage 8 Dual-Chamber Trap`.
+- `runtime/CONSCIOUSNESS_ENGINE_OMEGA.py` — deprecated terms `False Heaven` / `False Hell` in Stage 8 prose replaced with canonical `Illusion of Arrival` / `Illusion of Permanence`.
+- `core/calibration_bridge.py` — comment referencing "Monster/" updated to "LASE/".
+
+### Fixed
+- Constitutional compliance: all live code deprecated-term violations corrected. Zero occurrences of `FALSE_HELL`, `False Hell`, `False Heaven`, `FALSE_HEAVEN`, `F-HELL`, `PRIMA_MATERIA`, `FORMATION`, `EMERGENCE`, `CREATIVE_EXPANSION`, `CATALYZED_TENSION` in any `.py` file.
+- Deepseek's Five-Step table corrected: `stage_classifier.py` does not exist in LASE; correct file references are `core/build1_overwatch_strict/nsdt_engine_v65.py` and `core/build4_unified_field/nsdt_engine_v8.py`.
+
+### Deprecated
+- The name "Monster" is superseded by "LASE". Monster v1.0 is considered frozen.
+
+### Migration Notes
+- All canonical SAP engine files (`core/`) are untouched — no refactor required.
+- Constitutional Directives, deprecated term lists, and Stage 8 naming remain in full force.
+- Users who cloned Monster should switch to the LASE repository for all future updates.
 
 ---
 
@@ -59,94 +95,3 @@ Format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 ### Added – Examples
 - `examples/quickstart.py` — Single-file demo: NSDT → analysis across 3 builds, extras, JSON round-trip, presets, JSON schema
 - `examples/cross_build_comparison.py` — Side-by-side comparison table across all 10 stage territories
-
----
-
-## [0.4.0] – Build 4: Unified Field v8
-
-### Added – `build4_unified_field/`
-- `sap_unified_field.py` — Unified Field equation U = α·G + β·P + γ·E + δ·L:
-  - G: geometric violation mass (fraction of posterior on adjacency-forbidden stages)
-  - P: cross-entropy (negative log-posterior of dominant stage)
-  - E: expected trap energy (Σ p(s)·trap_energy(s,x))
-  - L: Lyapunov value (w_H·H + w_E·E + w_v·v²)
-  - `gradient()`: real central finite-difference gradient ∇U (corrected from zeros stub)
-  - `components()`: breakdown dict for debugging and logging
-- `nsdt_engine_v8.py` — NSDataTEngineV8 inheriting v7:
-  - `unified_field_value(NSDataT)` — NSDataT interface
-  - `unified_field_raw(ndarray)` — array interface for test harness / optimisation
-  - `unified_field_gradient(ndarray)` — ∇U
-  - `unified_field_components(ndarray)` — component breakdown
-  - `analyse_v8()` — full v7 analysis + unified field augmentation
-- `test_harness_v8.py` — 14 property-based tests (Hypothesis):
-  - Posterior, energy, Lyapunov, unified field, gradient self-consistency, geometry contracts
-- `kairos_integration.py` — KairosClient + KairosRedTeamAdapter:
-  - Timeout (10 s), error handling, 3-failure abort, max_steps cap
-  - Gradient-ascent red-teaming of Kairos engine
-  - Explicit numpy→list conversion for JSON safety
-
-### Fixed (10 flaws from prior AI session)
-1. test_harness_v8.py: Tests used NSDataT interface against raw-array engine → added `unified_field_raw()`
-2. test_harness_v8.py: `test_lyapunov_decrease` was vacuous → tests real DAMPEN (energy×0.8, velocity→0)
-3. test_harness_v8.py: Gradient test compared against zeros stub → Richardson extrapolation consistency check
-4. sap_unified_field.py: `gradient()` returned `np.zeros(5)` → real finite-difference gradient
-5. sap_unified_field.py: `_geometric_violation()` used supervised label vs prev_stage → uses adjacency matrix on posterior mass
-6. nsdt_engine_v8.py: `datetime` not imported → NameError → added `import datetime`
-7. nsdt_engine_v8.py: Single mixed interface → split `unified_field_value()` + `unified_field_raw()`
-8. nsdt_engine_v8.py: Non-functional skeleton ("methods omitted") → proper v7 inheritance
-9. kairos_integration.py: ndarray passed to `requests.post()` → TypeError → explicit float list conversion
-10. kairos_integration.py: No timeout, unbounded HTTP calls → 10 s timeout, try/except, abort, cap
-
----
-
-## [0.3.0] – Build 3: Active Defense v7
-
-### Added – `build3_active_defense/`
-- `sap_lyapunov.py` — Lyapunov stability controller (V = w_H·H + w_E·E + w_v·v²) with defense actions (HOLD / DAMPEN / INTERVENE / BREAK_PATTERN) and `LyapunovVulnerabilityScanner`
-- `nsdt_engine_v7.py` — NSDataTEngine with Lyapunov layer (extends v6.5, drop-in compatible)
-- `octo_spore_v1.py` — Active adversarial spore: Lyapunov instability scanning + honey-pot inversion
-- `kairos_redteam.py` — Red-team simulation targeting strict engine
-- `api_overwatch_v7.py` — FastAPI v7 endpoint (port 8001)
-
----
-
-## [0.2.0] – Build 2: Kairos Therapeutic Engine
-
-### Added – `build2_kairos/`
-- `sap_kairos_geometry.py` — Permissive geometry (regression allowed, free choice at Stage 5)
-- `sap_kairos_bayesian.py` — Therapeutic posterior with regression prior
-- `sap_kairos_session.py` — Session tracking with journal entries and somatic invitations
-- `api_kairos.py` — FastAPI endpoint (port 8002) with coaching response generation
-
----
-
-## [0.1.0] – Build 1: Overwatch Strict v6.5
-
-### Added – `build1_overwatch_strict/`
-- `sap_geometry_engine.py` — Hard geometric transition law, adjacency matrix, Stage 5 point of no return, Stage 8 terminal branch, weighted centroid distances, micro-position projection
-- `sap_energy_layer.py` — Trap energy field (Stage 3, 5, 7, 8 potentials), expected energy, finite-difference gradient, logit modulation
-- `sap_constrained_bayesian.py` — Geometric-masked Bayesian posterior with softmax + temperature
-- `sap_datastructures.py` — NSDataT, TrapScoreResult, TemporalSnapshot
-- `nsdt_engine_v65.py` — Full inference engine: stage, micro-position, trap score, inversion check, history, trajectory prediction
-- `api_overwatch.py` — FastAPI endpoint (port 8000)
-
----
-
-## SAP Constitutional Constants (never modified)
-
-| Stage | Canonical Name |
-|-------|---------------|
-| 0 | PLENARA |
-| 1 | SPARK OF NAVIGATION |
-| 2 | FORGE OF POLARITY |
-| 3 | ENGINE OF EXPRESSION |
-| 4 | CRUCIBLE OF EQUILIBRIUM |
-| 5 | DYNAMO OF WILL |
-| 6 | NEXUS OF HARMONY |
-| 7 | LENS OF DISTILLATION |
-| 8 | VESSEL OF GROUNDING |
-| 9 | TRANSPARENCY OF THE GUIDE |
-
-Torus cycles 0→9→0. Stage 5: point of no return forward. Stage 8: terminal branch (Illusion of Permanence, 1.45× amplifier). These constants are embedded in all builds and must never be renamed, abbreviated, or altered by any AI or implementation.
-
-*LUMINARK™ — Meridian Axiom Alignment Technologies (MAAT) — Richard Stanfield*

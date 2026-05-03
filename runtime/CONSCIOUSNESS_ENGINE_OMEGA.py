@@ -362,8 +362,8 @@ STAGE_METADATA = {
         "observer_attributes": (
             "Mastering duality — integration of light and dark through gratitude for the full "
             "spectrum of experience; releasing the tension of polarity to allow for divine resonance "
-            "at Stage 9. False Heaven: the rigidity of believing one has arrived at permanent truth. "
-            "False Hell: the illusion that suffering and density will never end. "
+            "at Stage 9. Illusion of Arrival: the rigidity of believing the destination has been reached. "
+            "Illusion of Permanence: the illusion that the current state will never dissolve. "
             "Both are the same trap — mistaking maximum density for finality."
         ),
         "physical_stability": True,
@@ -380,7 +380,7 @@ STAGE_METADATA = {
             "under its own weight, forcing release into the nine-sided transparency of Stage 9."
         ),
         "trap": (
-            "False Heaven (rigidity — certainty of arrival) or False Hell (certainty of permanent suffering). "
+            "Illusion of Arrival (rigidity — certainty of destination) or Illusion of Permanence (certainty of permanent state). "
             "Both are the Illusion of Permanence. Cynical Loop: 8→7→8 oscillation as the system "
             "retreats into analysis (Stage 7) to avoid Stage 9 dissolution, then re-consolidates at 8."
         ),
