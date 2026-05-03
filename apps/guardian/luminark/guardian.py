@@ -27,16 +27,25 @@ from .principles import (
 # ─────────────────────────────────────────────
 
 class SAPStage(Enum):
-    VOID        = (0, "Null / No Signal",      "Output is empty or undetectable.")
-    SEED        = (1, "Emergent Signal",        "Early, raw output — incomplete but forming.")
-    ROOT        = (2, "Grounded",               "Stable base — factual, bounded.")
-    GROWTH      = (3, "Expanding",              "Broadening context — moderate confidence.")
-    FOUNDATION  = (4, "Stable Foundation",      "Well-reasoned, appropriately hedged.")
-    TENSION     = (5, "Tension / Complexity",   "Multi-dimensional — some contradiction.")
-    FLUIDITY    = (6, "Fluid Complexity",       "Rich nuance — risk of drift.")
-    ILLUSION    = (7, "Illusion Zone",          "Hallucination risk — unanchored claims.")
-    RIGIDITY    = (8, "Rigidity Trap",          "Overconfidence — refuses correction.")
-    DISSOLUTION = (9, "Dissolution",            "Catastrophic breakdown — incoherent.")
+    """
+    Canonical SAP stage enum — constitutional constants, never alter names.
+    Guardian domain labels (label, description) describe AI output quality
+    at each stage. Risk multipliers and danger zone thresholds are preserved.
+
+    DEPRECATED IDENTIFIERS (must never be used anywhere):
+        VOID, SEED, ROOT, GROWTH, FOUNDATION, TENSION,
+        FLUIDITY, ILLUSION, RIGIDITY, DISSOLUTION
+    """
+    PLENARA                   = (0, "Null / No Signal",    "Output is empty or undetectable.")
+    SPARK_OF_NAVIGATION       = (1, "Emergent Signal",     "Early, raw output — incomplete but forming.")
+    FORGE_OF_POLARITY         = (2, "Grounded",            "Stable base — factual, bounded.")
+    ENGINE_OF_EXPRESSION      = (3, "Expanding",           "Broadening context — moderate confidence.")
+    CRUCIBLE_OF_EQUILIBRIUM   = (4, "Stable Foundation",   "Well-reasoned, appropriately hedged.")
+    DYNAMO_OF_WILL            = (5, "Tension / Complexity","Multi-dimensional — some contradiction.")
+    NEXUS_OF_HARMONY          = (6, "Fluid Complexity",    "Rich nuance — risk of drift.")
+    LENS_OF_DISTILLATION      = (7, "Illusion Zone",       "Hallucination risk — unanchored claims.")
+    VESSEL_OF_GROUNDING       = (8, "Rigidity Trap",       "Overconfidence — refuses correction.")
+    TRANSPARENCY_OF_THE_GUIDE = (9, "Dissolution",         "Catastrophic breakdown — incoherent.")
 
     def __new__(cls, value, label, description):
         obj = object.__new__(cls)

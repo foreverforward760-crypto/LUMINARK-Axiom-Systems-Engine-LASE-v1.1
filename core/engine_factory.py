@@ -319,5 +319,34 @@ class EngineFactory:
         return adapter_cls(config)
 
 
-# Backward-compatible alias
-create_engine = EngineFactory.create
+    @staticmethod
+    def create_calibrated(
+        build: str = "overwatch",
+        learned_path: str = None,
+    ):
+        """
+        Create a SAP engine adapter with the calibration bridge attached.
+
+        The returned adapter has an additional .calibration attribute
+        (CalibrationBridge) that can be used to:
+          - Get calibrated stage probabilities before Bayesian inference
+          - Run online updates after confirmed stage classifications
+
+        Parameters
+        ----------
+        build        : Engine build name ("overwatch", "kairos", "defense", "unified")
+        learned_path : Optional path to previously saved learned parameters JSON
+        """
+        try:
+            from calibration_bridge import CalibrationBridge
+        except ImportError:
+            from .calibration_bridge import CalibrationBridge
+
+        adapter = EngineFactory.create(build)
+        adapter.calibration = CalibrationBridge(learned_path=learned_path)
+        return adapter
+
+
+# Backward-compatible aliases
+create_engine            = EngineFactory.create
+create_calibrated_engine = EngineFactory.create_calibrated

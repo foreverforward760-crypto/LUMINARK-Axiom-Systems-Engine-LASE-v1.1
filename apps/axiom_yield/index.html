@@ -1,0 +1,1301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Axiom Yield Broker | SAP-Powered Logistics Intelligence</title>
+    <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-primary: #0a0e14;
+            --bg-secondary: #151921;
+            --bg-tertiary: #1e2530;
+            --cyan: #00e5ff;
+            --cyan-dim: #00a8cc;
+            --orange: #ff6b35;
+            --orange-dim: #cc5429;
+            --yellow: #ffd700;
+            --red: #ff3366;
+            --green: #00ff88;
+            --text-primary: #e6edf3;
+            --text-secondary: #8b949e;
+            --border: #30363d;
+            --shadow: rgba(0, 229, 255, 0.15);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Rajdhani', sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Animated Grid Background */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                linear-gradient(var(--border) 1px, transparent 1px),
+                linear-gradient(90deg, var(--border) 1px, transparent 1px);
+            background-size: 50px 50px;
+            opacity: 0.3;
+            z-index: -1;
+            animation: gridPulse 20s ease-in-out infinite;
+        }
+
+        @keyframes gridPulse {
+            0%, 100% { opacity: 0.3; }
+            50% { opacity: 0.15; }
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, var(--bg-secondary), var(--bg-tertiary));
+            border-bottom: 2px solid var(--cyan);
+            padding: 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 4px 20px rgba(0, 229, 255, 0.2);
+        }
+
+        h1 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 2.8rem;
+            font-weight: 900;
+            background: linear-gradient(135deg, var(--cyan), var(--orange));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin-bottom: 0.5rem;
+            animation: titleGlow 3s ease-in-out infinite;
+        }
+
+        @keyframes titleGlow {
+            0%, 100% { filter: drop-shadow(0 0 10px var(--cyan)); }
+            50% { filter: drop-shadow(0 0 20px var(--orange)); }
+        }
+
+        .subtitle {
+            font-family: 'Share Tech Mono', monospace;
+            color: var(--text-secondary);
+            font-size: 1rem;
+            letter-spacing: 2px;
+        }
+
+        /* Navigation Tabs */
+        .tabs {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .tab {
+            background: var(--bg-tertiary);
+            border: 1px solid var(--border);
+            color: var(--text-secondary);
+            padding: 0.75rem 1.5rem;
+            cursor: pointer;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .tab::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--cyan);
+            transition: width 0.3s ease;
+        }
+
+        .tab:hover {
+            background: var(--bg-secondary);
+            color: var(--cyan);
+            border-color: var(--cyan);
+        }
+
+        .tab:hover::before {
+            width: 100%;
+        }
+
+        .tab.active {
+            background: linear-gradient(135deg, var(--cyan-dim), var(--cyan));
+            color: var(--bg-primary);
+            border-color: var(--cyan);
+            font-weight: 700;
+        }
+
+        /* Main Container */
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .section {
+            display: none;
+            animation: fadeIn 0.5s ease;
+        }
+
+        .section.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Card Styling */
+        .card {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .card:hover {
+            border-color: var(--cyan);
+            box-shadow: 0 4px 20px var(--shadow);
+            transform: translateY(-2px);
+        }
+
+        .card-header {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--cyan);
+            margin-bottom: 1.5rem;
+            padding-bottom: 1rem;
+            border-bottom: 2px solid var(--border);
+        }
+
+        /* Carrier Monitor Dashboard */
+        .carrier-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .carrier-card {
+            background: var(--bg-tertiary);
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            padding: 1.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .carrier-card:hover {
+            border-color: var(--cyan);
+            transform: scale(1.02);
+        }
+
+        .carrier-name {
+            font-weight: 700;
+            font-size: 1.3rem;
+            color: var(--cyan);
+            margin-bottom: 0.5rem;
+        }
+
+        .carrier-id {
+            font-family: 'Share Tech Mono', monospace;
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+            margin-bottom: 1rem;
+        }
+
+        .metric {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 0.75rem 0;
+            padding: 0.5rem;
+            background: var(--bg-primary);
+            border-radius: 4px;
+        }
+
+        .metric-label {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        .metric-value {
+            font-family: 'Share Tech Mono', monospace;
+            font-weight: 700;
+            font-size: 1.1rem;
+        }
+
+        .stage-badge {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            border-radius: 4px;
+            font-weight: 700;
+            font-size: 0.85rem;
+            letter-spacing: 1px;
+        }
+
+        .stage-0 { background: #1a1a2e; color: #666; }
+        .stage-1 { background: #16213e; color: var(--cyan); }
+        .stage-2 { background: #0f3460; color: #00d4ff; }
+        .stage-3 { background: #533483; color: #e94560; }
+        .stage-4 { background: #e94560; color: white; }
+        .stage-5 { background: #ffd700; color: #0a0e14; }
+        .stage-6 { background: #ff6b35; color: white; }
+        .stage-7 { background: #ff3366; color: white; }
+        .stage-8 { background: #990000; color: white; border: 2px solid var(--yellow); }
+        .stage-9 { background: #000; color: var(--red); border: 2px solid var(--red); }
+
+        .score {
+            font-size: 2.5rem;
+            font-weight: 900;
+            font-family: 'Orbitron', sans-serif;
+            text-align: center;
+            margin: 1rem 0;
+        }
+
+        .score.high { color: var(--green); }
+        .score.medium { color: var(--yellow); }
+        .score.low { color: var(--orange); }
+        .score.critical { color: var(--red); }
+
+        .warning {
+            background: linear-gradient(135deg, rgba(255, 107, 53, 0.1), rgba(255, 51, 102, 0.1));
+            border: 1px solid var(--orange);
+            border-radius: 4px;
+            padding: 1rem;
+            margin-top: 1rem;
+            color: var(--orange);
+            font-weight: 600;
+        }
+
+        /* Input Styling */
+        .input-group {
+            margin-bottom: 1.5rem;
+        }
+
+        label {
+            display: block;
+            color: var(--cyan);
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            font-size: 0.95rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        input[type="range"] {
+            width: 100%;
+            height: 8px;
+            border-radius: 5px;
+            background: var(--bg-primary);
+            outline: none;
+            -webkit-appearance: none;
+        }
+
+        input[type="range"]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: var(--cyan);
+            cursor: pointer;
+            box-shadow: 0 0 10px var(--cyan);
+        }
+
+        input[type="range"]::-moz-range-thumb {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: var(--cyan);
+            cursor: pointer;
+            box-shadow: 0 0 10px var(--cyan);
+        }
+
+        input[type="number"], input[type="text"], select {
+            width: 100%;
+            padding: 0.75rem;
+            background: var(--bg-primary);
+            border: 1px solid var(--border);
+            border-radius: 4px;
+            color: var(--text-primary);
+            font-family: 'Share Tech Mono', monospace;
+            font-size: 1rem;
+        }
+
+        input:focus, select:focus {
+            outline: none;
+            border-color: var(--cyan);
+            box-shadow: 0 0 10px var(--shadow);
+        }
+
+        button {
+            background: linear-gradient(135deg, var(--cyan), var(--cyan-dim));
+            color: var(--bg-primary);
+            border: none;
+            padding: 1rem 2rem;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: 700;
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 229, 255, 0.3);
+        }
+
+        button:hover {
+            background: linear-gradient(135deg, var(--orange), var(--orange-dim));
+            box-shadow: 0 6px 20px rgba(255, 107, 53, 0.4);
+            transform: translateY(-2px);
+        }
+
+        button:active {
+            transform: translateY(0);
+        }
+
+        /* SAP Framework Visualization */
+        .sap-cycle {
+            position: relative;
+            width: 500px;
+            height: 500px;
+            margin: 2rem auto;
+        }
+
+        .sap-stage {
+            position: absolute;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: var(--bg-tertiary);
+            border: 2px solid var(--border);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .sap-stage:hover {
+            transform: scale(1.2);
+            border-color: var(--cyan);
+            box-shadow: 0 0 20px var(--cyan);
+        }
+
+        .sap-stage.selected {
+            background: var(--cyan);
+            color: var(--bg-primary);
+            border-color: var(--cyan);
+            box-shadow: 0 0 30px var(--cyan);
+        }
+
+        .stage-info {
+            background: var(--bg-tertiary);
+            border: 1px solid var(--cyan);
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-top: 2rem;
+            min-height: 200px;
+        }
+
+        .stage-title {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.5rem;
+            color: var(--cyan);
+            margin-bottom: 1rem;
+        }
+
+        .stage-details {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+        }
+
+        .detail-item {
+            background: var(--bg-primary);
+            padding: 1rem;
+            border-radius: 4px;
+            border-left: 3px solid var(--cyan);
+        }
+
+        .detail-label {
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .detail-value {
+            font-weight: 700;
+            color: var(--text-primary);
+        }
+
+        /* Lane Entropy Map */
+        .lane-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .lane-card {
+            background: var(--bg-tertiary);
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            padding: 1.25rem;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .lane-card:hover {
+            border-color: var(--cyan);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px var(--shadow);
+        }
+
+        .lane-name {
+            font-weight: 700;
+            color: var(--cyan);
+            margin-bottom: 0.5rem;
+        }
+
+        .entropy-dots {
+            display: flex;
+            gap: 4px;
+            margin: 0.75rem 0;
+        }
+
+        .dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(1.2); opacity: 0.7; }
+        }
+
+        .pricing-multiplier {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--orange);
+            margin-top: 0.5rem;
+        }
+
+        /* Results Display */
+        .results {
+            background: var(--bg-tertiary);
+            border: 2px solid var(--cyan);
+            border-radius: 8px;
+            padding: 2rem;
+            margin-top: 2rem;
+        }
+
+        .result-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1rem;
+        }
+
+        .result-box {
+            background: var(--bg-primary);
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            padding: 1.5rem;
+            text-align: center;
+        }
+
+        .result-label {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .result-value {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 2rem;
+            font-weight: 900;
+            color: var(--cyan);
+        }
+
+        .recommendation {
+            background: linear-gradient(135deg, rgba(0, 229, 255, 0.1), rgba(255, 107, 53, 0.1));
+            border: 1px solid var(--cyan);
+            border-radius: 6px;
+            padding: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .recommendation h3 {
+            color: var(--cyan);
+            font-family: 'Orbitron', sans-serif;
+            margin-bottom: 1rem;
+        }
+
+        .recommendation-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .recommendation-list li {
+            padding: 0.5rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .recommendation-list li::before {
+            content: '▹';
+            position: absolute;
+            left: 0;
+            color: var(--cyan);
+            font-weight: 700;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            h1 { font-size: 2rem; }
+            .sap-cycle { width: 350px; height: 350px; }
+            .sap-stage { width: 45px; height: 45px; font-size: 0.85rem; }
+            .carrier-grid, .lane-grid { grid-template-columns: 1fr; }
+        }
+
+        .fade-in {
+            animation: fadeIn 0.5s ease;
+        }
+
+        /* Ghost Carrier Scanner */
+        .scan-input {
+            display: grid;
+            grid-template-columns: 1fr auto;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .scan-results {
+            margin-top: 2rem;
+        }
+
+        .threat-level {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .threat-safe { background: var(--green); color: var(--bg-primary); }
+        .threat-warning { background: var(--yellow); color: var(--bg-primary); }
+        .threat-danger { background: var(--red); color: white; }
+
+        .fingerprint-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>⚡ Axiom Yield Broker</h1>
+        <p class="subtitle">SAP-Powered Predictive Logistics Intelligence Platform</p>
+        <div class="tabs">
+            <div class="tab active" onclick="showSection('dashboard')">Carrier Monitor</div>
+            <div class="tab" onclick="showSection('calculator')">Yield Calculator</div>
+            <div class="tab" onclick="showSection('ghost')">Ghost Filter</div>
+            <div class="tab" onclick="showSection('lanes')">Lane Entropy</div>
+            <div class="tab" onclick="showSection('framework')">SAP Framework</div>
+        </div>
+    </header>
+
+    <div class="container">
+        <!-- CARRIER MONITOR DASHBOARD -->
+        <div id="dashboard" class="section active">
+            <div class="card">
+                <div class="card-header">⚙️ Live Carrier Monitor</div>
+                <p style="color: var(--text-secondary); margin-bottom: 1.5rem;">
+                    Real-time SAP stage tracking for active carriers. Stage 8 carriers show false stability—they appear reliable but are one incident from catastrophic failure.
+                </p>
+                <div class="carrier-grid" id="carrierGrid"></div>
+            </div>
+        </div>
+
+        <!-- AXIOM YIELD CALCULATOR -->
+        <div id="calculator" class="section">
+            <div class="card">
+                <div class="card-header">📊 Axiom Yield Calculator</div>
+                <p style="color: var(--text-secondary); margin-bottom: 1.5rem;">
+                    Calculate the Axiom Yield Score using the four core tension metrics. The score reveals the carrier's true SAP stage and predicts failure risk.
+                </p>
+
+                <div class="input-group">
+                    <label>Driver Hours of Service (HOS) Remaining: <span id="hosValue">7.5</span> hours</label>
+                    <input type="range" id="hos" min="0" max="11" step="0.5" value="7.5" oninput="updateValue('hos')">
+                </div>
+
+                <div class="input-group">
+                    <label>Route Volatility (0-100): <span id="volatilityValue">45</span></label>
+                    <input type="range" id="volatility" min="0" max="100" step="1" value="45" oninput="updateValue('volatility')">
+                    <small style="color: var(--text-secondary);">Traffic density, weather disruption, construction delays</small>
+                </div>
+
+                <div class="input-group">
+                    <label>Communication Coherence (0-100): <span id="coherenceValue">75</span></label>
+                    <input type="range" id="coherence" min="0" max="100" step="1" value="75" oninput="updateValue('coherence')">
+                    <small style="color: var(--text-secondary);">Dispatcher responsiveness, evasiveness detection, contact quality</small>
+                </div>
+
+                <div class="input-group">
+                    <label>Recovery Debt (0-100): <span id="debtValue">30</span></label>
+                    <input type="range" id="debt" min="0" max="100" step="1" value="30" oninput="updateValue('debt')">
+                    <small style="color: var(--text-secondary);">Accumulated stress from missed breaks, delayed loads, equipment issues</small>
+                </div>
+
+                <button onclick="calculateAxiomYield()">🔬 Calculate Axiom Yield</button>
+
+                <div id="calculatorResults" style="display: none;">
+                    <div class="results">
+                        <div class="result-grid">
+                            <div class="result-box">
+                                <div class="result-label">Axiom Yield Score</div>
+                                <div class="result-value" id="yieldScore">--</div>
+                            </div>
+                            <div class="result-box">
+                                <div class="result-label">SAP Stage</div>
+                                <div class="result-value" id="sapStage">--</div>
+                            </div>
+                            <div class="result-box">
+                                <div class="result-label">Physical Stability</div>
+                                <div class="result-value" id="physicalStability">--</div>
+                            </div>
+                            <div class="result-box">
+                                <div class="result-label">Conscious Stability</div>
+                                <div class="result-value" id="consciousStability">--</div>
+                            </div>
+                        </div>
+
+                        <div class="recommendation">
+                            <h3>📋 Recommendations</h3>
+                            <ul class="recommendation-list" id="recommendations"></ul>
+                        </div>
+
+                        <div id="stage8Warning" style="display: none;" class="warning">
+                            ⚠️ <strong>STAGE 8 TRAP DETECTED:</strong> This carrier exhibits false stability. They appear on-schedule but have zero safety margin. High probability of catastrophic failure within 24-48 hours. Recommend immediate contingency planning.
+                        </div>
+
+                        <div id="stage5Warning" style="display: none;" class="warning">
+                            🔄 <strong>STAGE 5 THRESHOLD:</strong> Critical transition point. The doorway opens backward—carrier may either recover or accelerate into Stage 6+ chaos. Monitor closely for next 12 hours.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- GHOST CARRIER FILTER -->
+        <div id="ghost" class="section">
+            <div class="card">
+                <div class="card-header">👻 Ghost-Carrier Scanner</div>
+                <p style="color: var(--text-secondary); margin-bottom: 1.5rem;">
+                    Detects Stage 0 (artificial inertia) and Stage 8 (false stability) fraud patterns. Real carriers show natural fractal growth; scammers create "too perfect" profiles.
+                </p>
+
+                <div class="scan-input">
+                    <input type="text" id="carrierMC" placeholder="Enter MC# (e.g., MC123456)" />
+                    <button onclick="scanCarrier()">🔍 Scan Carrier</button>
+                </div>
+
+                <div id="scanResults" class="scan-results" style="display: none;">
+                    <div class="result-box">
+                        <div class="result-label">Fractal Fingerprint Score</div>
+                        <div class="result-value" id="fingerprintScore">--</div>
+                        <div id="threatLevel" style="margin-top: 1rem;"></div>
+                    </div>
+
+                    <div class="fingerprint-grid">
+                        <div class="detail-item">
+                            <div class="detail-label">Age Entropy</div>
+                            <div class="detail-value" id="ageEntropy">--</div>
+                        </div>
+                        <div class="detail-item">
+                            <div class="detail-label">Growth Variance</div>
+                            <div class="detail-value" id="growthVariance">--</div>
+                        </div>
+                        <div class="detail-item">
+                            <div class="detail-label">Contact Coherence</div>
+                            <div class="detail-value" id="contactCoherence">--</div>
+                        </div>
+                    </div>
+
+                    <div class="recommendation">
+                        <h3>🔬 Analysis</h3>
+                        <ul class="recommendation-list" id="ghostRecommendations"></ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- LANE ENTROPY MAP -->
+        <div id="lanes" class="section">
+            <div class="card">
+                <div class="card-header">🗺️ Lane Entropy & Market Tension</div>
+                <p style="color: var(--text-secondary); margin-bottom: 1.5rem;">
+                    Each freight corridor mapped to SAP stages. Quote higher when entering Stage 8 false stability—capacity collapse is imminent even if load boards show availability.
+                </p>
+                <div class="lane-grid" id="laneGrid"></div>
+            </div>
+        </div>
+
+        <!-- SAP FRAMEWORK VISUALIZATION -->
+        <div id="framework" class="section">
+            <div class="card">
+                <div class="card-header">🔮 Stanfield's Axiom of Perpetuity (SAP) Framework</div>
+                <p style="color: var(--text-secondary); margin-bottom: 1.5rem;">
+                    The complete 10-stage torus cycle from PLENARA (0) through TRANSPARENCY OF THE GUIDE (9). Click any stage to explore its properties.
+                </p>
+                
+                <div class="sap-cycle" id="sapCycle"></div>
+                
+                <div class="stage-info" id="stageInfo">
+                    <div class="stage-title">Select a stage to view details</div>
+                    <p style="color: var(--text-secondary);">Click any node in the cycle above to explore its physical/conscious stability, tension characteristics, and logistics applications.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // SAP Framework Data
+        const sapStages = [
+            {
+                stage: 0,
+                name: "PLENARA (The Void)",
+                physicalStable: true,
+                consciousStable: true,
+                tension: 0,
+                inversion: "None - Pure Potential",
+                geometry: "Point",
+                digitalRoot: 0,
+                logistics: "Ghost Carrier - No activity signature, artificial profile"
+            },
+            {
+                stage: 1,
+                name: "PRIMA MATERIA",
+                physicalStable: false,
+                consciousStable: true,
+                tension: 10,
+                inversion: "First Polarity - Matter emerges",
+                geometry: "Line",
+                digitalRoot: 1,
+                logistics: "New carrier - High potential, unproven capacity"
+            },
+            {
+                stage: 2,
+                name: "FORMATION",
+                physicalStable: true,
+                consciousStable: false,
+                tension: 20,
+                inversion: "Physical stabilizes, Mind uncertain",
+                geometry: "Plane",
+                digitalRoot: 2,
+                logistics: "Establishing routes - Building customer base"
+            },
+            {
+                stage: 3,
+                name: "EMERGENCE OF COMPLEXITY",
+                physicalStable: false,
+                consciousStable: true,
+                tension: 30,
+                inversion: "First self-reflection - 3D complexity emerges",
+                geometry: "Cube",
+                digitalRoot: 3,
+                logistics: "Growth phase - Scaling operations, first challenges"
+            },
+            {
+                stage: 4,
+                name: "CREATIVE EXPANSION",
+                physicalStable: true,
+                consciousStable: false,
+                tension: 40,
+                inversion: "Physical peak, Mental chaos",
+                geometry: "Tesseract",
+                digitalRoot: 4,
+                logistics: "Rapid expansion - Multiple lanes, driver acquisition"
+            },
+            {
+                stage: 5,
+                name: "THE THRESHOLD",
+                physicalStable: false,
+                consciousStable: true,
+                tension: 50,
+                inversion: "Doorway opens backward - Critical choice point",
+                geometry: "Pentagonal Symmetry",
+                digitalRoot: 5,
+                logistics: "Pivot moment - Can recover or accelerate to chaos"
+            },
+            {
+                stage: 6,
+                name: "CATALYZED TENSION",
+                physicalStable: true,
+                consciousStable: false,
+                tension: 60,
+                inversion: "Stable form, Unstable mind - Pressure builds",
+                geometry: "Hexagon",
+                digitalRoot: 6,
+                logistics: "High stress - Multiple delays, driver complaints"
+            },
+            {
+                stage: 7,
+                name: "THE CRUCIBLE",
+                physicalStable: false,
+                consciousStable: true,
+                tension: 70,
+                inversion: "Physical chaos, Mental clarity sees the pattern",
+                geometry: "Heptagon",
+                digitalRoot: 7,
+                logistics: "Crisis mode - Visible failures, scrambling for capacity"
+            },
+            {
+                stage: 8,
+                name: "Illusion of Permanence",
+                physicalStable: true,
+                consciousStable: false,
+                tension: 80,
+                inversion: "Compressed tension + False permanence - Trap state",
+                geometry: "Octagon",
+                digitalRoot: 8,
+                logistics: "FALSE STABILITY - Appears on-time but zero margin, imminent collapse"
+            },
+            {
+                stage: 9,
+                name: "TRANSPARENCY OF THE GUIDE",
+                physicalStable: false,
+                consciousStable: false,
+                tension: 90,
+                inversion: "No inversion - Dissolution toward renewal",
+                geometry: "Enneagon",
+                digitalRoot: 9,
+                logistics: "CATASTROPHIC RELEASE - Breakdown, quit, accident, total service failure"
+            }
+        ];
+
+        // Sample Carrier Data
+        const carriers = [
+            { id: "MC-742891", name: "Apex Freight Solutions", hos: 3.5, volatility: 72, coherence: 58, debt: 65 },
+            { id: "MC-551234", name: "Horizon Logistics", hos: 8.0, volatility: 35, coherence: 88, debt: 22 },
+            { id: "MC-398442", name: "Velocity Transport", hos: 2.0, volatility: 85, coherence: 45, debt: 78 },
+            { id: "MC-629105", name: "Titan Haulers", hos: 9.5, volatility: 28, coherence: 92, debt: 15 },
+            { id: "MC-441876", name: "Phoenix Carriers", hos: 5.5, volatility: 55, coherence: 70, debt: 48 },
+            { id: "MC-337291", name: "Redline Express", hos: 1.5, volatility: 90, coherence: 40, debt: 85 }
+        ];
+
+        // Sample Lane Data
+        const lanes = [
+            { name: "ATL → CHI", stage: 3, entropy: 35, multiplier: 1.15 },
+            { name: "LAX → NYC", stage: 7, entropy: 78, multiplier: 1.65 },
+            { name: "DFW → MIA", stage: 2, entropy: 25, multiplier: 1.05 },
+            { name: "SEA → DEN", stage: 8, entropy: 82, multiplier: 1.85 },
+            { name: "PHX → HOU", stage: 4, entropy: 45, multiplier: 1.25 },
+            { name: "BOS → ATL", stage: 6, entropy: 68, multiplier: 1.50 },
+            { name: "PDX → SLC", stage: 1, entropy: 18, multiplier: 0.95 },
+            { name: "MEM → IND", stage: 5, entropy: 52, multiplier: 1.35 }
+        ];
+
+        // Tab Navigation
+        function showSection(sectionId) {
+            document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+            document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+            document.getElementById(sectionId).classList.add('active');
+            event.target.classList.add('active');
+        }
+
+        // Update Slider Values
+        function updateValue(id) {
+            const value = document.getElementById(id).value;
+            document.getElementById(id + 'Value').textContent = value;
+        }
+
+        // Calculate Axiom Yield Score
+        function calculateAxiomYield() {
+            const hos = parseFloat(document.getElementById('hos').value);
+            const volatility = parseFloat(document.getElementById('volatility').value);
+            const coherence = parseFloat(document.getElementById('coherence').value);
+            const debt = parseFloat(document.getElementById('debt').value);
+
+            // Physical Stability Index (HOS-based)
+            const physicalStability = (hos / 11) * 100;
+
+            // Entropy Accumulation (volatility + debt)
+            const entropy = (volatility + debt) / 2;
+
+            // Conscious Stability (coherence-based, inverted)
+            const consciousStability = coherence;
+
+            // Axiom Yield Score: Composite metric
+            const axiomYield = (physicalStability * 0.3) + ((100 - entropy) * 0.4) + (consciousStability * 0.3);
+
+            // Determine SAP Stage
+            let stage, stageName;
+            if (axiomYield >= 80) {
+                stage = hos > 9 ? 1 : 2;
+                stageName = sapStages[stage].name;
+            } else if (axiomYield >= 65) {
+                stage = 3;
+                stageName = sapStages[stage].name;
+            } else if (axiomYield >= 50) {
+                stage = entropy > 60 ? 5 : 4;
+                stageName = sapStages[stage].name;
+            } else if (axiomYield >= 35) {
+                stage = 6;
+                stageName = sapStages[stage].name;
+            } else if (axiomYield >= 25) {
+                stage = 7;
+                stageName = sapStages[stage].name;
+            } else if (axiomYield >= 15) {
+                stage = 8;
+                stageName = sapStages[stage].name;
+            } else {
+                stage = 9;
+                stageName = sapStages[stage].name;
+            }
+
+            // Display Results
+            document.getElementById('yieldScore').textContent = axiomYield.toFixed(1);
+            document.getElementById('sapStage').textContent = `Stage ${stage}`;
+            document.getElementById('physicalStability').textContent = physicalStability.toFixed(1) + '%';
+            document.getElementById('consciousStability').textContent = consciousStability.toFixed(1) + '%';
+
+            // Color code score
+            const scoreEl = document.getElementById('yieldScore');
+            scoreEl.className = 'result-value';
+            if (axiomYield >= 70) scoreEl.classList.add('high');
+            else if (axiomYield >= 50) scoreEl.classList.add('medium');
+            else if (axiomYield >= 30) scoreEl.classList.add('low');
+            else scoreEl.classList.add('critical');
+
+            // Generate Recommendations
+            const recommendations = [];
+            if (stage === 8) {
+                recommendations.push("CRITICAL: Do not assign high-value or time-sensitive loads");
+                recommendations.push("False stability detected - carrier appears reliable but has zero margin");
+                recommendations.push("Probability of failure within 24-48 hours: >75%");
+                recommendations.push("Recommend immediate replacement carrier sourcing");
+                document.getElementById('stage8Warning').style.display = 'block';
+            } else {
+                document.getElementById('stage8Warning').style.display = 'none';
+            }
+
+            if (stage === 5) {
+                recommendations.push("THRESHOLD: Critical transition point - can recover or deteriorate");
+                recommendations.push("Monitor for next 12 hours before additional assignments");
+                recommendations.push("Doorway opens backward - provide recovery opportunity (easy miles, home time)");
+                document.getElementById('stage5Warning').style.display = 'block';
+            } else {
+                document.getElementById('stage5Warning').style.display = 'none';
+            }
+
+            if (stage === 9) {
+                recommendations.push("CATASTROPHIC: Immediate service failure imminent");
+                recommendations.push("Do not assign any new loads - expect breakdown/quit/accident");
+                recommendations.push("Contact dispatcher immediately for load recovery plan");
+            }
+
+            if (hos < 3) {
+                recommendations.push(`HOS critically low (${hos} hrs) - driver likely to violate hours or stop abruptly`);
+            }
+
+            if (volatility > 70) {
+                recommendations.push("Route volatility extreme - expect significant delays regardless of driver condition");
+            }
+
+            if (coherence < 50) {
+                recommendations.push("Communication coherence poor - dispatcher may be concealing problems (Stage 8 evasiveness)");
+            }
+
+            if (debt > 60) {
+                recommendations.push("Recovery debt high - driver has accumulated significant stress, burnout risk elevated");
+            }
+
+            if (stage <= 3 && axiomYield > 70) {
+                recommendations.push("✓ Carrier in good condition - suitable for standard loads");
+                recommendations.push("✓ Physical and conscious stability both positive");
+            }
+
+            const recList = document.getElementById('recommendations');
+            recList.innerHTML = '';
+            recommendations.forEach(rec => {
+                const li = document.createElement('li');
+                li.textContent = rec;
+                recList.appendChild(li);
+            });
+
+            document.getElementById('calculatorResults').style.display = 'block';
+        }
+
+        // Render Carrier Dashboard
+        function renderCarriers() {
+            const grid = document.getElementById('carrierGrid');
+            grid.innerHTML = '';
+
+            carriers.forEach(carrier => {
+                const physicalStability = (carrier.hos / 11) * 100;
+                const entropy = (carrier.volatility + carrier.debt) / 2;
+                const consciousStability = carrier.coherence;
+                const axiomYield = (physicalStability * 0.3) + ((100 - entropy) * 0.4) + (consciousStability * 0.3);
+
+                let stage;
+                if (axiomYield >= 80) stage = carrier.hos > 9 ? 1 : 2;
+                else if (axiomYield >= 65) stage = 3;
+                else if (axiomYield >= 50) stage = entropy > 60 ? 5 : 4;
+                else if (axiomYield >= 35) stage = 6;
+                else if (axiomYield >= 25) stage = 7;
+                else if (axiomYield >= 15) stage = 8;
+                else stage = 9;
+
+                const inversionTension = sapStages[stage].physicalStable !== sapStages[stage].consciousStable ? 'HIGH' : 'LOW';
+
+                const card = document.createElement('div');
+                card.className = 'carrier-card';
+                card.innerHTML = `
+                    <div class="carrier-name">${carrier.name}</div>
+                    <div class="carrier-id">${carrier.id}</div>
+                    <div class="metric">
+                        <span class="metric-label">Axiom Yield</span>
+                        <span class="metric-value ${axiomYield >= 70 ? 'high' : axiomYield >= 50 ? 'medium' : axiomYield >= 30 ? 'low' : 'critical'}">${axiomYield.toFixed(1)}</span>
+                    </div>
+                    <div class="metric">
+                        <span class="metric-label">SAP Stage</span>
+                        <span class="stage-badge stage-${stage}">Stage ${stage}</span>
+                    </div>
+                    <div class="metric">
+                        <span class="metric-label">Inversion Tension</span>
+                        <span class="metric-value" style="color: ${inversionTension === 'HIGH' ? 'var(--red)' : 'var(--green)'}">${inversionTension}</span>
+                    </div>
+                    ${stage === 8 ? '<div class="warning" style="font-size: 0.85rem; padding: 0.5rem;">⚠️ TRAP RISK: False stability detected</div>' : ''}
+                    ${stage === 9 ? '<div class="warning" style="font-size: 0.85rem; padding: 0.5rem; border-color: var(--red); color: var(--red);">🚨 CRITICAL: Failure imminent</div>' : ''}
+                `;
+                grid.appendChild(card);
+            });
+        }
+
+        // Render Lane Entropy Map
+        function renderLanes() {
+            const grid = document.getElementById('laneGrid');
+            grid.innerHTML = '';
+
+            lanes.forEach(lane => {
+                const stageData = sapStages[lane.stage];
+                const dots = [];
+                const dotCount = Math.ceil(lane.entropy / 10);
+                
+                for (let i = 0; i < dotCount; i++) {
+                    const color = lane.entropy > 70 ? 'var(--red)' : lane.entropy > 50 ? 'var(--orange)' : lane.entropy > 30 ? 'var(--yellow)' : 'var(--green)';
+                    dots.push(`<div class="dot" style="background: ${color};"></div>`);
+                }
+
+                const card = document.createElement('div');
+                card.className = 'lane-card';
+                card.innerHTML = `
+                    <div class="lane-name">${lane.name}</div>
+                    <div class="stage-badge stage-${lane.stage}">Stage ${lane.stage}</div>
+                    <div class="entropy-dots">${dots.join('')}</div>
+                    <div style="color: var(--text-secondary); font-size: 0.85rem; margin: 0.5rem 0;">
+                        Entropy: ${lane.entropy}% | ${stageData.inversion}
+                    </div>
+                    <div class="pricing-multiplier">×${lane.multiplier}</div>
+                    <div style="color: var(--text-secondary); font-size: 0.8rem; margin-top: 0.5rem;">
+                        ${lane.stage === 8 ? '⚠️ Capacity collapse imminent - quote high' : lane.entropy > 60 ? '📈 High tension - premium pricing recommended' : '✓ Stable corridor'}
+                    </div>
+                `;
+                grid.appendChild(card);
+            });
+        }
+
+        // Render SAP Cycle Visualization
+        function renderSAPCycle() {
+            const cycle = document.getElementById('sapCycle');
+            cycle.innerHTML = '';
+
+            const centerX = 250;
+            const centerY = 250;
+            const radius = 180;
+
+            sapStages.forEach((stage, index) => {
+                const angle = (index / 10) * 2 * Math.PI - Math.PI / 2; // Start at top
+                const x = centerX + radius * Math.cos(angle) - 30;
+                const y = centerY + radius * Math.sin(angle) - 30;
+
+                const stageEl = document.createElement('div');
+                stageEl.className = 'sap-stage stage-' + index;
+                stageEl.textContent = index;
+                stageEl.style.left = x + 'px';
+                stageEl.style.top = y + 'px';
+                stageEl.onclick = () => showStageInfo(index);
+                cycle.appendChild(stageEl);
+            });
+        }
+
+        // Show Stage Information
+        function showStageInfo(stageNum) {
+            const stage = sapStages[stageNum];
+            const infoDiv = document.getElementById('stageInfo');
+            
+            // Highlight selected stage
+            document.querySelectorAll('.sap-stage').forEach(el => el.classList.remove('selected'));
+            document.querySelectorAll('.sap-stage')[stageNum].classList.add('selected');
+
+            infoDiv.innerHTML = `
+                <div class="stage-title">Stage ${stageNum}: ${stage.name}</div>
+                <div class="stage-details">
+                    <div class="detail-item">
+                        <div class="detail-label">Physical Stability</div>
+                        <div class="detail-value" style="color: ${stage.physicalStable ? 'var(--green)' : 'var(--red)'}">
+                            ${stage.physicalStable ? '✓ Stable' : '✗ Unstable'}
+                        </div>
+                    </div>
+                    <div class="detail-item">
+                        <div class="detail-label">Conscious Stability</div>
+                        <div class="detail-value" style="color: ${stage.consciousStable ? 'var(--green)' : 'var(--red)'}">
+                            ${stage.consciousStable ? '✓ Stable' : '✗ Unstable'}
+                        </div>
+                    </div>
+                    <div class="detail-item">
+                        <div class="detail-label">Tension Level</div>
+                        <div class="detail-value">${stage.tension}%</div>
+                    </div>
+                    <div class="detail-item">
+                        <div class="detail-label">Inversion Principle</div>
+                        <div class="detail-value">${stage.inversion}</div>
+                    </div>
+                    <div class="detail-item">
+                        <div class="detail-label">Sacred Geometry</div>
+                        <div class="detail-value">${stage.geometry}</div>
+                    </div>
+                    <div class="detail-item">
+                        <div class="detail-label">Digital Root</div>
+                        <div class="detail-value">${stage.digitalRoot}</div>
+                    </div>
+                </div>
+                <div style="margin-top: 1.5rem; padding: 1rem; background: var(--bg-primary); border-radius: 4px; border-left: 3px solid var(--orange);">
+                    <div style="color: var(--orange); font-weight: 700; margin-bottom: 0.5rem;">📦 Logistics Translation:</div>
+                    <div style="color: var(--text-primary);">${stage.logistics}</div>
+                </div>
+            `;
+        }
+
+        // Ghost Carrier Scanner
+        function scanCarrier() {
+            const mc = document.getElementById('carrierMC').value;
+            if (!mc) {
+                alert('Please enter a carrier MC number');
+                return;
+            }
+
+            // Simulate fractal fingerprint calculation
+            // Real implementation would query FMCSA database
+            const ageEntropy = Math.random() * 100;
+            const growthVariance = Math.random() * 100;
+            const contactCoherence = Math.random() * 100;
+
+            // Fractal Fingerprint Formula: (age_entropy × 0.3) + (growth_variance × 0.4) + (contact_coherence × 0.3)
+            const fingerprintScore = (ageEntropy * 0.3) + (growthVariance * 0.4) + (contactCoherence * 0.3);
+
+            document.getElementById('fingerprintScore').textContent = fingerprintScore.toFixed(1);
+            document.getElementById('ageEntropy').textContent = ageEntropy.toFixed(1);
+            document.getElementById('growthVariance').textContent = growthVariance.toFixed(1);
+            document.getElementById('contactCoherence').textContent = contactCoherence.toFixed(1);
+
+            let threatLevel, threatClass;
+            if (fingerprintScore < 35) {
+                threatLevel = '🚨 HIGH RISK - Ghost Carrier';
+                threatClass = 'threat-danger';
+            } else if (fingerprintScore < 60) {
+                threatLevel = '⚠️ MODERATE RISK - Verify Credentials';
+                threatClass = 'threat-warning';
+            } else {
+                threatLevel = '✓ LOW RISK - Natural Growth Pattern';
+                threatClass = 'threat-safe';
+            }
+
+            document.getElementById('threatLevel').innerHTML = `<div class="threat-level ${threatClass}">${threatLevel}</div>`;
+
+            // Generate recommendations
+            const recommendations = [];
+            if (fingerprintScore < 35) {
+                recommendations.push("GHOST SIGNATURE DETECTED: Carrier shows Stage 0 artificial inertia");
+                recommendations.push("Profile appears 'too perfect' - lacks natural business messiness (fractal growth)");
+                recommendations.push("Recommend: Do not book loads, report to FMCSA fraud hotline");
+                recommendations.push("Likely scam patterns: Double-brokering, identity theft, cargo theft");
+            } else if (fingerprintScore < 60) {
+                recommendations.push("Some anomalies detected in growth pattern");
+                recommendations.push("Recommend: Verify insurance, check references, escrow payment");
+                recommendations.push("Monitor first 2-3 loads closely before establishing trust");
+            } else {
+                recommendations.push("✓ Natural fractal growth pattern detected");
+                recommendations.push("✓ Contact coherence within normal range");
+                recommendations.push("✓ Age entropy shows organic business development");
+                recommendations.push("Carrier appears legitimate - standard vetting procedures apply");
+            }
+
+            if (ageEntropy < 20) {
+                recommendations.push("⚠️ Company age too young with suspiciously high ratings - possible fabricated history");
+            }
+
+            if (growthVariance < 25) {
+                recommendations.push("⚠️ Growth pattern too linear - real companies show natural variance");
+            }
+
+            if (contactCoherence < 30) {
+                recommendations.push("⚠️ Contact information inconsistent or unreachable - red flag");
+            }
+
+            const recList = document.getElementById('ghostRecommendations');
+            recList.innerHTML = '';
+            recommendations.forEach(rec => {
+                const li = document.createElement('li');
+                li.textContent = rec;
+                recList.appendChild(li);
+            });
+
+            document.getElementById('scanResults').style.display = 'block';
+        }
+
+        // Initialize on page load
+        renderCarriers();
+        renderLanes();
+        renderSAPCycle();
+        showStageInfo(0); // Show Stage 0 by default
+    </script>
+</body>
+</html>

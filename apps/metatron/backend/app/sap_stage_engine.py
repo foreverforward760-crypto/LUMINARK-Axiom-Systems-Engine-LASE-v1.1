@@ -14,16 +14,17 @@ class SAPStageEngine:
     """
 
     STAGE_DESCRIPTIONS: Dict[int, str] = {
-        0: "Plenara (Void/Reset) – Complete reset, post-crash or pre-emergence.",
-        1: "Navigation – First spark of uptrend, high uncertainty, clear vision.",
-        2: "Polarity – Consolidation, forming base, conflicting signals.",
-        3: "Expression – Breakout attempt, high volume, confident move.",
-        4: "Foundation – Sustainable trend, healthy pullbacks, longest phase.",
-        5: "Threshold – Critical decision point, high tension, volatile.",
-        6: "Integration – Peak harmony, smooth trend, low volatility.",
-        7: "Analysis – Divergences appear, distribution, isolated moves.",
-        8: "Unity (Trap) – Euphoria, low volatility, false permanence.",
-        9: "Release – Climax, blow-off top or crash, dissolution.",
+        0: "PLENARA – Complete reset, post-crash or pre-emergence. Primordial potential.",
+        1: "SPARK OF NAVIGATION – First ignition of uptrend, high uncertainty, directional clarity emerging.",
+        2: "FORGE OF POLARITY – Consolidation and polarization, forming base, conflicting signals.",
+        3: "ENGINE OF EXPRESSION – Breakout attempt, high volume, confident move, first self-reflection.",
+        4: "CRUCIBLE OF EQUILIBRIUM – Sustainable trend, healthy pullbacks, maximum complexity threshold.",
+        5: "DYNAMO OF WILL – Critical decision point, high tension, volatile. Three-way bifurcation stage.",
+        6: "NEXUS OF HARMONY – Peak integration, smooth trend, low volatility, all systems synchronized.",
+        7: "LENS OF DISTILLATION – Divergences appear, distribution, deep refinement and analysis.",
+        8: "VESSEL OF GROUNDING – Dual-chamber trap: Illusion of Arrival (low adaptability) or "
+           "Illusion of Permanence (high tension). 1.45x TrapScore amplifier active.",
+        9: "TRANSPARENCY OF THE GUIDE – Climax, dissolution, blow-off or completion. Return to PLENARA.",
     }
 
     # ---------------------------------------------------------------------------

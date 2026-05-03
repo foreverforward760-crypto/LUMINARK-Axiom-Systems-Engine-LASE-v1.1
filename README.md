@@ -1,8 +1,8 @@
-# LUMINARK Monster Build
+# LUMINARK Axiom Systems Engine (LASE)
 ## Meridian Axiom Alignment Technologies (MAAT)
 ### Stanfield's Axiom of Perpetuity (SAP) Framework — Unified Repository
 
-**Version:** Monster v1.0  
+**Version:** LUMINARK Axiom Systems Engine v1.0  
 **Assembled:** May 2, 2026  
 **Inventor:** Richard L. Stanfield, Chief Science Officer  
 **Contact:** LuminarkMeridian@gmail.com
@@ -11,7 +11,7 @@
 
 ## What This Is
 
-The Monster build is the authoritative consolidated repository of the full LUMINARK ecosystem. It unifies nine previously separate repositories into a single, navigable structure with clear layer separation and a canonical source of truth for the SAP mathematical framework.
+The LUMINARK Axiom Systems Engine build is the authoritative consolidated repository of the full LUMINARK ecosystem. It unifies nine previously separate repositories into a single, navigable structure with clear layer separation and a canonical source of truth for the SAP mathematical framework.
 
 This is not a new build. It is a **governed consolidation** — every file traces directly to a verified source repo, with the canonical engine (090LuminarkHybridEngine090 v8.2.1) as the non-negotiable foundation.
 
