@@ -380,18 +380,19 @@ async def overwatch_analyze(infra: InfraInput):
           summary="Container Rule / Digit Vessel analysis")
 async def container_rule(cr: ContainerRuleInput):
     try:
-        # Try latest engine first, fall back to original
-        try:
-            from LatestLUMINARK_OVERWATCH_PRIME_ULTRA import InfraContainerRuleEngine
-        except ImportError:
-            from LUMINARK_OVERWATCH_PRIME_ULTRA import InfraContainerRuleEngine
-        engine = InfraContainerRuleEngine()
+        # Use canonical ContainerRuleEngine from LASE engine/ layer
+        import sys, os
+        _engine_dir = os.path.join(os.path.dirname(os.path.dirname(__file__)), "engine")
+        if _engine_dir not in sys.path:
+            sys.path.insert(0, _engine_dir)
+        from container_rule_engine import ContainerRuleEngine
+        engine = ContainerRuleEngine()
         result = engine.analyze(
             content_digit=cr.content_digit,
             container_digit=cr.container_digit,
             current_sap_stage=cr.current_sap_stage,
         )
-        return _wrap(result, "/overwatch/container_rule")
+        return _wrap(result.to_dict(), "/overwatch/container_rule")
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
 

@@ -5,6 +5,68 @@ Format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ---
 
+## [LASE v1.2] — 2026-05-03
+
+### Added — Gap Closure (source: uploaded documents)
+
+**GAP 1 — Container Rule Engine (CRITICAL)**
+- `engine/container_rule_engine.py` v1.0 — Full implementation of Container Rule digit-vessel mathematics:
+  - Canonical Digit-Pair Table (9 stages, Content/Container inverse progression)
+  - 3-6-9 Flux Dynamics: Stage 3/6 = 90% Magnetic Drag (Poles); Stage 8 = 100% (High Voltage Containment); Stage 9 = 0% (Slip Stream)
+  - Harmonic Resonance detector: DR=9 = "Divine Line" unlock condition
+  - Dissolve Mechanic: Stage 9 + Harmonic Resonance → "shatter the container, return to PLENARA"
+  - Stage 7 isolation trap detection (high Content, low Container = separation risk)
+  - `InfraContainerRuleEngine` — drop-in for `/api/infra/container-rule` endpoint
+  - `full_cycle_table()` — complete 9-stage canonical table with all mechanics
+- `runtime/main.py` — `/overwatch/container_rule` endpoint now wired to canonical `ContainerRuleEngine` instead of calling a stub in the Ultra runtime
+
+**GAP 2 — SAP Stage Canonical Reference (CRITICAL)**
+- `docs/SAP_STAGE_CANONICAL_REFERENCE.md` — authoritative stage reference compiled from source documents:
+  - 0ᵀ/0ᴮ dual-arc notation formally defined (Primordial Source vs. Integrative Void)
+  - Complete 81-stage fractal map (9 Gates × 9 micro-stages, descending AND ascending arcs)
+  - Stage 5 three-way bifurcation mathematics (P(success), P(regression), P(crisis))
+  - Stage 8 Dual-Chamber Trap — full constitutional naming (Illusion of Arrival / Illusion of Permanence, 1.45× amplifier)
+  - 9 Recursive Fractal Layers (individual → cosmic, Layer 1=9 stages through Layer 9=81 stages)
+  - 42 Ma'at Ethical Nodes with Yunus Protocol trigger conditions
+  - Mathematical state formalization: S=(G,m,a,E,I,M,t,L), dm/dt equation, Gate transition condition
+  - 369 Resonance Framework with Tesla reference
+  - Multi-substrate cross-validation confidence table (97% biological → 87% civilizational)
+
+**GAP 3 — LuminarkBeast ML Engine (NEW)**
+- `engine/luminark_beast.py` — Ω-Class Supercharged v4 COMPLETE ML engine:
+  - `LuminarkBeast` — 6-layer transformer, 8 heads, 256-dim, character-level on SAP data
+  - `SuperchargedTrainer` — training loop with Ma'at and Yunus safety applied to generated output (training-time safety, distinct from inference-time classification in other engines)
+  - `SAPStageMonitor` — monitors model's own training SAP stage via NSDT lens on training metrics
+  - RAG Memory via FAISS vector store (retrieval-augmented generation)
+  - Voice I/O support (disabled by default, Python 3.14 compatibility)
+  - HuggingFace export pipeline (push trained model to HF Hub)
+  - Streamlit dashboard for interactive training
+- `engine/luminark_beast_README.md` — documents architecture, key distinctions from LASE classifiers, usage
+
+**GAP 4 — Cybersecurity Encyclopedia (Training Asset)**
+- `docs/training_data/cybersecurity_encyclopedia.md` — 4,538-line cybersecurity reference compiled for LUMINARK AI Security Intelligence Training:
+  - 10 parts covering psychology of attacks, social engineering, malware, APTs, AI/deepfake threats, physical breaches, defensive strategies, future threats
+  - Part 10: LUMINARK Integration — SAP stage mapping to threat psychology and defender vulnerability windows
+- `docs/training_data/README.md` — explains placement, usage with LuminarkBeast and Guardian AI
+
+**GAP 5 — Omega9 API (runtime/main_v12_omega9.py)**
+- `runtime/main_v12_omega9.py` — v12.1 (Ω-9 Integration) preserved as authoritative 23-endpoint reference:
+  - 6 categories: System (2), Infrastructure (4), Consciousness (5), Ω-9 Engine (3), Admin (1), startup (1)
+  - Includes: FractalAddress (macro.micro.pico notation), InversionOscillator, entropy well tracking
+  - `/api/infra/container-rule` — calls `InfraContainerRuleEngine` (now resolves to canonical engine)
+  - `/api/omega9/address`, `/api/omega9/action`, `/api/omega9/report/{system_id}`
+  - Note: runtime/main.py (LASE production) has 20 endpoints with different path structure; v12_omega9 preserved for reference and migration target
+
+**GAP 6 — Source documents preserved**
+- Full source documents available for review in uploaded session; key content formalized into:
+  - `docs/SAP_STAGE_CANONICAL_REFERENCE.md` (Stanfields_Axiom_of-Perpetuity.docx + STANFIELD_81_Returns.docx)
+  - `engine/container_rule_engine.py` (Analysis_of_the_Container_Rule_and_the_Digit_Vessel.docx)
+
+### Notes on Windows Shortcut Files
+- `72_SPAT_docx`, `NAM_Framework_for_AI_Safety.md`, `octo_mycelial_v4.py`, `bio_defense.py` were uploaded as Windows `.lnk` shortcut files (not actual content). Please re-upload the actual files to add them to LASE.
+
+---
+
 ## [LASE v1.1] — 2026-05-03
 
 ### Added
