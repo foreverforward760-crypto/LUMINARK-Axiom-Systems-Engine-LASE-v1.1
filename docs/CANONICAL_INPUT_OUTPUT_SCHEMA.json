@@ -1,0 +1,168 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "LUMINARK OVERWATCH PRIME — Canonical Data Contract",
+  "description": "Fixed input/output schema for Core Engine v1.0. All adapters must produce inputs conforming to this schema. All API responses must conform to the output schema.",
+  "version": "1.0",
+  "author": "Richard L. Stanfield | Meridian Axiom Alignment Technologies",
+
+  "InputSchema": {
+    "type": "object",
+    "required": ["timestamp", "system_id", "domain", "nsdt", "source"],
+    "properties": {
+      "timestamp": {
+        "type": "string",
+        "format": "date-time",
+        "description": "ISO 8601 UTC timestamp of the telemetry reading",
+        "example": "2024-10-09T20:30:00Z"
+      },
+      "system_id": {
+        "type": "string",
+        "description": "Unique identifier for the monitored system",
+        "example": "frcc_region"
+      },
+      "domain": {
+        "type": "string",
+        "enum": ["grid", "vehicle", "hvac", "network", "supply_chain", "financial", "human"],
+        "description": "Domain adapter that produced this vector"
+      },
+      "nsdt": {
+        "type": "object",
+        "description": "Five-dimensional NSDT health vector. All values normalized 0.0–1.0.",
+        "required": ["complexity", "stability", "tension", "adaptability", "coherence"],
+        "properties": {
+          "complexity": {
+            "type": "number", "minimum": 0.0, "maximum": 1.0,
+            "description": "Rate of change, unpredictability, interaction density"
+          },
+          "stability": {
+            "type": "number", "minimum": 0.0, "maximum": 1.0,
+            "description": "Reserve capacity, operating margin, structural integrity"
+          },
+          "tension": {
+            "type": "number", "minimum": 0.0, "maximum": 1.0,
+            "description": "Demand-supply gap, stress load, pressure differential"
+          },
+          "adaptability": {
+            "type": "number", "minimum": 0.0, "maximum": 1.0,
+            "description": "Flexibility, rerouting capacity, redundancy"
+          },
+          "coherence": {
+            "type": "number", "minimum": 0.0, "maximum": 1.0,
+            "description": "Communication integrity, coordination quality"
+          }
+        }
+      },
+      "source": {
+        "type": "string",
+        "description": "Adapter that produced the NSDT vector",
+        "example": "eia930_grid_adapter"
+      },
+      "raw_metrics": {
+        "type": "object",
+        "description": "Optional: original telemetry values before adapter mapping",
+        "additionalProperties": true
+      }
+    }
+  },
+
+  "OutputSchema": {
+    "type": "object",
+    "required": ["timestamp", "system_id", "stage", "stage_label", "trapscore", "trajectory", "consensus_confidence", "alert_level", "alert_name", "alert_message"],
+    "properties": {
+      "timestamp": {
+        "type": "string", "format": "date-time"
+      },
+      "system_id": {
+        "type": "string"
+      },
+      "nsdt": {
+        "$ref": "#/InputSchema/properties/nsdt",
+        "description": "Echo of the input NSDT vector"
+      },
+      "nsdt_mean": {
+        "type": "number", "minimum": 0.0, "maximum": 1.0,
+        "description": "Arithmetic mean of the five NSDT dimensions"
+      },
+      "stage": {
+        "type": "integer", "minimum": 0, "maximum": 9,
+        "description": "Classified health stage (0=worst, 9=transformational)"
+      },
+      "stage_label": {
+        "type": "string",
+        "enum": ["Reactive","Survival","Compromised","Functional","Foundation","Threshold","Harmony","Distillation","Atlas","Transformation"]
+      },
+      "stage_distance": {
+        "type": "number", "minimum": 0.0,
+        "description": "Euclidean distance from the matched stage centroid. Lower = higher confidence."
+      },
+      "trapscore": {
+        "type": "number", "minimum": 0.0, "maximum": 1.0,
+        "description": "Failure trajectory risk. Formula: (stage/9) * (1-stability) * (1-adaptability)"
+      },
+      "trajectory": {
+        "type": "string",
+        "enum": ["ASCENDING", "DESCENDING", "OSCILLATING", "STABLE"],
+        "description": "Direction of stage progression over the observation window"
+      },
+      "trajectory_confidence": {
+        "type": "number", "minimum": 0.0, "maximum": 1.0
+      },
+      "consensus_confidence": {
+        "type": "number", "minimum": 0.0, "maximum": 1.0,
+        "description": "Agreement across three independent evaluator pathways"
+      },
+      "consensus_label": {
+        "type": "string",
+        "enum": ["HIGH CONSENSUS", "MODERATE CONSENSUS", "SPLIT VERDICT"]
+      },
+      "alert_level": {
+        "type": "integer", "minimum": 1, "maximum": 5,
+        "description": "1=NOMINAL, 2=OCTO-CAMOUFLAGE, 3=MYCELIAL CONTAINMENT, 4=HARROWING, 5=QUARANTINE"
+      },
+      "alert_name": {
+        "type": "string",
+        "enum": ["NOMINAL", "OCTO-CAMOUFLAGE", "MYCELIAL CONTAINMENT", "HARROWING", "QUARANTINE"]
+      },
+      "alert_color": {
+        "type": "string",
+        "enum": ["GREEN", "YELLOW", "ORANGE", "RED"]
+      },
+      "alert_message": {
+        "type": "string",
+        "description": "Human-readable alert description"
+      },
+      "alert_fired": {
+        "type": "boolean",
+        "description": "True if alert level >= OCTO-CAMOUFLAGE (level >= 2)"
+      },
+      "failure_signature": {
+        "type": ["string", "null"],
+        "description": "Name of closest matched historical failure pattern, or null if no match",
+        "example": "HURRICANE_INFRASTRUCTURE"
+      },
+      "failure_signature_distance": {
+        "type": ["number", "null"],
+        "description": "Euclidean distance from matched failure signature centroid"
+      },
+      "recommended_action": {
+        "type": "string",
+        "description": "Operator action recommendation based on alert level and matched signature"
+      }
+    }
+  },
+
+  "AlertLevelDefinitions": {
+    "5_QUARANTINE":          { "color": "RED",    "action": "Full containment — immediate shutdown protocol" },
+    "4_HARROWING":           { "color": "RED",    "action": "Critical — immediate operator action required" },
+    "3_MYCELIAL_CONTAINMENT":{ "color": "ORANGE", "action": "Fault spreading — maintenance within 7 days" },
+    "2_OCTO_CAMOUFLAGE":     { "color": "YELLOW", "action": "System masking issue — inspect within 30 days" },
+    "1_NOMINAL":             { "color": "GREEN",  "action": "All systems within expected parameters" }
+  },
+
+  "FailureSignatureLibrary": {
+    "WINTER_FREEZE_OFF":       { "typical_nsdt": [0.85, 0.20, 0.90, 0.30, 0.60], "events": ["Texas Uri 2021", "SPP Feb 2021", "Elliott Dec 2022"] },
+    "HURRICANE_INFRASTRUCTURE":{ "typical_nsdt": [0.88, 0.17, 0.84, 0.20, 0.48], "events": ["Ian 2022", "Laura 2020", "Helene 2024", "Milton 2024"] },
+    "HEAT_WAVE_DEMAND_SPIKE":  { "typical_nsdt": [0.53, 0.33, 0.88, 0.48, 0.85], "events": ["California 2020", "PNW 2021"] },
+    "FUEL_SUPPLY_CONSTRAINT":  { "typical_nsdt": [0.45, 0.35, 0.90, 0.30, 0.88], "events": ["New England Bomb Cyclone 2018"] }
+  }
+}

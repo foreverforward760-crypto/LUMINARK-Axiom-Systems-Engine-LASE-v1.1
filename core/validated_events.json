@@ -1,0 +1,212 @@
+[
+  {
+    "name": "Texas Winter Storm Uri",
+    "failure_signature": "WINTER_FREEZE_OFF",
+    "region": "ERCOT",
+    "balancing_authority": "ERCOT",
+    "date": "Feb 2021",
+    "cause": "Natural gas generator freeze-offs at scale",
+    "lead_time_hours": 4,
+    "min_stage": 0,
+    "nsdt_signature": [0.85, 0.20, 0.90, 0.51, 0.60],
+    "peak_outages_millions": 4.5,
+    "economic_damage_billions": 195,
+    "validation_csv": "luminark_texas_2021_validation.csv",
+    "dimensional_notes": {
+      "complexity": "Very High — simultaneous multi-unit generator trips unpredictable",
+      "stability": "Very Low — operating reserves below emergency threshold",
+      "tension": "Very High — winter peak demand with generation collapsing",
+      "adaptability": "Low — weatherization failures across all fuel types simultaneously",
+      "coherence": "Moderate — ERCOT coordinating but overwhelmed"
+    }
+  },
+  {
+    "name": "Elliott Cold Snap",
+    "failure_signature": "WINTER_FREEZE_OFF",
+    "region": "ERCOT",
+    "balancing_authority": "ERCOT",
+    "date": "Dec 2022",
+    "cause": "Demand capacity shortfall during extreme cold",
+    "lead_time_hours": 0,
+    "min_stage": 1,
+    "nsdt_signature": [0.20, 0.17, 0.30, 0.30, 0.95],
+    "peak_outages_millions": 1.2,
+    "economic_damage_billions": 12,
+    "validation_csv": "luminark_elliott_2022_validation.csv",
+    "dimensional_notes": {
+      "complexity": "Low — cause was known, demand shortfall not chaotic",
+      "stability": "Very Low — operating below safe threshold",
+      "tension": "Moderate — cold demand spike but less than Uri",
+      "adaptability": "Low — limited backup capacity available",
+      "coherence": "Very High — ERCOT fully coordinating, single-cause event"
+    }
+  },
+  {
+    "name": "Hurricane Ian",
+    "failure_signature": "HURRICANE_INFRASTRUCTURE",
+    "region": "FRCC (Florida)",
+    "balancing_authority": "FRCC",
+    "date": "Sep 2022",
+    "cause": "Physical infrastructure destruction — Category 4 landfall",
+    "lead_time_hours": 9,
+    "min_stage": 1,
+    "nsdt_signature": [0.90, 0.15, 0.80, 0.20, 0.50],
+    "peak_outages_millions": 2.67,
+    "economic_damage_billions": 109,
+    "validation_csv": "luminark_ian_2022_validation.csv",
+    "dimensional_notes": {
+      "complexity": "Very High — transmission line failures unpredictable",
+      "stability": "Very Low — reserve margin collapsed",
+      "tension": "High — hospitals and critical load demanding power",
+      "adaptability": "Very Low — physical routing alternatives destroyed",
+      "coherence": "Moderate — SCADA systems losing communication"
+    }
+  },
+  {
+    "name": "Hurricane Laura",
+    "failure_signature": "HURRICANE_INFRASTRUCTURE",
+    "region": "MISO South (Louisiana)",
+    "balancing_authority": "LGEE/Entergy LA",
+    "date": "Aug 2020",
+    "cause": "Physical infrastructure destruction — Category 4 landfall near Lake Charles",
+    "lead_time_hours": 38,
+    "min_stage": 1,
+    "nsdt_signature": [0.85, 0.18, 0.85, 0.25, 0.50],
+    "peak_outages_millions": 0.88,
+    "economic_damage_billions": 19,
+    "validation_csv": "luminark_laura_2020_validation.csv",
+    "dimensional_notes": {
+      "complexity": "Very High — physical transmission destruction unpredictable",
+      "stability": "Critical — hundreds of thousands offline, reserve gone",
+      "tension": "Critical — August heat demand on surviving grid",
+      "adaptability": "Very Low — physical infrastructure destroyed",
+      "coherence": "Severely Degraded — SCADA coverage compromised in storm zone"
+    }
+  },
+  {
+    "name": "California Heat Wave",
+    "failure_signature": "HEAT_WAVE_DEMAND_SPIKE",
+    "region": "CAISO (California)",
+    "balancing_authority": "CAISO",
+    "date": "Aug 2020",
+    "cause": "Extreme heat dome — demand spike with solar falloff and import unavailability",
+    "lead_time_hours": 23,
+    "min_stage": 2,
+    "nsdt_signature": [0.55, 0.25, 0.90, 0.40, 0.85],
+    "peak_outages_millions": 0.80,
+    "economic_damage_billions": 2.5,
+    "validation_csv": "luminark_california_2020_validation.csv",
+    "dimensional_notes": {
+      "complexity": "Moderate — predictable demand-driven stress",
+      "stability": "Low — reserve margin shrinking as heat dome builds",
+      "tension": "Very High — demand exceeding historical peaks at solar falloff",
+      "adaptability": "Low-Moderate — import unavailability from regional heat",
+      "coherence": "High — CAISO grid communicating and coordinating normally"
+    }
+  },
+  {
+    "name": "Pacific Northwest Heat Dome",
+    "failure_signature": "HEAT_WAVE_DEMAND_SPIKE",
+    "region": "WECC / NW (Pacific Northwest)",
+    "balancing_authority": "BPAT",
+    "date": "Jun 2021",
+    "cause": "Unprecedented heat dome — 116F in Portland, demand 28% above June maximum",
+    "lead_time_hours": 12,
+    "min_stage": 3,
+    "nsdt_signature": [0.55, 0.40, 0.85, 0.55, 0.85],
+    "peak_outages_millions": 0.05,
+    "economic_damage_billions": 0.5,
+    "validation_csv": "luminark_pnw_2021_validation.csv",
+    "dimensional_notes": {
+      "complexity": "Elevated — equipment stress at above-design temperatures",
+      "stability": "Degraded — reserve margins near minimum safe level",
+      "tension": "Very High — demand 28% above historical June maximum",
+      "adaptability": "Moderate — BPA hydro providing critical buffer (key resilience factor)",
+      "coherence": "High — BPA coordinating effectively with WECC"
+    }
+  },
+  {
+    "name": "New England Bomb Cyclone",
+    "failure_signature": "FUEL_SUPPLY_CONSTRAINT",
+    "region": "ISO-NE (New England)",
+    "balancing_authority": "ISONE",
+    "date": "Jan 2018",
+    "cause": "Natural gas pipeline constraint during extreme cold — fuel supply crisis",
+    "lead_time_hours": 13,
+    "min_stage": 3,
+    "nsdt_signature": [0.45, 0.35, 0.90, 0.30, 0.88],
+    "peak_outages_millions": 0.0,
+    "economic_damage_billions": 0.8,
+    "validation_csv": "luminark_newengland_2018_validation.csv",
+    "dimensional_notes": {
+      "complexity": "Moderate — crisis understood, not chaotic",
+      "stability": "Low — reserve margins at minimum safe level for 72+ hours",
+      "tension": "Maximum — record gas demand, record cold, minimum grid reserve",
+      "adaptability": "Critical — pipeline constrained, oil inventories depleting daily",
+      "coherence": "High — ISO-NE coordinating emergency protocols effectively"
+    }
+  },
+  {
+    "name": "SPP Winter Storm",
+    "failure_signature": "WINTER_FREEZE_OFF",
+    "region": "SPP (Great Plains)",
+    "balancing_authority": "SWPP",
+    "date": "Feb 2021",
+    "cause": "Natural gas generator freeze-offs — concurrent with Texas Uri",
+    "lead_time_hours": 36,
+    "min_stage": 1,
+    "nsdt_signature": [0.89, 0.16, 0.90, 0.30, 0.60],
+    "peak_outages_millions": 1.0,
+    "economic_damage_billions": 4.2,
+    "validation_csv": "luminark_spp_2021_validation.csv",
+    "dimensional_notes": {
+      "complexity": "Critical — simultaneous generator trips across multiple fuel types",
+      "stability": "Critical — rolling blackouts underway, millions disconnected",
+      "tension": "Critical — winter peak demand with generation collapsing",
+      "adaptability": "Critical — backup capacity exhausted, interstate transfers maxed",
+      "coherence": "Degraded but functional — SPP coordinating emergency protocols"
+    }
+  },
+  {
+    "name": "Hurricane Helene",
+    "failure_signature": "HURRICANE_INFRASTRUCTURE",
+    "region": "FRCC (Florida) / Southeast",
+    "balancing_authority": "FRCC",
+    "date": "Sep 2024",
+    "cause": "Category 4 landfall near Perry FL — infrastructure destruction, rapid NE track",
+    "lead_time_hours": 7,
+    "min_stage": 1,
+    "nsdt_signature": [0.85, 0.20, 0.88, 0.20, 0.45],
+    "peak_outages_millions": 0.60,
+    "economic_damage_billions": 6.4,
+    "validation_csv": "luminark_helene_2024_validation.csv",
+    "dimensional_notes": {
+      "complexity": "Very High — physical transmission destruction, rapid storm movement",
+      "stability": "Very Low — 600K customers offline, reserve gone",
+      "tension": "Very High — remaining connected load under severe pressure",
+      "adaptability": "Very Low — physical infrastructure destroyed, rerouting impossible",
+      "coherence": "Severely Degraded — SCADA compromised in storm zone"
+    }
+  },
+  {
+    "name": "Hurricane Milton",
+    "failure_signature": "HURRICANE_INFRASTRUCTURE",
+    "region": "FRCC (Florida) — Tampa Bay Direct Strike",
+    "balancing_authority": "FRCC",
+    "date": "Oct 2024",
+    "cause": "Category 3 direct Tampa Bay strike — 3.3M customers, largest FL outage since Ian",
+    "lead_time_hours": 12,
+    "min_stage": 0,
+    "nsdt_signature": [0.90, 0.15, 0.90, 0.16, 0.45],
+    "peak_outages_millions": 3.30,
+    "economic_damage_billions": 34.0,
+    "validation_csv": "luminark_milton_2024_validation.csv",
+    "dimensional_notes": {
+      "complexity": "Critical — physical destruction across FPL, FPC, TEC territories",
+      "stability": "Critical — 3.3M customers offline, FRCC in full emergency",
+      "tension": "Critical — hospitals and critical load on collapsed grid",
+      "adaptability": "Critical — Tampa Bay crossbay infrastructure destroyed",
+      "coherence": "Severely Degraded — outage count growing faster than SCADA tracking"
+    }
+  }
+]
