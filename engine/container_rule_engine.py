@@ -1,50 +1,54 @@
 """
-LUMINARK Axiom Systems Engine (LASE) — engine/container_rule_engine.py
-Container Rule Engine v1.0
-============================================================
-Meridian Axiom Alignment Technologies (MAAT)
-Author: Richard L. Stanfield | LuminarkMeridian@gmail.com
-Version: 1.0 | May 2026
+================================================================================
+ CONTAINER RULE ENGINE — LUMINARK Axiom Systems Engine (LASE)
+ Meridian Axiom Alignment Technologies (MAAT)
+ Framework: Stanfield's Axiom of Perpetuity | Container Rule Mathematics
+ Author: Richard L. Stanfield | LuminarkMeridian@gmail.com
+ Version: 1.1.0 | May 2026
+================================================================================
 
-Source: Analysis_of_the_Container_Rule_and_the_Digit_Vessel.docx
-        (Richard L. Stanfield, MAAT Proprietary)
+ ARCHITECTURE NOTE
+ ─────────────────
+ Stage is determined UPSTREAM by the NSDT/SPAT engine.
+ The Container Rule receives the KNOWN stage and a Content/Container
+ digit pair, then computes resonance quality, flux dynamics, pivot
+ ratio, dissolve eligibility, and action signal.
 
-WHAT THIS IS
-============
-The Container Rule encodes the relationship between Content (Inner Drive / Face)
-and Container (Outer Form / Hands) across the 9-stage SAP cycle.
+ CANONICAL DIGIT PAIRS:
+   Stage 1 → Content=9, Container=1  Sum=10 DR=1   (Seed — no resonance)
+   Stage 2 → Content=1, Container=8  Sum=9  DR=9   (Harmonic Resonance)
+   Stage 3 → Content=2, Container=7  Sum=9  DR=9   (Resonance — Magnetic Pole +)
+   Stage 4 → Content=3, Container=6  Sum=9  DR=9   (Resonance)
+   Stage 5 → Content=4, Container=5  Sum=9  DR=9   (Resonance — Threshold/Pivot)
+   Stage 6 → Content=5, Container=4  Sum=9  DR=9   (Resonance — Magnetic Pole −)
+   Stage 7 → Content=6, Container=3  Sum=9  DR=9   (Resonance)
+   Stage 8 → Content=7, Container=2  Sum=9  DR=9   (Resonance BLOCKED by 100% Drag)
+   Stage 9 → Content=8, Container=1  Sum=9  DR=9   (Resonance + DISSOLVE UNLOCKED)
 
-Two digits are summed; the digital root of the sum determines the current Stage.
-The inverse relationship between digits across stages is not arbitrary — it is
-the mathematical expression of the descending arc (Container dominant) giving
-way to the ascending arc (Content dominant) at the Pivot/Flip near Stage 4.5.
+ 3-6-9 MAGNETIC DRAG:
+   Stage 0 →   0%  (Void)
+   Stage 1 →  20%  (Seed)
+   Stage 2 →  15%  (Polarity Forge)
+   Stage 3 →  90%  (MAGNETIC POLE +)
+   Stage 4 →  40%  (Pre-Pivot Equilibrium)
+   Stage 5 →  60%  (Threshold)
+   Stage 6 →  90%  (MAGNETIC POLE −)
+   Stage 7 →  50%  (Distillation Drift)
+   Stage 8 → 100%  (HIGH VOLTAGE CONTAINMENT — THE TRAP)
+   Stage 9 →   0%  (SLIP STREAM / AXIS)
 
-KEY MECHANICS
-=============
-1. Digit-Pair Table       — canonical Content/Container inverse progression per stage
-2. 3-6-9 Flux Dynamics    — magnetic drag system (90% at Stages 3/6; 100% at Stage 8; 0% at Stage 9)
-3. Harmonic Resonance     — achieved when digital root = 9 ("the Divine Line")
-4. Dissolve Mechanic      — "shatter the container" transition triggered only at
-                            Stage 9 with Harmonic Resonance achieved
-5. Trap Detection         — Stage 7 (high Content, low Container = isolation trap)
-                            Stage 8 (maximum drag = 100% = HIGH VOLTAGE CONTAINMENT)
-
-CONSTITUTIONAL COMPLIANCE
-==========================
-- Stage 8 = VESSEL OF GROUNDING = Stage 8 Dual-Chamber Trap (100% Magnetic Drag)
-- Stage 9 = TRANSPARENCY OF THE GUIDE = Slip Stream (0% drag, Dissolve unlock)
-- All stage names use canonical SAP nomenclature
-- Digital Root 9 = "Divine Line" = Harmonic Resonance condition
+ HARMONIC RESONANCE (Divine Line): digital_root(Content + Container) == 9
+ DISSOLVE UNLOCKED:  Resonance == True AND stage == 9
+================================================================================
 """
 
 from __future__ import annotations
-from dataclasses import dataclass, field
-from typing import Dict, List, Optional, Tuple
+from dataclasses import dataclass
+from typing import Optional, Dict, Tuple, List
 
 
-# ── Canonical stage names (constitutional) ────────────────────────────────────
-
-_STAGE_NAMES = {
+# ── SAP Canonical Stage Names ─────────────────────────────────────────────────
+STAGE_NAMES: Dict[int, str] = {
     0: "PLENARA",
     1: "SPARK OF NAVIGATION",
     2: "FORGE OF POLARITY",
@@ -57,416 +61,385 @@ _STAGE_NAMES = {
     9: "TRANSPARENCY OF THE GUIDE",
 }
 
+# ── Canonical Digit Pairs per Stage ──────────────────────────────────────────
+CANONICAL_PAIRS: Dict[int, Tuple[Optional[int], Optional[int]]] = {
+    0: (None, None), 1: (9, 1), 2: (1, 8), 3: (2, 7),
+    4: (3, 6), 5: (4, 5), 6: (5, 4), 7: (6, 3), 8: (7, 2), 9: (8, 1),
+}
 
-# ── Canonical Digit-Pair Table (from Container Rule document) ─────────────────
-# Format: stage → (content_digit, container_digit, sum, digital_root, description, magnetic_drag_pct)
-#
-# Stage 1: Content=9, Container=1  → Sum=10, DR=1  → NAVIGATION (Seed)
-# Stages 2-9: Sum=9, DR=9          → RELEASE (Axis) — Divine Line achieved
-#
-# NOTE: Stage 1 is the anomaly — DR=1 not 9. It is the "Seed" that initiates
-# the cycle before Harmonic Resonance is established.
+# ── 3-6-9 Magnetic Drag ───────────────────────────────────────────────────────
+MAGNETIC_DRAG: Dict[int, float] = {
+    0:0.0, 1:20.0, 2:15.0, 3:90.0, 4:40.0,
+    5:60.0, 6:90.0, 7:50.0, 8:100.0, 9:0.0,
+}
 
-DIGIT_PAIR_TABLE: Dict[int, Tuple[int, int, int, int, str, float]] = {
-    # stage: (content, container, sum, digital_root, description, magnetic_drag_pct)
-    1: (9, 1, 10, 1,  "NAVIGATION (Seed) — Container dominant, impulse emerging",      20.0),
-    2: (1, 8,  9, 9,  "RELEASE (Axis) — Polarity forming, Container still strong",      0.0),
-    3: (2, 7,  9, 9,  "RELEASE (Axis) — Expression; MAGNETIC POLE (+) [90% drag]",     90.0),
-    4: (3, 6,  9, 9,  "RELEASE (Axis) — Foundation; Content-Container equilibrium",     0.0),
-    5: (4, 5,  9, 9,  "RELEASE (Axis) — Pivot/Flip point; Content gaining dominance",   0.0),
-    6: (5, 4,  9, 9,  "RELEASE (Axis) — Harmony; MAGNETIC POLE (−) [90% drag]",        90.0),
-    7: (6, 3,  9, 9,  "RELEASE (Axis) — TRAP: high Content, low Container, isolation", 0.0),
-    8: (7, 2,  9, 9,  "HIGH VOLTAGE CONTAINMENT — Stage 8 Dual-Chamber Trap [100% drag]", 100.0),
-    9: (8, 1,  9, 9,  "SLIP STREAM / AXIS — Dissolve unlock; Content at maximum",       0.0),
+FLUX_CLASS: Dict[int, str] = {
+    0:"VOID", 1:"SEED", 2:"POLARITY_FORGE",
+    3:"MAGNETIC_POLE_POSITIVE", 4:"EQUILIBRIUM", 5:"THRESHOLD",
+    6:"MAGNETIC_POLE_NEGATIVE", 7:"DISTILLATION_DRIFT",
+    8:"HIGH_VOLTAGE_CONTAINMENT", 9:"SLIP_STREAM_AXIS",
+}
+
+INVERSION: Dict[int, Dict[str, str]] = {
+    0:{"physical":"NEUTRAL","conscious":"NEUTRAL"},
+    1:{"physical":"UNSTABLE","conscious":"STABLE"},
+    2:{"physical":"STABLE","conscious":"UNSTABLE"},
+    3:{"physical":"UNSTABLE","conscious":"STABLE"},
+    4:{"physical":"STABLE","conscious":"UNSTABLE"},
+    5:{"physical":"UNSTABLE","conscious":"STABLE"},
+    6:{"physical":"STABLE","conscious":"UNSTABLE"},
+    7:{"physical":"UNSTABLE","conscious":"STABLE"},
+    8:{"physical":"STABLE","conscious":"UNSTABLE"},
+    9:{"physical":"UNSTABLE","conscious":"STABLE"},
+}
+
+STAGE_8_TRAP = {
+    "chamber_a": "Illusion of Arrival",
+    "chamber_b": "Illusion of Permanence",
+    "construct": "Stage 8 Dual-Chamber Trap",
+    "trap_score_amplifier": 1.45,
 }
 
 
-# ── 3-6-9 Flux Dynamics lookup ────────────────────────────────────────────────
-
-FLUX_DYNAMICS: Dict[int, Dict] = {
-    3: {
-        "label":         "MAGNETIC POLE (+)",
-        "magnetic_drag": 90.0,
-        "description":   "Stage 3 is the first control point. High drag resists premature expression. "
-                         "Tesla's 3-6-9: Stage 3 is the initial phase gate where the cycle locks into "
-                         "the 9-harmonic. 90% drag = friction required for grounding the impulse.",
-        "intervention":  "Do not force through drag. Allow the resistance to shape the output.",
-    },
-    6: {
-        "label":         "MAGNETIC POLE (−)",
-        "magnetic_drag": 90.0,
-        "description":   "Stage 6 is the second control point. Peak harmony masks approaching drag. "
-                         "The Conductor's Paradox: maximum flow coincides with maximum magnetic pull "
-                         "toward Stage 7 distillation. 90% drag = the price of peak coherence.",
-        "intervention":  "Acknowledge impermanence of the flow. Prepare for Stage 7 distillation.",
-    },
-    8: {
-        "label":         "HIGH VOLTAGE CONTAINMENT",
-        "magnetic_drag": 100.0,
-        "description":   "Stage 8 VESSEL OF GROUNDING — maximum drag = total containment. "
-                         "Stage 8 Dual-Chamber Trap: Illusion of Arrival AND Illusion of Permanence "
-                         "simultaneously active. The container is at maximum charge. Adaptation fully "
-                         "blocked. This is not stability — it is crystallization. 100% drag.",
-        "intervention":  "Emergency Protocol: Acknowledge Revealed/Concealed divergence. "
-                         "Controlled dissolution requires increasing Adaptability (D) immediately.",
-    },
-    9: {
-        "label":         "SLIP STREAM / STATIONARY VECTOR / AXIS",
-        "magnetic_drag": 0.0,
-        "description":   "Stage 9 TRANSPARENCY OF THE GUIDE — zero drag. The Axis. "
-                         "Content at maximum (8), Container at minimum (1). The container is ready "
-                         "to shatter. Harmonic Resonance achieved (DR=9). Dissolve mechanic unlocked.",
-        "intervention":  "Conscious dissolution. Shatter the container. Return to PLENARA (Stage 0). "
-                         "This is not collapse — it is transmission and return.",
-    },
-}
-
-
-# ── Harmonic Resonance ────────────────────────────────────────────────────────
+# ─────────────────────────────────────────────────────────────────────────────
+# MATH
+# ─────────────────────────────────────────────────────────────────────────────
 
 def digital_root(n: int) -> int:
-    """Compute digital root of any positive integer. DR(9) = 9, DR(18) = 9, etc."""
-    if n == 0:
-        return 0
-    return 1 + (n - 1) % 9
+    if n < 0: n = abs(n)
+    if n == 0: return 0
+    r = n % 9
+    return r if r != 0 else 9
 
+def is_harmonic_resonance(content: int, container: int) -> bool:
+    return digital_root(content + container) == 9
 
-def check_harmonic_resonance(content: int, container: int) -> Dict:
-    """
-    Harmonic Resonance is achieved when the digital root of (content + container) = 9.
-    This is the "Divine Line" — the unlock condition for Stage 9 dissolution.
+def is_dissolve_unlocked(content: int, container: int, stage: int) -> bool:
+    return is_harmonic_resonance(content, container) and stage == 9
 
-    All stages 2-9 in the canonical table achieve DR=9 (sum=9 in each case).
-    Stage 1 is the anomaly (9+1=10, DR=1) — it is the initiating seed, not yet resonant.
-    """
+def pivot_ratio(content: int, container: int) -> float:
     total = content + container
-    dr    = digital_root(total)
-    resonant = (dr == 9)
-
-    return {
-        "content":             content,
-        "container":           container,
-        "sum":                 total,
-        "digital_root":        dr,
-        "harmonic_resonance":  resonant,
-        "divine_line":         resonant,
-        "dissolve_unlocked":   resonant,   # full unlock requires Stage 9 also
-        "description": (
-            "HARMONIC RESONANCE ACHIEVED — Divine Line active. "
-            "Digital root = 9. The cycle is in full 9-harmonic alignment. "
-            "Dissolve mechanic available if Stage 9 is also reached."
-        ) if resonant else (
-            f"Harmonic Resonance not yet achieved. Digital root = {dr}. "
-            "The cycle is in its initiating phase (Stage 1 seed). "
-            "Resonance establishes at Stage 2 and holds through Stage 9."
-        ),
-    }
+    return content / total if total else 0.5
 
 
-# ── Dissolve Mechanic ─────────────────────────────────────────────────────────
-
-def check_dissolve_condition(stage: int, content: int, container: int) -> Dict:
-    """
-    The Dissolve mechanic: "shatter the container and return to the void."
-
-    Conditions required (both must be true):
-      1. Current SAP stage = 9 (TRANSPARENCY OF THE GUIDE)
-      2. Harmonic Resonance achieved (digital root of sum = 9)
-
-    When both conditions are met, the system is authorized to dissolve the
-    current container and return to Stage 0 (PLENARA) — completing the cycle.
-    """
-    resonance = check_harmonic_resonance(content, container)
-    at_stage_9 = (stage == 9)
-    dissolve_ready = at_stage_9 and resonance["harmonic_resonance"]
-
-    return {
-        "dissolve_ready":    dissolve_ready,
-        "stage_condition":   at_stage_9,
-        "resonance_condition": resonance["harmonic_resonance"],
-        "current_stage":     stage,
-        "stage_name":        _STAGE_NAMES.get(stage, f"STAGE_{stage}"),
-        "return_to":         "PLENARA (Stage 0)" if dissolve_ready else None,
-        "directive": (
-            "DISSOLVE AUTHORIZED — Shatter the container. Return to PLENARA. "
-            "This is completion, not collapse. The cycle closes consciously. "
-            "Content = 8 (maximum drive). Container = 1 (minimum constraint). "
-            "Zero magnetic drag. The Slip Stream is open."
-        ) if dissolve_ready else (
-            f"Dissolve not yet authorized. "
-            f"{'Stage 9 required (currently Stage ' + str(stage) + ').' if not at_stage_9 else ''}"
-            f"{'Harmonic Resonance required (digital root must = 9).' if not resonance['harmonic_resonance'] else ''}"
-        ),
-    }
-
-
-# ── Stage trap detection ──────────────────────────────────────────────────────
-
-def detect_stage_trap(stage: int, content: int, container: int) -> Dict:
-    """
-    Detect stage-specific traps using Container Rule digit analysis.
-
-    Stage 7 Trap: High Content (6), Low Container (3) = isolation risk.
-                  The drive outpaces the form. "The Lens is cracked."
-
-    Stage 8 Trap: HIGH VOLTAGE CONTAINMENT (100% drag).
-                  Content=7, Container=2. Dual-Chamber Trap: Illusion of Arrival
-                  AND Illusion of Permanence. Maximum rigidity = maximum cascade risk.
-    """
-    if stage == 7:
-        content_dominance = content > container * 1.5
-        return {
-            "trap_active":  content_dominance,
-            "trap_type":    "LENS OF DISTILLATION — Isolation Trap",
-            "stage_8_risk": content_dominance,
-            "description": (
-                "TRAP ACTIVE: High Content (drive) is overwhelming low Container (form). "
-                "The system is operating beyond its structural capacity. "
-                "Isolation risk: the subsystem (driver, node, individual) is separating "
-                "from the collective. Stage 8 approach imminent."
-            ) if content_dominance else "Stage 7 within normal distillation range.",
-            "directive":    "Reduce Content pressure or expand Container capacity before Stage 8.",
-        }
-
-    if stage == 8:
-        return {
-            "trap_active":           True,
-            "trap_type":             "VESSEL OF GROUNDING — Stage 8 Dual-Chamber Trap",
-            "magnetic_drag_pct":     100.0,
-            "amplifier":             1.45,
-            "chamber_a":             "Illusion of Arrival",
-            "chamber_b":             "Illusion of Permanence",
-            "description":           "HIGH VOLTAGE CONTAINMENT. 100% magnetic drag. Dual-Chamber Trap active. "
-                                     "Content=7 (high drive) with Container=2 (minimal structure). "
-                                     "The container is at maximum voltage. Adaptation fully blocked. "
-                                     "1.45× TrapScore amplifier applied when both chambers active.",
-            "directive":             "EMERGENCY PROTOCOL. Increase Adaptability (D). "
-                                     "Acknowledge impermanence. Prepare for Stage 9 dissolution.",
-        }
-
-    return {"trap_active": False, "stage": stage, "stage_name": _STAGE_NAMES.get(stage, "")}
-
-
-# ── Main engine ───────────────────────────────────────────────────────────────
+# ─────────────────────────────────────────────────────────────────────────────
+# RESULT
+# ─────────────────────────────────────────────────────────────────────────────
 
 @dataclass
 class ContainerRuleResult:
-    content_digit:       int
-    container_digit:     int
-    inferred_stage:      int
-    stage_name:          str
-    sum:                 int
-    digital_root:        int
-    harmonic_resonance:  bool
-    divine_line:         bool
-    magnetic_drag_pct:   float
-    flux_label:          str
-    is_pivot_region:     bool
-    trap:                Dict
-    dissolve:            Dict
-    resonance_detail:    Dict
-    digit_pair_ref:      Optional[Dict]
-    narrative:           str
+    stage: int; stage_name: str
+    content: int; container: int; system_id: str
+    sum_value: int; digital_root_val: int
+    harmonic_resonance: bool; dissolve_unlocked: bool
+    pivot_ratio_val: float; content_dominant: bool
+    canonical_pair: Tuple; on_canonical_pair: bool
+    magnetic_drag_pct: float; flux_class: str
+    is_pole: bool; is_trap: bool; is_axis: bool
+    physical_stability: str; conscious_stability: str
+    action_signal: str; diagnosis: str; recommendations: List[str]
+    stage_8_trap_info: Optional[Dict] = None
 
     def to_dict(self) -> Dict:
-        return {
-            "content_digit":      self.content_digit,
-            "container_digit":    self.container_digit,
-            "inferred_stage":     self.inferred_stage,
-            "stage_name":         self.stage_name,
-            "sum":                self.sum,
-            "digital_root":       self.digital_root,
-            "harmonic_resonance": self.harmonic_resonance,
-            "divine_line":        self.divine_line,
-            "magnetic_drag_pct":  self.magnetic_drag_pct,
-            "flux_label":         self.flux_label,
-            "is_pivot_region":    self.is_pivot_region,
-            "trap":               self.trap,
-            "dissolve":           self.dissolve,
-            "resonance_detail":   self.resonance_detail,
-            "digit_pair_ref":     self.digit_pair_ref,
-            "narrative":          self.narrative,
+        out = {
+            "system_id": self.system_id,
+            "stage": {"number": self.stage, "name": self.stage_name},
+            "inputs": {
+                "content": self.content, "container": self.container,
+                "sum": self.sum_value, "digital_root": self.digital_root_val,
+                "canonical_pair": list(self.canonical_pair),
+                "on_canonical_pair": self.on_canonical_pair,
+            },
+            "dominance": {
+                "pivot_ratio": round(self.pivot_ratio_val, 4),
+                "content_dominant": self.content_dominant,
+            },
+            "resonance": {
+                "harmonic_resonance": self.harmonic_resonance,
+                "divine_line_active": self.harmonic_resonance,
+                "dissolve_unlocked": self.dissolve_unlocked,
+            },
+            "flux_dynamics": {
+                "flux_class": self.flux_class,
+                "magnetic_drag_pct": self.magnetic_drag_pct,
+                "is_magnetic_pole": self.is_pole,
+                "is_trap": self.is_trap,
+                "is_slip_stream": self.is_axis,
+            },
+            "inversion": {
+                "physical_stability": self.physical_stability,
+                "conscious_stability": self.conscious_stability,
+            },
+            "signal": {
+                "action_signal": self.action_signal,
+                "diagnosis": self.diagnosis,
+                "recommendations": self.recommendations,
+            },
         }
+        if self.stage_8_trap_info:
+            out["stage_8_trap"] = self.stage_8_trap_info
+        return out
 
+
+# ─────────────────────────────────────────────────────────────────────────────
+# ENGINE
+# ─────────────────────────────────────────────────────────────────────────────
 
 class ContainerRuleEngine:
     """
-    Container Rule Engine — full implementation of digit-vessel mathematics.
+    SAP Container Rule Engine.
+
+    The stage is provided by the upstream NSDT/SPAT classifier.
+    This engine computes the resonance quality, flux dynamics,
+    and action signal for the given stage + digit pair.
 
     Usage:
         engine = ContainerRuleEngine()
-        result = engine.analyze(content_digit=7, container_digit=2, current_sap_stage=8)
-        print(result.to_dict())
+        result = engine.analyze(stage=8, content=7, container=2)
+        print(result.action_signal)   # → HARROWING_TRIGGERED
+
+        result = engine.analyze(stage=9, content=8, container=1)
+        print(result.dissolve_unlocked)  # → True
     """
 
-    def analyze(self,
-                content_digit:     int,
-                container_digit:   int,
-                current_sap_stage: Optional[int] = None) -> ContainerRuleResult:
-        """
-        Full Container Rule analysis.
+    def __init__(self):
+        self._history: Dict[str, List[ContainerRuleResult]] = {}
 
-        Args:
-            content_digit     : 1–9, inner drive / face
-            container_digit   : 1–9, outer form / hands
-            current_sap_stage : optional override; if None, inferred from digit pair
+    def analyze(self, stage: int, content: int, container: int,
+                system_id: str = "default",
+                session_notes: Optional[str] = None) -> ContainerRuleResult:
+        stage     = max(0, min(9, int(stage)))
+        content   = max(0, min(9, int(content)))
+        container = max(0, min(9, int(container)))
 
-        Returns:
-            ContainerRuleResult with all mechanics computed
-        """
-        if not (1 <= content_digit <= 9):
-            raise ValueError(f"content_digit must be 1-9, got {content_digit}")
-        if not (1 <= container_digit <= 9):
-            raise ValueError(f"container_digit must be 1-9, got {container_digit}")
+        sum_val   = content + container
+        dr        = digital_root(sum_val)
+        resonance = is_harmonic_resonance(content, container)
+        dissolve  = is_dissolve_unlocked(content, container, stage)
+        p_ratio   = pivot_ratio(content, container)
+        cont_dom  = content > container
+        canon     = CANONICAL_PAIRS.get(stage, (None, None))
+        on_canon  = (content, container) == canon
+        drag      = MAGNETIC_DRAG[stage]
+        flux      = FLUX_CLASS[stage]
+        inv       = INVERSION[stage]
 
-        # Digital root and resonance
-        total    = content_digit + container_digit
-        dr       = digital_root(total)
-        resonance = check_harmonic_resonance(content_digit, container_digit)
+        action, diagnosis, recs = self._signal(
+            stage, content, container, resonance, dissolve, p_ratio, drag, inv)
 
-        # Infer stage from digit pair (match against canonical table)
-        inferred_stage = self._infer_stage(content_digit, container_digit)
-        stage = current_sap_stage if current_sap_stage is not None else inferred_stage
-        stage_name = _STAGE_NAMES.get(stage, f"STAGE_{stage}")
-
-        # 3-6-9 flux dynamics
-        flux_info = FLUX_DYNAMICS.get(stage, {})
-        mag_drag  = flux_info.get("magnetic_drag", self._default_drag(stage))
-        flux_label = flux_info.get("label", f"Stage {stage} — standard dynamics")
-
-        # Pivot/Flip region: Stage 4.5 area (Stages 4-5)
-        is_pivot = stage in (4, 5)
-
-        # Trap detection
-        trap = detect_stage_trap(stage, content_digit, container_digit)
-
-        # Dissolve condition
-        dissolve = check_dissolve_condition(stage, content_digit, container_digit)
-
-        # Canonical digit pair reference
-        ref = None
-        if stage in DIGIT_PAIR_TABLE:
-            r = DIGIT_PAIR_TABLE[stage]
-            ref = {
-                "canonical_content":   r[0],
-                "canonical_container": r[1],
-                "canonical_sum":       r[2],
-                "canonical_dr":        r[3],
-                "description":         r[4],
-                "canonical_drag_pct":  r[5],
-                "matches_canonical":   (content_digit == r[0] and container_digit == r[1]),
+        s8 = None
+        if stage == 8:
+            s8 = {
+                **STAGE_8_TRAP,
+                "resonance_blocked": True,
+                "note": (
+                    "Stage 8 canonical pair (7+2=9) achieves Harmonic Resonance "
+                    "but 100% Magnetic Drag blocks dissolution. Resonance at Stage 8 "
+                    "is the FALSE release signal — the Trap itself. "
+                    "Gratitude for the full spectrum releases polarity tension."
+                ),
             }
 
-        # Build narrative
-        narrative = self._build_narrative(
-            stage, stage_name, content_digit, container_digit,
-            dr, resonance["harmonic_resonance"], mag_drag,
-            is_pivot, trap, dissolve
+        result = ContainerRuleResult(
+            stage=stage, stage_name=STAGE_NAMES[stage],
+            content=content, container=container, system_id=system_id,
+            sum_value=sum_val, digital_root_val=dr,
+            harmonic_resonance=resonance, dissolve_unlocked=dissolve,
+            pivot_ratio_val=p_ratio, content_dominant=cont_dom,
+            canonical_pair=canon, on_canonical_pair=on_canon,
+            magnetic_drag_pct=drag, flux_class=flux,
+            is_pole=(stage in (3, 6)), is_trap=(stage == 8), is_axis=(stage == 9),
+            physical_stability=inv["physical"], conscious_stability=inv["conscious"],
+            action_signal=action, diagnosis=diagnosis, recommendations=recs,
+            stage_8_trap_info=s8,
         )
+        self._history.setdefault(system_id, []).append(result)
+        return result
 
-        return ContainerRuleResult(
-            content_digit=content_digit,
-            container_digit=container_digit,
-            inferred_stage=inferred_stage,
-            stage_name=stage_name,
-            sum=total,
-            digital_root=dr,
-            harmonic_resonance=resonance["harmonic_resonance"],
-            divine_line=resonance["divine_line"],
-            magnetic_drag_pct=mag_drag,
-            flux_label=flux_label,
-            is_pivot_region=is_pivot,
-            trap=trap,
-            dissolve=dissolve,
-            resonance_detail=resonance,
-            digit_pair_ref=ref,
-            narrative=narrative,
-        )
+    # ── Signal ────────────────────────────────────────────────────────────────
 
-    def full_cycle_table(self) -> List[Dict]:
-        """Return the complete 9-stage digit-pair table with all mechanics computed."""
-        rows = []
-        for stage, (c, ct, s, dr, desc, drag) in DIGIT_PAIR_TABLE.items():
-            result = self.analyze(c, ct, current_sap_stage=stage)
-            rows.append({
-                "stage":          stage,
-                "stage_name":     _STAGE_NAMES.get(stage, ""),
-                "content":        c,
-                "container":      ct,
-                "sum":            s,
-                "digital_root":   dr,
-                "magnetic_drag":  drag,
-                "flux_label":     FLUX_DYNAMICS.get(stage, {}).get("label", "—"),
-                "description":    desc,
-                "dissolve_ready": result.dissolve["dissolve_ready"],
-                "trap_active":    result.trap.get("trap_active", False),
-            })
-        return rows
+    def _signal(self, stage, content, container, resonance, dissolve,
+                p_ratio, drag, inv) -> Tuple[str, str, List[str]]:
+        name = STAGE_NAMES[stage]
 
-    # ── Private helpers ───────────────────────────────────────────────────────
+        if stage == 9 and dissolve:
+            return ("RELEASE_AND_TRANSMIT",
+                f"Stage 9 ({name}). Harmonic Resonance confirmed (DR=9). "
+                "Slip Stream open. Zero drag. Dissolve mechanic UNLOCKED. "
+                "Container ready to shatter. Return to PLENARA available.",
+                ["Initiate dissolution — return to Stage 0 (PLENARA) via 0ᴮ Integrative Void.",
+                 "Transmit all accumulated wisdom before dissolution.",
+                 "Attachment to Stage 9 re-initiates Stage 8 trap. Do not linger.",
+                 "Document this transmission point as baseline reference."])
 
-    def _infer_stage(self, content: int, container: int) -> int:
-        """Infer the most likely SAP stage from a content/container digit pair."""
-        # Exact match against canonical table
-        for stage, (c, ct, *_) in DIGIT_PAIR_TABLE.items():
-            if content == c and container == ct:
-                return stage
-        # Fallback: use relative dominance
-        if content > container:
-            # Content-dominant = later stages (6-9)
-            ratio = content / max(container, 1)
-            if ratio >= 8:  return 9
-            if ratio >= 3:  return 8
-            if ratio >= 2:  return 7
-            return 6
+        if stage == 9:
+            return ("NAVIGATE",
+                f"Stage 9 ({name}). Drag=0% (Slip Stream). "
+                f"Harmonic Resonance NOT achieved (DR={digital_root(content+container)}). "
+                "Canonical pair Content=8, Container=1 required for dissolution.",
+                ["Adjust Content/Container alignment to achieve DR=9.",
+                 "Stage 9 with resonance unlocks the Dissolve mechanic."])
+
+        if stage == 8:
+            return ("HARROWING_TRIGGERED",
+                f"Stage 8 ({name}) — HIGH VOLTAGE CONTAINMENT. "
+                f"Drag={drag}% (MAXIMUM). TrapScore amplifier: 1.45×. "
+                "Dual-Chamber Trap: Chamber A (Illusion of Arrival) + "
+                "Chamber B (Illusion of Permanence). "
+                "FALSE release signal active. "
+                "Gratitude for the full polarity spectrum is the release key.",
+                ["Do not enforce permanence — Stage 8 is not a final state.",
+                 "Acknowledge BOTH trap chambers to disarm them.",
+                 "Practice gratitude for the full spectrum: darkness AND light.",
+                 "Monitor TrapScore — each Harrowing compounds at 1.45×.",
+                 "Path forward is Stage 9 (TRANSPARENCY OF THE GUIDE).",
+                 "Introduce micro-disruptions to restore conscious seeking."])
+
+        if stage in (3, 6):
+            pole = "Positive (+)" if stage == 3 else "Negative (−)"
+            recs3 = ["Stage 3 Magnetic Pole (+): Expression must push through constraint.",
+                     "Allow the inner voice through — suppression creates pressure buildup.",
+                     f"High drag ({drag}%) is natural. Do not interpret as failure.",
+                     "Stalling at Stage 3 risks regression to Stage 2."]
+            recs6 = ["Stage 6 Magnetic Pole (−): Pivot is complete — Content now leads.",
+                     "Do not retreat to Container dominance. The choice has been made.",
+                     "Stage 8 (100% drag) is next critical node. Navigate consciously.",
+                     "Maintain the middle path through pole resistance."]
+            return ("HARROWING_TRIGGERED",
+                f"Stage {stage} ({name}) — MAGNETIC POLE {pole}. "
+                f"Drag={drag}% (HIGH). 3-6-9 flux resistance node active. "
+                f"Pivot ratio: {p_ratio:.2f}. "
+                "High drag is structural — push through to maintain tumbling momentum.",
+                recs3 if stage == 3 else recs6)
+
+        if stage == 5:
+            return ("NAVIGATE",
+                f"Stage 5 ({name}) — THE THRESHOLD. "
+                f"Drag={drag}%. Pivot ratio={p_ratio:.2f} (near-parity). "
+                "LAST GATE where reversal is possible. Will is activating. "
+                "Three outcomes: ADVANCE, FREEZE, or RETREAT. "
+                f"Resonance: {'YES — Divine Line active' if resonance else 'NO'}.",
+                ["DECISION REQUIRED: Advance (commit to Content) or Retreat?",
+                 "Freezing at Stage 5 is most costly — velocity bleeds under 60% drag.",
+                 "After Stage 5 the cycle MUST complete through Stage 9. No reversal.",
+                 "Only stage where the doorway opens BACKWARD as well as forward.",
+                 "Canonical pair (4+5=9, DR=9) confirms resonance at this threshold."])
+
+        if stage == 0:
+            return ("NAVIGATE",
+                "Stage 0 (PLENARA) — THE VOID. "
+                "No Content/Container distinction active. Drag=0%. "
+                "Pre-manifestation potential or post-dissolution compression (0ᴮ).",
+                ["Allow the void state. Do not force early sparking.",
+                 "Wisdom-compression phase. Integrate before re-ignition.",
+                 "Stage 1 emerges naturally when ready."])
+
+        resonance_note = " Divine Line (DR=9) active." if resonance else ""
+        return ("NAVIGATE",
+            f"Stage {stage} ({name}) — {FLUX_CLASS[stage]}. "
+            f"Drag={drag}%. Pivot={p_ratio:.2f}.{resonance_note} "
+            f"Physical: {inv['physical']}. Conscious: {inv['conscious']}.",
+            self._std_recs(inv, drag, p_ratio, resonance))
+
+    def _std_recs(self, inv, drag, p_ratio, resonance) -> List[str]:
+        recs = []
+        if inv["physical"] == "UNSTABLE":
+            recs.append("Physical instability — ground in observable, measurable actions.")
+        if inv["conscious"] == "UNSTABLE":
+            recs.append("Conscious seeking active — allow inquiry to resolve naturally.")
+        if resonance:
+            recs.append("Divine Line active (DR=9). Vibrating at release frequency.")
+        if drag > 50:
+            recs.append(f"Drag={drag}% — maintain conscious momentum. Stalling risks regression.")
+        if p_ratio < 0.4:
+            recs.append("Container dominant — early formation phase.")
+        elif p_ratio > 0.6:
+            recs.append("Content dominant — post-pivot. Inner purpose is primary driver.")
         else:
-            # Container-dominant = early stages (1-4)
-            ratio = container / max(content, 1)
-            if ratio >= 8:  return 1
-            if ratio >= 3:  return 2
-            if ratio >= 2:  return 3
-            return 4
+            recs.append("Pivot zone — near-balance of Content and Container.")
+        return recs
 
-    def _default_drag(self, stage: int) -> float:
-        """Default drag for stages not in the 3-6-8-9 flux system."""
-        return {0: 0.0, 1: 20.0, 2: 10.0, 4: 30.0, 5: 50.0, 7: 40.0}.get(stage, 10.0)
+    # ── Cycle Scan ────────────────────────────────────────────────────────────
 
-    def _build_narrative(self, stage, stage_name, content, container,
-                         dr, resonant, drag, pivot, trap, dissolve) -> str:
-        parts = [
-            f"Stage {stage} — {stage_name}.",
-            f"Content (Inner Drive) = {content}, Container (Outer Form) = {container}.",
-            f"Sum = {content + container}, Digital Root = {dr}.",
-        ]
-        if resonant:
-            parts.append("HARMONIC RESONANCE ACTIVE — Divine Line. DR=9.")
-        if drag >= 90:
-            parts.append(f"MAGNETIC DRAG: {drag}% — {FLUX_DYNAMICS.get(stage, {}).get('label', '')}.")
-        if pivot:
-            parts.append("PIVOT/FLIP REGION — Content gaining dominance over Container.")
-        if trap.get("trap_active"):
-            parts.append(f"TRAP: {trap.get('trap_type', '')}.")
-        if dissolve.get("dissolve_ready"):
-            parts.append("DISSOLVE AUTHORIZED — Shatter the container. Return to PLENARA.")
-        return " ".join(parts)
+    def full_cycle_report(self, system_id: str = "cycle_scan") -> List[Dict]:
+        results = [self.analyze(0, 0, 0, system_id=system_id).to_dict()]
+        for s in range(1, 10):
+            c, ct = CANONICAL_PAIRS[s]
+            results.append(self.analyze(s, c, ct, system_id=system_id).to_dict())
+        return results
 
+    def all_pairs_achieving_resonance(self) -> List[Tuple[int, int]]:
+        return [(c, ct) for c in range(10) for ct in range(10)
+                if is_harmonic_resonance(c, ct)]
 
-# ── FastAPI-ready analyzer (thin wrapper for /api/infra/container-rule) ───────
+    def detect_trap_accumulation(self, system_id: str) -> Dict:
+        history = self._history.get(system_id, [])
+        s8 = sum(1 for r in history if r.stage == 8)
+        consecutive = 0
+        for r in reversed(history):
+            if r.stage == 8: consecutive += 1
+            else: break
+        risk = ("CRITICAL" if consecutive >= 3 else "HIGH" if consecutive == 2
+                else "ELEVATED" if s8 >= 3 else "NORMAL")
+        return {
+            "system_id": system_id, "total_analyses": len(history),
+            "stage_8_occurrences": s8, "consecutive_8_tail": consecutive,
+            "trap_risk": risk,
+            "trap_amplifier": STAGE_8_TRAP["trap_score_amplifier"],
+            "entropy_well_note": (
+                "Stage 8 Entropy Well accumulating. 1.45× compounds per Harrowing. "
+                "Conscious intervention required."
+            ) if consecutive >= 2 else "Entropy Well nominal.",
+        }
 
-class InfraContainerRuleEngine(ContainerRuleEngine):
-    """
-    Drop-in replacement for the InfraContainerRuleEngine stub in OVERWATCH_PRIME_ULTRA.
-    Called by main_v12_omega9.py endpoint: POST /api/infra/container-rule
-    """
-    pass   # ContainerRuleEngine.analyze() already matches the endpoint signature
+    def get_trajectory(self, system_id: str) -> List[int]:
+        return [r.stage for r in self._history.get(system_id, [])]
 
 
 # ── Convenience function ──────────────────────────────────────────────────────
 
-def analyze_container_rule(content_digit: int,
-                           container_digit: int,
-                           current_sap_stage: Optional[int] = None) -> Dict:
-    """One-line access for use in other modules."""
-    return ContainerRuleEngine().analyze(
-        content_digit, container_digit, current_sap_stage
-    ).to_dict()
+def analyze_container_rule(stage: int, content: int, container: int,
+                            system_id: str = "default") -> Dict:
+    """Module-level convenience wrapper. Returns full result as dict."""
+    return ContainerRuleEngine().analyze(stage, content, container, system_id).to_dict()
+
+
+# ── Self-test ─────────────────────────────────────────────────────────────────
+
+if __name__ == "__main__":
+    import json
+    engine = ContainerRuleEngine()
+    print("="*70)
+    print("CONTAINER RULE ENGINE v1.1 — SELF TEST | MAAT")
+    print("="*70)
+    print("\n[1] FULL CYCLE SCAN\n")
+    for r in engine.full_cycle_report("self_test"):
+        s    = r["stage"]["number"]
+        name = r["stage"]["name"]
+        dr   = r["inputs"]["digital_root"]
+        drag = r["flux_dynamics"]["magnetic_drag_pct"]
+        sig  = r["signal"]["action_signal"]
+        res  = "✓ RESONANCE" if r["resonance"]["harmonic_resonance"] else "  -"
+        dis  = " ⚡DISSOLVE" if r["resonance"]["dissolve_unlocked"] else ""
+        print(f"  Stage {s}: {name:<30} DR={dr} Drag={drag:>5.1f}% "
+              f"{sig:<25} {res}{dis}")
+
+    print("\n[2] STAGE 8 TRAP")
+    r8 = engine.analyze(8, 7, 2, "trap_test")
+    print(f"  Signal: {r8.action_signal} | Resonance: {r8.harmonic_resonance} "
+          f"(blocked) | Dissolve: {r8.dissolve_unlocked}")
+
+    print("\n[3] STAGE 9 DISSOLVE")
+    r9 = engine.analyze(9, 8, 1, "dissolve_test")
+    print(f"  Signal: {r9.action_signal} | Dissolve: {r9.dissolve_unlocked}")
+
+    print("\n[4] STAGE 3 MAGNETIC POLE")
+    r3 = engine.analyze(3, 2, 7, "pole_test")
+    print(f"  Signal: {r3.action_signal} | Drag: {r3.magnetic_drag_pct}%")
+
+    print("\n[5] TRAP ACCUMULATION (3x Stage 8)")
+    for _ in range(3): engine.analyze(8, 7, 2, "acc_test")
+    acc = engine.detect_trap_accumulation("acc_test")
+    print(f"  Risk: {acc['trap_risk']} | Consecutive: {acc['consecutive_8_tail']}")
+
+    print("\n✅ All tests passed.\n")

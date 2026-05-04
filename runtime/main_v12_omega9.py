@@ -258,8 +258,27 @@ async def validate_historical():
 
 @app.post("/api/infra/container-rule", tags=["Infrastructure"], dependencies=[Depends(verify_api_key)])
 async def container_rule(cr: ContainerRuleInput):
-    engine = ultra_engine.InfraContainerRuleEngine()
-    return engine.analyze(cr.content_digit, cr.container_digit, cr.current_sap_stage)
+    """
+    Container Rule / Digit Vessel analysis.
+    Wired to canonical ContainerRuleEngine (engine/container_rule_engine.py v1.1).
+    Computes: digit-vessel math, 3-6-9 flux dynamics, Harmonic Resonance,
+    Dissolve mechanic, Stage 8 trap detection, action signal.
+    """
+    try:
+        import sys, os
+        _engine_dir = os.path.join(os.path.dirname(os.path.dirname(__file__)), "engine")
+        if _engine_dir not in sys.path:
+            sys.path.insert(0, _engine_dir)
+        from container_rule_engine import ContainerRuleEngine
+        _cr_engine = ContainerRuleEngine()
+        result = _cr_engine.analyze(
+            content_digit=cr.content_digit,
+            container_digit=cr.container_digit,
+            current_sap_stage=cr.current_sap_stage,
+        )
+        return result.to_dict()
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
 
 
 # ══════════════════════════════════════════════════════════════════════════════
