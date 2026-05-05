@@ -115,7 +115,7 @@ LUMINARK v12.0
 │   ├── Container Rule Engine
 │   ├── NMAP Economic Analysis Protocol
 │   ├── CITI Cross-Indicator Tumbling Index
-│   ├── SAR Toroidal Geometry (81-stage dual arc)
+│   ├── SAP Toroidal Geometry (81-stage dual arc)
 │   ├── Stage 5 Bifurcation Mathematics
 │   ├── 369 Resonance Detection
 │   ├── Octo-Mycelial v4.0 (RISS stage weights, protection cycle)
@@ -126,15 +126,15 @@ LUMINARK v12.0
 │   ├── Corporate Analyzer (Revenue, margin, growth staging)
 │   ├── Oracle Engine (GPT-4 integration)
 │   ├── MERIDIAN Financial Adapter
-│   ├── NSAT (Noctilucan Stage Assessment Tool)
-│   ├── NEI (Noctilucan Economic Index)
+│   ├── SSAT (SAP Stage Assessment Tool)
+│   ├── SEI (SAP Economic Index)
 │   ├── Stage 8 Trap Detector (Enhanced)
 │   ├── ThresholdOutcomePredictor (Stage 5 bifurcation)
 │   ├── Enhanced Sentinel Clarity (AI content safety)
 │   ├── 7-Layer Defense System (consciousness domain)
 │   ├── Omega Session State (trajectory memory)
 │   ├── IFS Terminology v2026 (Shame Parts, Morality Parts)
-│   ├── SAR Toroidal Geometry (consciousness domain)
+│   ├── SAP Toroidal Geometry (consciousness domain)
 │   ├── Stage Behavioral Indicators (all 10 stages)
 │   ├── 42 Ma'at Ethical Nodes
 │   ├── Yunus Protocol 2.0 (Full Isolation System)

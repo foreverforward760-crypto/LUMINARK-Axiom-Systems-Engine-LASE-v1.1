@@ -2174,8 +2174,8 @@ class LuminarkConsciousnessEngineOmega:
 
 
 # ===============================================================================
-# NAM ARCHETYPES — Named Stage Clusters (Aurogenesis / Stellifex / Primophos)
-# Stanfield, 2025 — Noctilucan Antikythera Mechanism
+# SAP ARCHETYPES — Named Stage Clusters (Aurogenesis / Stellifex / Primophos)
+# Stanfield, 2025 — Stanfield's Axiom of Perpetuity
 # ===============================================================================
 
 NAM_ARCHETYPES = {
@@ -2211,7 +2211,7 @@ NAM_ARCHETYPES = {
 
 
 def get_archetype(stage: int) -> dict:
-    """Return the NAM archetype cluster for a given SAP stage."""
+    """Return the SAP archetype cluster for a given SAP stage."""
     for key, arch in NAM_ARCHETYPES.items():
         if key == "PLENARA":
             continue
@@ -2221,21 +2221,21 @@ def get_archetype(stage: int) -> dict:
 
 
 # ===============================================================================
-# NSAT — NOCTILUCAN STAGE ASSESSMENT TOOL
+# SSAT — NOCTILUCAN STAGE ASSESSMENT TOOL
 # Multi-modal weighted stage assessment (clinical/coaching grade)
 # Inputs: self_report, interview, observation, diary, physio (optional)
 # Output: decimal stage code e.g. "5.3", "4.5"
 # ===============================================================================
 
-class NoctilucanStageAssessment:
+class SAPStageAssessment:
     """
-    NSAT — Multi-modal stage assessment tool.
+    SSAT — Multi-modal stage assessment tool.
     Integrates five assessment modalities with empirically-derived weights
     to produce a precise decimal stage code (e.g., "5.3", "4.5").
     Powers the Personal Assessment Tool on the LUMINARK website.
     """
 
-    VERSION = "NSAT v1.0 — Stanfield 2025"
+    VERSION = "SSAT v1.0 — Stanfield 2025"
 
     def __init__(self):
         self.weights = {
@@ -2520,7 +2520,7 @@ class DigitalRootCalculator:
 # Composite economic stage score from GDP, unemployment, inflation, debt.
 # ===============================================================================
 
-class NoctilucanEconomicIndex:
+class SAPEconomicIndex:
     """
     NEI: Composite economic stage indicator.
     Weights: GDP 35%, Unemployment 25%, Inflation 25%, Debt/GDP 15%.
@@ -2621,7 +2621,7 @@ class CrossIndicatorTumblingIndex:
                         inflation: float, debt: float,
                         asset_deviation: float = 0.0) -> dict:
         """Full economic cascade analysis combining NEI and CITI."""
-        nei = NoctilucanEconomicIndex()
+        nei = SAPEconomicIndex()
         nei_stage, breakdown = nei.calculate(gdp, unemployment, inflation, debt)
 
         indicators = {
@@ -2764,7 +2764,7 @@ class ThresholdOutcomePredictor:
 # ENHANCED SENTINEL CLARITY — AI OUTPUT SAFETY ANALYZER
 # Maps AI outputs to SAP stages — detects hallucination risk, omniscience trap.
 # Graduated interventions: Stage 7 = Warn, Stage 8 = HALT.
-# Based on: "NAM Framework for AI Safety" — Stanfield 2025
+# Based on: "SAP Framework for AI Safety" — Stanfield 2025
 # ===============================================================================
 
 class EnhancedSentinelClarity:
@@ -3255,10 +3255,10 @@ def run_demo():
         print(f"  {outcome:<35} {prob:.1%}  |{bar}")
     print(f"  Key Advice:  {pred['recommendations'][0]}")
 
-    # -- Demo 7: NSAT Stage Assessment ----------------------------------------
-    print("\n[7] NSAT — Noctilucan Stage Assessment Tool")
+    # -- Demo 7: SSAT Stage Assessment ----------------------------------------
+    print("\n[7] SSAT — SAP Stage Assessment Tool")
     print("-" * 50)
-    nsat   = NoctilucanStageAssessment()
+    nsat   = SAPStageAssessment()
     stage_code = nsat.calculate_stage(
         self_report  = {5: 0.8, 6: 0.4},
         interview    = {5: 0.7, 6: 0.5},
@@ -4267,8 +4267,8 @@ if __name__ == "__main__":
     print("LUMINARK OMEGA v2.0 upgrade verified successfully.")
 
 # ============================================================
-# SECTION J: SAR TOROIDAL GEOMETRY
-# Stanfield's Axiom of Recursion — Torus Model
+# SECTION J: SAP TOROIDAL GEOMETRY
+# Stanfield's Axiom of Perpetuity — Torus Model
 # Source: STANFIELD 81 Returns.docx
 # 0ᵀ = Primordial Source (top of torus)
 # 0ᴮ = Integrative Void (bottom of torus)
@@ -4310,7 +4310,7 @@ SAR_GATE_NAMES_OMEGA = {
 }
 
 TOROIDAL_GEOMETRY = {
-    "model": "Stanfield's Axiom of Recursion (SAR) — Toroidal Consciousness Field",
+    "model": "Stanfield's Axiom of Perpetuity (SAP) — Toroidal Consciousness Field",
     "geometry": "torus (donut)",
     "void_dual": {
         "0T": {"label": "0ᵀ Primordial Source", "position": "top", "nature": "pre-manifestation potential, cleared field"},
@@ -5151,7 +5151,7 @@ def run_omega_v4_analysis(
 
 
 # ============================================================
-# SECTION R: SAR SUBSTRATE DOMAINS — 1000-DISCIPLINE REFERENCE
+# SECTION R: SAP SUBSTRATE DOMAINS — 1000-DISCIPLINE REFERENCE
 # The framework is substrate-independent. These are validated
 # domains of application for the 0-9-0 cycle.
 # Source: disciplines.docx — 1000-Domain Hyperlist
@@ -5185,7 +5185,7 @@ SAR_SUBSTRATE_MACRO_DOMAINS = [
     "Civilizational / Historical / Archeological",
 ]
 
-# Validated domain confidence levels (from SAR framework testing)
+# Validated domain confidence levels (from SAP framework testing)
 SAR_DOMAIN_CONFIDENCE = {
     "biological":     0.97,  # Circadian, menstrual, cardiac, cellular mitosis
     "economic":       0.93,  # Business cycles, product lifecycles, market sentiment
@@ -5238,7 +5238,7 @@ def get_substrate_validation(domain: str) -> dict:
         "matched_category": matched_key or "general substrate",
         "confidence": conf,
         "confidence_pct": f"{conf*100:.0f}%",
-        "validation_note": f"SAR framework applies to '{domain}' with {conf*100:.0f}% validated correlation.",
+        "validation_note": f"SAP framework applies to '{domain}' with {conf*100:.0f}% validated correlation.",
         "substrate_independence": "The 0-9-0 cycle operates identically regardless of substrate — from quantum to cosmic.",
         "examples": examples.get(matched_key, ["Any system undergoing cyclic development, growth, and transformation"]),
         "total_validated_domains": "1000+ disciplines across 25 macro-domains",
@@ -5261,7 +5261,7 @@ def normalize_hrv_omega(hrv_ms: float) -> float:
     """
     Normalize Heart Rate Variability (20–100 ms range) to 0–100 scale.
 
-    HRV is the direct biological analog of system Integrity in SAR.
+    HRV is the direct biological analog of system Integrity in SAP.
     Higher HRV = greater adaptive capacity = higher Integrity.
 
     Args:
@@ -5276,7 +5276,7 @@ def compute_sleep_score_omega(duration_min: float, deep_pct: float) -> float:
     """
     Calculate sleep quality score (0–100).
 
-    Sleep is the restoration cycle — maps to Stage 0 (Void/Reset) in SAR.
+    Sleep is the restoration cycle — maps to Stage 0 (Void/Reset) in SAP.
     Insufficient sleep = incomplete reset = reduced Ma'at alignment.
 
     Args:
@@ -5314,7 +5314,7 @@ def compute_o2_score_omega(o2_percent: float) -> float:
     """
     Calculate oxygen saturation vitality score (0–100).
 
-    O2 saturation is the energy substrate — maps directly to Energy in SAR.
+    O2 saturation is the energy substrate — maps directly to Energy in SAP.
     ≥98% = peak vitality. <95% = degraded energy. <80% = crisis.
 
     Args:
@@ -5342,13 +5342,13 @@ def compute_combined_physio_score(hrv_ms: float,
         Sleep: 20% — restoration / Ma'at alignment
         Resp:  20% — regulation / coherence
 
-    Maps directly to LUMINARK SAR telemetry:
+    Maps directly to LUMINARK SAP telemetry:
         combined_score → Energy input
         hrv_score      → Integrity input
         sleep_score    → Ma'at alignment input
 
     Returns:
-        Dict with individual scores, combined score, SAR mapping, and chip_state
+        Dict with individual scores, combined score, SAP mapping, and chip_state
     """
     hrv_score   = normalize_hrv_omega(hrv_ms)
     sleep_score = compute_sleep_score_omega(duration_min, deep_pct)
@@ -5371,7 +5371,7 @@ def compute_combined_physio_score(hrv_ms: float,
         chip_state = "DORSAL_TRAP"
         state_note = "Dorsal vagal shutdown — freeze/collapse, Stage 0 or Stage 8 TRAP"
 
-    # Map to SAR telemetry inputs
+    # Map to SAP telemetry inputs
     sar_mapping = {
         "energy_input":    round(combined, 1),
         "integrity_input": round(hrv_score, 1),

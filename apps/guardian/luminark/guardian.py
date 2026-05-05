@@ -23,7 +23,7 @@ from .principles import (
 
 
 # ─────────────────────────────────────────────
-#  SAP / NAM Consciousness Stages
+#  SAP / SAP Consciousness Stages
 # ─────────────────────────────────────────────
 
 class SAPStage(Enum):

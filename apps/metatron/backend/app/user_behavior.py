@@ -4,7 +4,7 @@ from typing import Dict, List, Any
 
 class UserBehaviorAnalyzer:
     """
-    NAM Framework for AI Safety — maps a user's trading behaviour to an SAP
+    SAP Framework for AI Safety — maps a user's trading behaviour to an SAP
     stage and detects Stage-8 (overconfidence) cognitive traps.
     """
 

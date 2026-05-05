@@ -7,7 +7,7 @@ from .threat_intel import ThreatIntel
 
 class LuminarkAI:
     """
-    LUMINARK AI Core — integrates Brain (SAP), Heart (NAM), Body (Threat Intel).
+    LUMINARK AI Core — integrates Brain (SAP), Heart (SAP), Body (Threat Intel).
 
     Brain  → SAP Stage Engine     : classifies each asset on the 0-9 scale
     Heart  → User Behavior Analyzer : classifies the *user* and detects traps

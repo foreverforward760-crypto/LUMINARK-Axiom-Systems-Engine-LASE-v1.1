@@ -29,7 +29,7 @@ app = FastAPI(
     title="SAP Co-Pilot Companion App",
     description=(
         "LUMINARK AI – Stanfields Axiom of Perpetuity stage engine, "
-        "NAM user behaviour analysis, and cybersecurity threat intelligence."
+        "SAP user behaviour analysis, and cybersecurity threat intelligence."
     ),
     version="1.0.0",
 )

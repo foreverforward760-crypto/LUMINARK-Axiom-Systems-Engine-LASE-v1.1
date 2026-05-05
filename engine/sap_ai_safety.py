@@ -1,6 +1,6 @@
 """
-LUMINARK Axiom Systems Engine (LASE) — engine/nam_ai_safety.py
-NAM Framework for AI Safety — EnhancedSentinelClarity v1.0
+LUMINARK Axiom Systems Engine (LASE) — engine/sap_ai_safety.py
+SAP Framework for AI Safety — EnhancedSentinelClarity v1.0
 ============================================================
 Meridian Axiom Alignment Technologies (MAAT)
 Author: Richard L. Stanfield | LuminarkMeridian@gmail.com
@@ -8,7 +8,7 @@ Version: 1.0 | May 2026
 
 WHAT THIS IS
 ============
-The NAM (Noctilucan Axiom Model) Framework for AI Safety applies SAP stage
+The SAP (Stanfield's Axiom of Perpetuity) Framework for AI Safety applies SAP stage
 theory to AI output classification. It detects when AI-generated content
 has entered dangerous stages — particularly Stage 7 (false certainty /
 hallucination risk) and Stage 8 (Omniscience Trap / claiming absolute truth).
@@ -45,7 +45,7 @@ COMMERCIAL APPLICATIONS
 PATENT NOTE
 ===========
 First application of cyclical stage theory to AI output safety monitoring.
-The NAM-to-AI-stage mapping is novel and potentially patentable (MAAT IP).
+The SAP-to-AI-stage mapping is novel and potentially patentable (MAAT IP).
 
 VALIDATED ACCURACY
 ==================
@@ -108,7 +108,7 @@ LIMITATION_PHRASES = [
 
 @dataclass
 class SafetyAnalysis:
-    """Complete NAM AI safety analysis for a single output."""
+    """Complete SAP AI safety analysis for a single output."""
     input_text:        str
     confidence:        float
     assigned_stage:    int
@@ -162,7 +162,7 @@ class PatternAlert:
 
 class EnhancedSentinelClarity:
     """
-    NAM Framework AI Safety Classifier.
+    SAP Framework AI Safety Classifier.
 
     Analyzes AI-generated text to detect dangerous SAP stages (7/8) and
     recommend appropriate intervention levels before content reaches users.
@@ -186,7 +186,7 @@ class EnhancedSentinelClarity:
                        confidence: float = 0.5,
                        context:    str   = "general") -> SafetyAnalysis:
         """
-        Classify AI output text against NAM stages.
+        Classify AI output text against SAP stages.
 
         Args:
             text       : AI-generated text to analyze

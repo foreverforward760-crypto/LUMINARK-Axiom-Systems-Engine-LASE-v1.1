@@ -6,12 +6,12 @@ Meridian Axiom Alignment Technologies (MAAT)
 
 Integration of:
 - Octo-Mycelial v3.5 (biological sensory capabilities)
-- RISS (Recursive Impact & State Score) - SAR-aware threat scoring
+- RISS (Recursive Impact & State Score) - SAP-aware threat scoring
 - Cyber Kill Chain threat taxonomy
 - Network variability as direct HRV analog
 
 New capabilities:
-✓ RISS scoring with SAR stage weights
+✓ RISS scoring with SAP stage weights
 ✓ Cyber kill chain threat classification
 ✓ Network variability = HRV direct mapping
 ✓ Threat history & temporal analysis
@@ -119,7 +119,7 @@ class ThreatEvent:
 class RISSCalculator:
     """
     Recursive Impact & State Score Calculator
-    SAR stage weights integrated with threat assessment.
+    SAP stage weights integrated with threat assessment.
 
     Formula:
         RISS = (base_score + scale_factor + variability_penalty) * stage_weight
@@ -512,7 +512,7 @@ class OctoMycelialChip:
             events.append(ev)
             self.threat_history.append(ev)
             self.threats.add(node)
-            print(f"   Node {node}: health={self.G.nodes[node]['health']:.0f} | RISS={riss_score} | SAR={sar_stage}")
+            print(f"   Node {node}: health={self.G.nodes[node]['health']:.0f} | RISS={riss_score} | SAP={sar_stage}")
 
         print(f"   Network Variability → {self.network_variability:.0f}/100")
         return events

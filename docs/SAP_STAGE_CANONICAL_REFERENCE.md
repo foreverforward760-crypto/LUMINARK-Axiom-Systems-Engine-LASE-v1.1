@@ -11,7 +11,7 @@
 
 ## 1. The Complete Axiom
 
-Stanfield's Axiom of Perpetuity (SAP) / Stanfield's Axiom of Recursion (SAR):
+Stanfield's Axiom of Perpetuity (SAP) / Stanfield's Axiom of Perpetuity (SAP):
 
 > *"Consciousness navigates a fractal torus of nine Gates, each with nine micro-stages, cycling through descent into manifestation and ascent into wisdom, operating identically across all substrates and scales, with ethical validation through 42 Ma'at nodes, requiring neither addition nor reduction."*
 
@@ -318,4 +318,4 @@ The Axiom's purpose: enable conscious participation in the inevitable cycle.
 © 2026 Richard L. Stanfield / Meridian Axiom Alignment Technologies LLC  
 All rights reserved.
 
-SAP (Stanfield's Axiom of Perpetuity) and SAR (Stanfield's Axiom of Recursion) are proprietary intellectual property of Richard L. Stanfield / MAAT. Unauthorized use, reproduction, or distribution prohibited.
+SAP (Stanfield's Axiom of Perpetuity) and SAP (Stanfield's Axiom of Perpetuity) are proprietary intellectual property of Richard L. Stanfield / MAAT. Unauthorized use, reproduction, or distribution prohibited.

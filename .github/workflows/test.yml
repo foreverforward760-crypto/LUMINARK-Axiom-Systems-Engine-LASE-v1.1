@@ -1,0 +1,96 @@
+# LUMINARK Axiom Systems Engine — CI Pipeline
+# Stanfield's Axiom of Perpetuity (SAP) — Mathematical Invariant Suite
+# Meridian Axiom Alignment Technologies (MAAT)
+
+name: SAP Invariant Suite
+
+on:
+  push:
+    branches: ["main", "dev", "release/**"]
+  pull_request:
+    branches: ["main"]
+
+jobs:
+  core-tests:
+    name: Core Suite — Python ${{ matrix.python-version }}
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ["3.10", "3.11", "3.12"]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+          cache: "pip"
+      - name: Install dependencies
+        working-directory: core
+        run: pip install numpy scipy requests pytest
+      - name: Run SAP invariant suite (1,013 tests)
+        working-directory: core
+        run: python -m pytest tests/ --tb=short -q
+
+  engine-layer:
+    name: Engine Layer — SAP Constitutional Validation
+    runs-on: ubuntu-latest
+    needs: core-tests
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12" }
+      - run: pip install numpy scipy
+
+      - name: "Stage 8 — 1.45x amplifier constant (FALSE HELL constitutional check)"
+        working-directory: engine
+        run: |
+          python -c "
+          import sys; sys.path.insert(0,'.')
+          import sap_energy_layer as el
+          assert el.VESSEL_OF_GROUNDING_TRAP_AMPLIFIER == 1.45, \
+            f'CONSTITUTIONAL VIOLATION: Stage 8 amplifier={el.VESSEL_OF_GROUNDING_TRAP_AMPLIFIER}'
+          print('PASS: Stage 8 amplifier = 1.45x')
+          "
+
+      - name: "Stage 8 — Dual-chamber trap (Illusion of Arrival + Illusion of Permanence)"
+        working-directory: engine
+        run: |
+          python -c "
+          import sys; sys.path.insert(0,'.')
+          import sap_energy_layer as el
+          r = el.evaluate_vessel_of_grounding_trap(nsdt={'N':60,'S':88,'D':30,'T':18,'C':82})
+          assert r.chamber_active=='A' and r.amplifier_applied
+          print(f'PASS: Chamber A (Illusion of Arrival) energy={r.trap_energy:.4f}')
+          r = el.evaluate_vessel_of_grounding_trap(nsdt={'N':60,'S':50,'D':30,'T':85,'C':28})
+          assert r.chamber_active=='B' and r.amplifier_applied
+          print(f'PASS: Chamber B (Illusion of Permanence) energy={r.trap_energy:.4f}')
+          r = el.evaluate_vessel_of_grounding_trap(nsdt={'N':20,'S':55,'D':60,'T':40,'C':60})
+          assert r.chamber_active is None
+          print('PASS: Healthy traversal — no chamber active')
+          "
+
+      - name: "Stage 5 — Three-outcome bifurcation (RETREAT / CROSS / FREEZE)"
+        working-directory: engine
+        run: |
+          python -c "
+          import sys; sys.path.insert(0,'.')
+          import sap_energy_layer as el
+          b1 = el.evaluate_dynamo_of_will_bifurcation(nsdt={'N':60,'S':30,'D':15,'T':88,'C':25})
+          b2 = el.evaluate_dynamo_of_will_bifurcation(nsdt={'N':55,'S':65,'D':85,'T':30,'C':80})
+          b3 = el.evaluate_dynamo_of_will_bifurcation(nsdt={'N':60,'S':50,'D':50,'T':55,'C':50})
+          assert b1.path != b2.path
+          print(f'PASS: RETREAT={b1.path}, CROSS={b2.path}, FREEZE={b3.path}')
+          "
+
+      - name: "Axiom Yield — All 5 demo scenarios"
+        working-directory: engine
+        run: |
+          python -c "
+          import sys; sys.path.insert(0,'.')
+          import axiom_yield_scenarios as sc
+          for fn in [sc.scenario_1_cascade_failure_signature, sc.scenario_2_crystallized_stability,
+                     sc.scenario_3_bifurcation_lock, sc.scenario_4_recovery_arc_confirmed,
+                     sc.scenario_5_silent_tension_buildup]:
+              r = fn()
+              api = r['api_response']
+              print(f'PASS: {r[\"scenario\"]} — Stage {api[\"stage\"]} / {api[\"risk_level\"]}')
+          "

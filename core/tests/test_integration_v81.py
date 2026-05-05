@@ -27,7 +27,7 @@ sys.path.insert(0, os.path.join(_ROOT, "build3_active_defense"))
 def test_edge_no_external_imports():
     """Edge stub must not import numpy, requests, fastapi, or any external lib."""
     import importlib, ast
-    path = os.path.join(_ROOT, "sap_edge_stub.py")
+    path = os.path.join(_ROOT, "luminark", "sap_edge_stub.py")
     with open(path) as f:
         tree = ast.parse(f.read())
     forbidden = {"numpy", "np", "requests", "fastapi", "pydantic"}

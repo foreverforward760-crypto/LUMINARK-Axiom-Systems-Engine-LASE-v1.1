@@ -49,7 +49,7 @@
       multi-cycle active cycle analysis, harmonic Hz recommendations.
 
 - [x] Octo-Mycelial v4.0 — engine/octo_mycelial_v4.py
-      Standalone importable module. RISS scoring (SAR-aware threat scoring),
+      Standalone importable module. RISS scoring (SAP-aware threat scoring),
       Cyber Kill Chain threat taxonomy (7 threat types),
       Network Variability = HRV direct mapping, BioSensoryFusion (Mycelium + Octopus + Thermal),
       full threat history tracking.

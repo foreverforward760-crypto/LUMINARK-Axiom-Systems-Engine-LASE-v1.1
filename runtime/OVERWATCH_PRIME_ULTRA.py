@@ -2342,7 +2342,7 @@ THREAT_BASE_SCORES = {
 
 # ===============================================================================
 # RISS CALCULATOR — Recursive Impact & State Score
-# SAR-aware threat scoring: (base + scale + variability_penalty) * stage_weight
+# SAP-aware threat scoring: (base + scale + variability_penalty) * stage_weight
 # ===============================================================================
 
 class RISSCalculator:
@@ -2360,7 +2360,7 @@ class RISSCalculator:
         stage_weight        = SAP stage multiplier (Stage 8 = 2.2, Stage 5 = 1.8)
     """
 
-    VERSION = "RISS v1.0 — SAR-Aware Threat Scoring"
+    VERSION = "RISS v1.0 — SAP-Aware Threat Scoring"
 
     # SAP stage weights — Stage 8 most dangerous (trap/cascade)
     STAGE_WEIGHTS = {
@@ -4455,8 +4455,8 @@ if __name__ == "__main__":
     print("LUMINARK ULTRA v2.0 upgrade verified successfully.")
 
 # ============================================================
-# SECTION I: SAR GATE NAMES + 3-6-9 FLUX DYNAMICS
-# Stanfield's Axiom of Recursion — Gate Names & Magnetic Drag
+# SECTION I: SAP GATE NAMES + 3-6-9 FLUX DYNAMICS
+# Stanfield's Axiom of Perpetuity — Gate Names & Magnetic Drag
 # Source: STANFIELD 81 Returns.docx + Container Rule analysis
 # ============================================================
 
@@ -4576,7 +4576,7 @@ def calc_harmonic_resonance(content_digit: int, container_digit: int) -> dict:
 # SECTION K: dS/dt PHYSICS ENGINE
 # Stage Progression Differential Equation
 # Formula: dS/dt = r(S) · Energy · Damping · Integrity · Ma'at
-# Source: import streamlit as st.txt (SAR Physics Engine)
+# Source: import streamlit as st.txt (SAP Physics Engine)
 # ============================================================
 
 import math as _math
@@ -4590,7 +4590,7 @@ STAGE_GROWTH_RATES = {
 def calc_stage_velocity(current_stage: float, energy: float,
                          integrity: float, maat: float) -> float:
     """
-    Calculate stage progression velocity using SAR Physics Formula.
+    Calculate stage progression velocity using SAP Physics Formula.
     dS/dt = r(S) · Energy · (Integrity/100) · (Ma'at/100)
     Damping factor applied from Flux Dynamics magnetic drag.
     
@@ -4618,7 +4618,7 @@ def run_stage_physics_simulation(
     integrity_decay: float = 1.5
 ) -> dict:
     """
-    Run SAR Physics Engine simulation over N time steps.
+    Run SAP Physics Engine simulation over N time steps.
     Models how a system progresses through stages given energy, integrity, Ma'at.
     Integrity decays by integrity_decay per step (entropy).
     
@@ -4684,7 +4684,7 @@ def run_ultra_v3_analysis(
     """
     Full LUMINARK Ultra v3 analysis.
     Integrates: NSDT v8, TrapScore, Flux Dynamics, Container Rule,
-                SAR Physics Simulation, Consensus Engine, Trickster Wisdom.
+                SAP Physics Simulation, Consensus Engine, Trickster Wisdom.
     
     Args:
         complexity, stability, tension, adaptability, coherence: 0.0-1.0
@@ -4731,7 +4731,7 @@ def run_ultra_v3_analysis(
 
 
 # ============================================================
-# SECTION M: SAR COMPLETE MATHEMATICAL FORMALIZATION
+# SECTION M: SAP COMPLETE MATHEMATICAL FORMALIZATION
 # Source: STANFIELD 81 Returns.docx
 # State Vector S = (G, m, a, E, I, M, t, L)
 # dm/dt = a * r(G,m) * (E/100) * (I/100) * (M/100) * f(L)
@@ -4739,7 +4739,7 @@ def run_ultra_v3_analysis(
 
 import math as _math2
 
-# SAR State Vector definition
+# SAP State Vector definition
 # G = Gate (0-9), m = micro-stage (0.0-0.9), a = arc (-1 descending / +1 ascending)
 # E = Energy (0-100%), I = Integrity (0-100%), M = Ma'at alignment (0-100%)
 # t = time in current state, L = Layer (1-9 recursive scale)
@@ -4782,7 +4782,7 @@ def sar_dm_dt(gate: int, micro_stage: float, arc: int,
               energy: float, integrity: float, maat: float,
               layer: int = 1) -> float:
     """
-    SAR Micro-Stage Progression Rate.
+    SAP Micro-Stage Progression Rate.
     dm/dt = a * r(G,m) * (E/100) * (I/100) * (M/100) * f(L)
     
     Args:
@@ -4873,7 +4873,7 @@ def calc_stage5_bifurcation(integrity: float, energy: float, maat: float,
     Returns:
         probabilities dict + recommended action
     """
-    # Weights from SAR formalization
+    # Weights from SAP formalization
     w1, w2, w3, w4 = 0.025, 0.020, 0.020, 0.015
     w5, w6, w7     = 0.020, 0.020, 0.015
     theta1, theta2 = 0.0, 0.0
@@ -5113,7 +5113,7 @@ def get_model_type_recommendation(has_history: bool, tracking_progression: bool,
 def format_sar_notation(gate: int, micro_stage: float,
                          arc: str = "descending", layer: int = 1) -> str:
     """
-    Format SAR Arc Notation.
+    Format SAP Arc Notation.
     Examples:
       4.5↓       = Gate 4, micro 0.5, descending
       4.5↑       = Gate 4, micro 0.5, ascending
@@ -5139,7 +5139,7 @@ def format_sar_notation(gate: int, micro_stage: float,
 
 # ============================================================
 # SECTION R: UNIFIED ULTRA v4 ENTRY POINT
-# Full SAR integration: State Vector, Bifurcation, 369, CITI
+# Full SAP integration: State Vector, Bifurcation, 369, CITI
 # ============================================================
 
 def run_ultra_v4_analysis(
@@ -5155,7 +5155,7 @@ def run_ultra_v4_analysis(
     """
     Full LUMINARK Ultra v4 analysis.
     Integrates: NSDT v8, Flux Dynamics, Container Rule,
-                SAR State Vector, dm/dt, Stage 5 Bifurcation,
+                SAP State Vector, dm/dt, Stage 5 Bifurcation,
                 369 Resonance, CITI, Recursive Layer mapping,
                 Arc Notation, Two Model Types.
     """
@@ -5170,7 +5170,7 @@ def run_ultra_v4_analysis(
     if gate is None:
         gate = stage
 
-    # SAR dm/dt velocity
+    # SAP dm/dt velocity
     arc_int = -1 if arc == "descending" else 1
     velocity = sar_dm_dt(gate, micro_stage, arc_int, energy, integrity, maat, layer)
     base["sar_velocity"] = velocity
@@ -5591,7 +5591,7 @@ def nmap_classify_economy(gdp_growth: float, unemployment: float,
 # impact table, run_protection_cycle, get_system_stats
 # ============================================================
 
-# ── SAR Stage Weights for RISS (Recursive Impact & State Score) ───────────────
+# ── SAP Stage Weights for RISS (Recursive Impact & State Score) ───────────────
 # Stage 5: 1.8 (THRESHOLD — critical decision point)
 # Stage 8: 2.2 (TRAP — maximum danger, highest multiplier)
 # Stage 9: 1.4 (Transformation/Teaching)
@@ -5607,8 +5607,8 @@ RISS_SAR_STAGE_WEIGHTS = {
     9: 1.4,   # Stage 9: Transformation/Teaching — recovery phase
 }
 
-# ── Threat Type → SAR Stage Mapping (Cyber Kill Chain) ────────────────────────
-# Maps each kill chain phase to its corresponding SAR stage
+# ── Threat Type → SAP Stage Mapping (Cyber Kill Chain) ────────────────────────
+# Maps each kill chain phase to its corresponding SAP stage
 THREAT_TO_SAR_STAGE = {
     "reconnaissance":        1,   # Early probing → Stage 1 (Spark)
     "lateral_movement":      5,   # Threshold — critical fork point
@@ -5637,7 +5637,7 @@ NETWORK_VARIABILITY_IMPACT = {
 #   base_score          = threat type severity (30–90)
 #   scale_factor        = network spread impact (0–50, 3 per affected node)
 #   variability_penalty = HRV analog degradation (0–30)
-#   stage_weight        = SAR stage multiplier (0.3–2.2)
+#   stage_weight        = SAP stage multiplier (0.3–2.2)
 
 RISS_THREAT_BASE_SCORES = {
     "reconnaissance":        30,
@@ -5651,14 +5651,14 @@ RISS_THREAT_BASE_SCORES = {
 
 def determine_sar_stage_from_threat(threat_type: str, network_health: float) -> int:
     """
-    Map a Cyber Kill Chain threat type to its SAR stage.
+    Map a Cyber Kill Chain threat type to its SAP stage.
 
     Args:
         threat_type:    One of the THREAT_TO_SAR_STAGE keys (lowercase)
         network_health: Current network variability / HRV analog (0–100)
 
     Returns:
-        SAR stage integer (1–9)
+        SAP stage integer (1–9)
     """
     base_stage = THREAT_TO_SAR_STAGE.get(threat_type, 5)
 
@@ -5682,7 +5682,7 @@ def calc_riss_v4(threat_type: str,
         threat_type:          Cyber Kill Chain phase (e.g. 'lateral_movement')
         affected_nodes:       Number of nodes currently compromised
         network_variability:  HRV analog for the network (0–100, higher = healthier)
-        sar_stage:            Current SAR stage (used to look up multiplier)
+        sar_stage:            Current SAP stage (used to look up multiplier)
 
     Returns:
         dict with riss_score, severity, stage_weight, formula_components
@@ -5724,7 +5724,7 @@ def run_threat_v4(threat_type: str,
     """
     Full v4.0 threat assessment pipeline.
 
-    1. Determine SAR stage from threat type + network health
+    1. Determine SAP stage from threat type + network health
     2. Calculate RISS score
     3. Compute network variability degradation
     4. Return complete threat event record
@@ -5736,7 +5736,7 @@ def run_threat_v4(threat_type: str,
         threat_history:              Optional running list of prior threat events
 
     Returns:
-        Complete threat event dict including RISS, SAR stage, variability impact
+        Complete threat event dict including RISS, SAP stage, variability impact
     """
     import time as _time_t
     sar_stage = determine_sar_stage_from_threat(threat_type, current_network_variability)

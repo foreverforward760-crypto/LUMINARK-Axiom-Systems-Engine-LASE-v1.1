@@ -2,7 +2,7 @@
 # LUMINARK Ω-CLASS SUPERCHARGED v4 - COMPLETE INTEGRATION
 # ============================================================================
 # Integrates:
-# - Original SAR Framework (Stages 0-9)
+# - Original SAP Framework (Stages 0-9)
 # - Ma'at Protocol (42 ethical principles)
 # - Yunus Protocol (false certainty detection)
 # - Mycelial Defense
@@ -299,7 +299,7 @@ class LuminarkBeast(nn.Module):
     6-layer transformer with:
     - Toroidal attention
     - Gated linear units
-    - SAR stage awareness
+    - SAP stage awareness
     - Multi-GPU support
     """
     
@@ -870,7 +870,7 @@ def run_dashboard():
 
     # --- SIDEBAR: ANTIKYTHERA ENGINE (CONTROLS) ---
     with st.sidebar:
-        st.title("⚙️ Antikythera Engine")
+        st.title("⚙️ SAP Engine")
         st.caption("Bio-Rhythmic State Configuration")
         st.markdown("---")
         
@@ -1020,7 +1020,7 @@ def run_dashboard():
         ### 🧬 SAP System Index (Status)
         | Module | Status | Role |
         | :--- | :--- | :--- |
-        | **Antikythera Engine** | 🟢 **ACTIVE** | V3 Inversion Logic Integrated |
+        | **SAP Engine** | 🟢 **ACTIVE** | V3 Inversion Logic Integrated |
         | **Luminark Beast (Ω)** | 🟢 **ACTIVE** | 6-Layer Transformer / Recursive Logic |
         | **Ma'at Protocol** | 🟢 **ACTIVE** | Ethical/Truth Validation (42 Principles) |
         | **Yunus Protocol** | 🟢 **ON GUARD** | False Light / God Complex Detection |

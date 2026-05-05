@@ -14,7 +14,7 @@
    2. Injects the Constitutional Directive header into both engine files
    3. Adds Ω-9 engine classes to LatestLUMINARK_OVERWATCH_PRIME_ULTRA.py
    4. Bumps version strings to v12.0
-   5. Fixes SAR/SAP terminology (SAR → SAP where applicable)
+   5. Fixes SAP/SAP terminology (SAP → SAP where applicable)
 
  Files patched:
    - LatestLUMINARK_OVERWATCH_PRIME_ULTRA.py  (ULTRA engine)
@@ -407,10 +407,10 @@ def main():
         ("PRIME ULTRA v2.0 UNIFIED", "PRIME ULTRA v12.0 UNIFIED"),
         ("version=\"1.0\"", "version=\"12.0\""),
         ("version=\"2.0\"", "version=\"12.0\""),
-        # SAR → SAP where applicable (framework name)
-        # Note: we preserve SAR as acronym for Stanfield's Axiom of Recursion
-        # but fix the display name where it says "SAR" when meaning the full framework
-        ("SAR framework", "SAP/SAR framework"),
+        # SAP → SAP where applicable (framework name)
+        # Note: we preserve SAP as acronym for Stanfield's Axiom of Perpetuity
+        # but fix the display name where it says "SAP" when meaning the full framework
+        ("SAP framework", "SAP/SAP framework"),
     ]
 
     if patch_file(ULTRA_FILE, ultra_patches, "ULTRA engine"):
