@@ -46,6 +46,27 @@ from .recalibration import RecalibrationEngine
 from .unified_field import UnifiedField
 from .omega_loop import OmegaLoop, NSDTEvent, RoutingRule
 
+# ── Energy Layer ──────────────────────────────────────────────────────────────
+from .sap_energy_layer import (
+    SAPStage,
+    VESSEL_OF_GROUNDING_TRAP_AMPLIFIER,
+    VESSEL_OF_GROUNDING_CHAMBER_A,
+    VESSEL_OF_GROUNDING_CHAMBER_B,
+    VESSEL_OF_GROUNDING_CONSTRUCT,
+    TRAP_ENERGY_NONE,
+    TRAP_ENERGY_LOW,
+    TRAP_ENERGY_MODERATE,
+    TRAP_ENERGY_HIGH,
+    TRAP_ENERGY_MAXIMUM,
+    Stage8TrapResult,
+    Stage5BifurcationResult,
+    EvaluationResult,
+    evaluate_vessel_of_grounding_trap,
+    evaluate_dynamo_of_will_bifurcation,
+    trap_energy,
+    evaluate_trap,
+)
+
 # ── Version ───────────────────────────────────────────────────────────────────
 from .version import __version__, __author__, __org__
 
@@ -76,6 +97,24 @@ __all__ = [
     "OmegaLoop",
     "NSDTEvent",
     "RoutingRule",
+    # Energy layer
+    "SAPStage",
+    "VESSEL_OF_GROUNDING_TRAP_AMPLIFIER",
+    "VESSEL_OF_GROUNDING_CHAMBER_A",
+    "VESSEL_OF_GROUNDING_CHAMBER_B",
+    "VESSEL_OF_GROUNDING_CONSTRUCT",
+    "TRAP_ENERGY_NONE",
+    "TRAP_ENERGY_LOW",
+    "TRAP_ENERGY_MODERATE",
+    "TRAP_ENERGY_HIGH",
+    "TRAP_ENERGY_MAXIMUM",
+    "Stage8TrapResult",
+    "Stage5BifurcationResult",
+    "EvaluationResult",
+    "evaluate_vessel_of_grounding_trap",
+    "evaluate_dynamo_of_will_bifurcation",
+    "trap_energy",
+    "evaluate_trap",
     # Version
     "__version__",
     "__author__",
