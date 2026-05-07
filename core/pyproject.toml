@@ -34,7 +34,7 @@ dependencies = [
 ]
 
 [project.optional-dependencies]
-api = ["fastapi>=0.100", "uvicorn>=0.23", "pydantic>=2.0"]
+api = ["fastapi>=0.100", "uvicorn>=0.23", "pydantic>=2.0", "slowapi>=0.1.9"]
 tests = ["pytest>=7.4", "hypothesis>=6.80"]
 benchmark = []          # no extra deps; uses stdlib tracemalloc
 yaml = ["pyyaml>=6.0"]
@@ -48,8 +48,8 @@ all = [
 luminark-benchmark = "benchmark:main"
 
 [project.urls]
-Homepage = "https://github.com/foreverforward760-crypto/LuminarkHybridEngine"
-Repository = "https://github.com/foreverforward760-crypto/LuminarkHybridEngine"
+Homepage   = "https://github.com/foreverforward760-crypto/LUMINARK-Axiom-Systems-Engine-LASE-v1.1"
+Repository = "https://github.com/foreverforward760-crypto/LUMINARK-Axiom-Systems-Engine-LASE-v1.1"
 
 [tool.setuptools.dynamic]
 version = { attr = "luminark.version.__version__" }

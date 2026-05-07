@@ -1,0 +1,49 @@
+# LASE SDK API — Docker image
+# © 2026 Richard L. Stanfield / Meridian Axiom Alignment Technologies LLC
+#
+# Build:
+#   docker build -t lase-sdk-api -f core/Dockerfile.sdk .
+#
+# Run:
+#   docker run -p 8080:8080 \
+#     -e LASE_API_KEY=your-secret-key \
+#     -e LASE_DEMO_KEY=lase-demo-public \
+#     lase-sdk-api
+
+FROM python:3.11-slim
+
+LABEL maintainer="LuminarkMeridian@gmail.com"
+LABEL description="LASE SDK API — SAP Classification as a Service"
+LABEL version="1.1.0"
+
+WORKDIR /app
+
+# System deps
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    build-essential \
+    && rm -rf /var/lib/apt/lists/*
+
+# Install luminark package from local core/ directory
+COPY core/ /app/core/
+RUN pip install --no-cache-dir "/app/core[api]"
+
+# Install slowapi for rate limiting (not in core pyproject yet)
+RUN pip install --no-cache-dir slowapi>=0.1.9
+
+# Create non-root user
+RUN useradd -m -u 1001 lase
+USER lase
+
+# Expose port
+EXPOSE 8080
+
+# Health check
+HEALTHCHECK --interval=30s --timeout=5s --start-period=10s --retries=3 \
+    CMD python -c "import urllib.request; urllib.request.urlopen('http://localhost:8080/v1/health')"
+
+# Start server
+CMD ["uvicorn", "luminark.api.main:app", \
+     "--host", "0.0.0.0", \
+     "--port", "8080", \
+     "--workers", "2", \
+     "--log-level", "info"]
