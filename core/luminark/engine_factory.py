@@ -350,3 +350,171 @@ class EngineFactory:
 # Backward-compatible aliases
 create_engine            = EngineFactory.create
 create_calibrated_engine = EngineFactory.create_calibrated
+
+
+# ─────────────────────────────────────────────────────────────────────────────
+# CalibratedAdapter — wraps any build adapter with the calibration bridge
+# ─────────────────────────────────────────────────────────────────────────────
+
+class CalibratedAdapter:
+    """
+    Wraps an existing engine adapter with the UpdateAndRestoredOverwatch v5
+    adaptive calibration layer (SAPCalibrationEngine).
+
+    WIRING (LASE Task 5):
+        The calibration bridge is now active inside analyze() — not just
+        attached as an attribute.
+
+    Inference flow:
+        1. CalibrationBridge.forward(nsdt) → calibrated prior
+           (expected_stage, probs, entropy from learned centroids)
+        2. Wrapped engine.analyze(nsdt) → raw SAPAnalysisResult
+        3. If calibration and engine disagree by >1.5 stages, blend them:
+           final_stage = round(0.55 * engine_stage + 0.45 * expected_stage)
+        4. Return augmented SAPAnalysisResult with calibration metadata attached.
+
+    Online learning:
+        After external confirmation of a true stage, call:
+            adapter.record_confirmed(nsdt_list, confirmed_stage)
+        This updates the bridge's learned centroids.
+
+    Persistence:
+        adapter.save_calibration(path)   — serialize centroids to JSON
+        adapter.load_calibration(path)   — load previously saved centroids
+    """
+
+    def __init__(
+        self,
+        base_adapter,
+        learned_path: Optional[str] = None,
+        blend_weight: float = 0.45,   # weight of calibration prior in blend
+    ):
+        self._base      = base_adapter
+        self._blend     = float(max(0.0, min(1.0, blend_weight)))
+        self.build      = base_adapter.build
+
+        # Import CalibrationBridge
+        try:
+            from .calibration_bridge import CalibrationBridge
+        except ImportError:
+            from calibration_bridge import CalibrationBridge
+
+        self.calibration = CalibrationBridge(learned_path=learned_path)
+        self._enabled    = True
+
+    def analyze(self, nsdt: NSDTVector, system_id: str = "default") -> SAPAnalysisResult:
+        """
+        Run calibrated analysis.
+
+        Blends the canonical engine's stage output with the calibration
+        bridge's learned expected_stage when the two disagree significantly.
+        """
+        # 1. Run base engine
+        result = self._base.analyze(nsdt, system_id)
+
+        if not self._enabled:
+            return result
+
+        try:
+            # 2. Get calibration prior
+            nsdt_list = [
+                nsdt.complexity, nsdt.stability,
+                nsdt.tension,    nsdt.adaptability,
+                nsdt.coherence,
+            ]
+            calib = self.calibration.forward(nsdt_list)
+            cal_expected = calib["expected_stage"]
+            cal_probs    = calib["probs"]
+            cal_entropy  = calib["entropy"]
+
+            # 3. Blend only when calibration and engine disagree > 1.5 stages
+            engine_stage = result.stage
+            if abs(engine_stage - cal_expected) > 1.5:
+                blended_stage = round(
+                    (1.0 - self._blend) * engine_stage +
+                    self._blend * cal_expected
+                )
+                blended_stage = max(0, min(9, int(blended_stage)))
+            else:
+                blended_stage = engine_stage
+
+            # 4. Augment result with calibration metadata
+            #    (attach as extra attributes — SAPAnalysisResult is a dataclass
+            #     so we can set extra attrs without breaking existing consumers)
+            result.stage                = blended_stage
+            result.stage_name           = SAP_STAGE_NAMES.get(blended_stage, f"UNKNOWN_{blended_stage}")
+            result.calibration_expected = round(cal_expected, 3)
+            result.calibration_entropy  = round(cal_entropy, 4)
+            result.calibration_probs    = [round(p, 4) for p in cal_probs]
+            result.calibration_blended  = (blended_stage != engine_stage)
+
+        except Exception as _e:
+            # Calibration failure is non-fatal — return raw engine result
+            pass
+
+        return result
+
+    def record_confirmed(self, nsdt_list: list, confirmed_stage: int) -> None:
+        """
+        Online update: record a confirmed SAP stage for calibration learning.
+
+        Call after forensic audit, retrospective validation, or domain-expert
+        review confirms the true SAP stage of a previously classified system.
+
+        Parameters
+        ----------
+        nsdt_list       : [complexity, stability, tension, adaptability, coherence]
+                          on luminark native scale [0, 10]
+        confirmed_stage : int [0–9] — verified true SAP stage
+        """
+        self.calibration.update(nsdt_list, confirmed_stage)
+
+    def save_calibration(self, path: str) -> None:
+        """Save learned calibration parameters to JSON."""
+        self.calibration.save(path)
+
+    def load_calibration(self, path: str) -> None:
+        """Load previously saved calibration parameters from JSON."""
+        self.calibration.load(path)
+
+    def disable_calibration(self) -> None:
+        """Disable calibration blending — pass-through to base engine only."""
+        self._enabled = False
+
+    def enable_calibration(self) -> None:
+        """Re-enable calibration blending after disable_calibration()."""
+        self._enabled = True
+
+
+# Patch EngineFactory.create_calibrated to use the new CalibratedAdapter
+def _create_calibrated_v2(
+    build: str = "overwatch",
+    learned_path: Optional[str] = None,
+    blend_weight: float = 0.45,
+) -> CalibratedAdapter:
+    """
+    Create a SAP engine adapter with the calibration bridge ACTIVE during inference.
+
+    LASE Task 5 upgrade: CalibratedAdapter now blends calibration prior into
+    every analyze() call rather than just attaching the bridge as a passive attribute.
+
+    Parameters
+    ----------
+    build        : Engine build name ("overwatch", "kairos", "defense", "unified")
+    learned_path : Optional path to previously saved learned parameters JSON
+    blend_weight : Weight of calibration prior in stage blending [0.0–1.0]
+                   Default 0.45 = calibration provides 45% influence when disagreement >1.5 stages
+
+    Returns
+    -------
+    CalibratedAdapter — duck-type compatible with all engine adapters.
+    Additional methods: record_confirmed(), save_calibration(), load_calibration()
+    Additional attributes: calibration (CalibrationBridge)
+    """
+    base = EngineFactory.create(build)
+    return CalibratedAdapter(base, learned_path=learned_path, blend_weight=blend_weight)
+
+
+# Hot-patch the factory method and the backward-compatible alias
+EngineFactory.create_calibrated = staticmethod(_create_calibrated_v2)
+create_calibrated_engine         = _create_calibrated_v2

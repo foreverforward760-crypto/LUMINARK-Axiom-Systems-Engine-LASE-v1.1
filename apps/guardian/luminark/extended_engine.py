@@ -1,12 +1,19 @@
 """
-LUMINARK Extended Engine — v2.0
+LUMINARK Extended Engine — v2.1
 Supplements the core LuminarkGuardian with five additional analysis modules:
-  • NSDTAnalyzer      — Neural-Symbolic Decision Tree alignment scoring
-  • CITIAnalyzer      — Consciousness Integration stage mapping
-  • PolyvagalAdjuster — HRV-based threat score modulation
+  • NSDTAnalyzer          — Neural-Symbolic Decision Tree alignment scoring
+  • CITIAnalyzer          — Consciousness Integration stage mapping
+  • PolyvagalAdjuster     — HRV-based threat score modulation
   • CulturalContextAdjuster — Domain & culture-aware severity weighting
-  • FractalAnalyzer   — Recursive sub-fragment analysis
-  • ExtendedEngine    — Composes all modules with the base guardian
+  • FractalAnalyzer       — Recursive sub-fragment analysis
+  • ExtendedEngine        — Composes all modules with the base guardian
+
+WIRING (v2.1):
+  Canonical SAP energy layer (sap_energy_layer.py) is now imported and wired
+  into analyze_extended().  When the caller supplies an nsdt_sap dict with
+  SAP-domain NSDT values on [0, 100], the engine computes canonical trap energy
+  for the inferred SAP stage and appends SAP_TRAP_* flags to nsdt_flags.
+  This replaces the former trapscore pass-through with a computed canonical signal.
 """
 
 from __future__ import annotations
@@ -16,6 +23,18 @@ from dataclasses import dataclass, field
 from typing import Dict, List, Optional, Tuple
 
 from .guardian import LuminarkGuardian, GuardianResult, Violation
+
+# ── Canonical SAP energy layer (LASE wiring task 2) ──────────────────────────
+try:
+    from .sap_energy_layer import (
+        SAPStage as SAPEnergyStage,
+        evaluate_trap,
+        evaluate_vessel_of_grounding_trap,
+        evaluate_dynamo_of_will_bifurcation,
+    )
+    _SAP_ENERGY_AVAILABLE = True
+except ImportError:
+    _SAP_ENERGY_AVAILABLE = False
 
 
 # ─────────────────────────────────────────────────────────────────────────────
@@ -34,6 +53,11 @@ class ExtendedResult:
     cultural_notes: List[str]              # Human-readable adjustment notes
     fractal_depth_used: int                # Actual recursion depth applied
     fractal_sub_results: List[dict]        # Per-fragment analysis summaries
+    # Canonical SAP energy layer output (wired in v2.1)
+    sap_trap_energy: float = 0.0           # [0.0, 1.0] from canonical energy layer
+    sap_trap_stage: Optional[int] = None   # SAP stage integer used for energy calc
+    sap_trap_chamber: Optional[str] = None # Stage 8 chamber: 'A', 'B', or None
+    sap_bifurcation_path: Optional[str] = None  # Stage 5 path: 'A', 'B', 'C'
 
     def to_dict(self) -> dict:
         return {
@@ -47,6 +71,10 @@ class ExtendedResult:
             "cultural_notes":            self.cultural_notes,
             "fractal_depth_used":        self.fractal_depth_used,
             "fractal_sub_results":       self.fractal_sub_results,
+            "sap_trap_energy":           round(self.sap_trap_energy, 4),
+            "sap_trap_stage":            self.sap_trap_stage,
+            "sap_trap_chamber":          self.sap_trap_chamber,
+            "sap_bifurcation_path":      self.sap_bifurcation_path,
         }
 
 
@@ -381,10 +409,21 @@ class ExtendedEngine:
         pv_manual: Optional[str],
         citi_stages: dict,
         fractal_depth: int,
+        # Optional: SAP-domain NSDT vector on [0, 100] for canonical energy layer.
+        # Keys: complexity, stability, tension, adaptability, coherence.
+        # If omitted, canonical trap energy will not be computed.
+        nsdt_sap: Optional[dict] = None,
+        # Optional: explicit SAP stage integer (0–9). If omitted, stage is
+        # inferred from the base guardian result's stage value.
+        sap_stage_override: Optional[int] = None,
     ) -> Tuple[GuardianResult, ExtendedResult]:
         """
         Full pipeline. Returns (GuardianResult, ExtendedResult).
         GuardianResult is unchanged; ExtendedResult is purely additive.
+
+        v2.1: Canonical SAP energy layer is now wired. Pass nsdt_sap (NSDT vector
+        on [0, 100]) to receive sap_trap_energy, sap_trap_chamber, and
+        sap_bifurcation_path in ExtendedResult.
         """
         base = self._guardian.analyze(text)
 
@@ -393,6 +432,53 @@ class ExtendedEngine:
         if trapscore.get("detected", False) and float(trapscore.get("score", 0.0)) > 0.7:
             nsdt_flags.append("TRAP_DETECTED")
             nsdt_score = float(np.clip(nsdt_score * 0.80, 0.0, 1.0))
+
+        # ── Canonical SAP energy layer (LASE wiring task 2) ──────────────────
+        sap_trap_energy    = 0.0
+        sap_trap_stage_int = None
+        sap_trap_chamber   = None
+        sap_bifurcation    = None
+
+        if _SAP_ENERGY_AVAILABLE and nsdt_sap:
+            try:
+                # Determine stage: use override, or map guardian stage → SAP stage
+                if sap_stage_override is not None:
+                    stage_int = max(0, min(9, sap_stage_override))
+                else:
+                    # Guardian SAPStage.value is already 0–9 canonical
+                    stage_int = base.stage.value
+
+                sap_stage_enum = SAPEnergyStage(stage_int)
+                trap_result = evaluate_trap(sap_stage_enum, nsdt_sap, build="overwatch")
+
+                sap_trap_energy    = trap_result.trap_energy
+                sap_trap_stage_int = stage_int
+                sap_trap_chamber   = trap_result.chamber_active
+                sap_bifurcation    = trap_result.path
+
+                # Append canonical energy flags
+                if sap_trap_energy >= 0.80:
+                    nsdt_flags.append("SAP_TRAP_CRITICAL")
+                elif sap_trap_energy >= 0.45:
+                    nsdt_flags.append("SAP_TRAP_ACTIVE")
+                elif sap_trap_energy >= 0.15:
+                    nsdt_flags.append("SAP_TRAP_MONITOR")
+
+                if sap_trap_chamber == "A":
+                    nsdt_flags.append("SAP_S8_ILLUSION_OF_ARRIVAL")
+                elif sap_trap_chamber == "B":
+                    nsdt_flags.append("SAP_S8_TENSION_LOCK")
+
+                if sap_bifurcation == "C":
+                    nsdt_flags.append("SAP_S5_BIFURCATION_LOCK")
+
+                # Adjust nsdt_score downward proportionally to trap energy
+                if sap_trap_energy > 0.0:
+                    nsdt_score = float(np.clip(nsdt_score * (1.0 - sap_trap_energy * 0.4), 0.0, 1.0))
+
+            except Exception:
+                pass  # Energy layer failure is non-fatal; result retains defaults
+        # ─────────────────────────────────────────────────────────────────────
 
         citi_stage, citi_scores = self._citi.analyze(citi_stages)
 
@@ -413,6 +499,10 @@ class ExtendedEngine:
             cultural_notes=cult_notes,
             fractal_depth_used=depth_used,
             fractal_sub_results=sub_results,
+            sap_trap_energy=round(sap_trap_energy, 4),
+            sap_trap_stage=sap_trap_stage_int,
+            sap_trap_chamber=sap_trap_chamber,
+            sap_bifurcation_path=sap_bifurcation,
         )
 
         return base, extended

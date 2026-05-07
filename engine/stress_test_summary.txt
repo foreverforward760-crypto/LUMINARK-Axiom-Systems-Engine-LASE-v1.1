@@ -1,0 +1,59 @@
+
+████████████████████████████████████████████████████████████████████████
+  AXIOM YIELD BROKER — RETROACTIVE STRESS TEST REPORT
+  LASE Task 4 | Stanfield's Axiom of Perpetuity (SAP) Framework
+  Meridian Axiom Alignment Technologies (MAAT)
+████████████████████████████████████████████████████████████████████████
+
+  Run timestamp   : 2026-05-07T05:24:04.169911Z
+  Carriers tested : 200
+  Weeks per carrier: 52
+  Total observations: 10,400
+
+════════════════════════════════════════════════════════════════════════
+  RISK DISTRIBUTION
+────────────────────────────────────────────────────────────────────────
+  CRITICAL        988  (  9.5%)  ████
+  HIGH          2,042  ( 19.6%)  █████████
+  MODERATE         51  (  0.5%)  
+  LOW               6  (  0.1%)  
+  STABLE        7,313  ( 70.3%)  ███████████████████████████████████
+
+════════════════════════════════════════════════════════════════════════
+  CRITICAL SIGNAL COUNTS
+────────────────────────────────────────────────────────────────────────
+  Load assignment BLOCKED      :  3,030  (29.1%)
+  Immediate intervention req'd :    988  (9.5%)
+
+  Stage 8 — VESSEL OF GROUNDING
+    Chamber A (Illusion of Arrival) :  2,042
+    Chamber B (Tension Lock)        :     45
+
+  Stage 5 — DYNAMO OF WILL
+    Path A (Recovery Arc)       :    975
+    Path B (Capacity Pullback)  :      6
+    Path C (Bifurcation Lock)   :    147
+
+════════════════════════════════════════════════════════════════════════
+  ARCHETYPE YIELD SCORE SUMMARY
+────────────────────────────────────────────────────────────────────────
+  Stage1_Ignition                        mean=100.0  [100.0–100.0]  n=1300
+  Stage5_BifurcationLock                 mean=100.0  [100.0–100.0]  n=147
+  Stage2_Polarization                    mean=100.0  [100.0–100.0]  n=934
+  Stage3_Expression                      mean= 95.8  [71.3–100.0]  n=963
+  Stage4_Equilibrium                     mean=100.0  [100.0–100.0]  n=962
+  Stage5_BifurcationAdvance              mean=  0.0  [0.0–0.0]  n=981
+  Stage0_Collapse                        mean=100.0  [100.0–100.0]  n=157
+  Stage6_Harmony                         mean=100.0  [100.0–100.0]  n=1115
+  Stage7_Distillation                    mean= 78.4  [45.9–100.0]  n=952
+  Stage8_HealthyTraversal                mean= 69.4  [52.2–89.8]  n=980
+  Stage8_CrystallizedStability           mean= 41.3  [26.3–58.0]  n=959
+  Stage9_Dissolution                     mean= 12.4  [1.1–24.5]  n=796
+  Stage8_TensionLock                     mean= 79.9  [64.1–95.6]  n=154
+
+════════════════════════════════════════════════════════════════════════
+  STRESS TEST COMPLETE — All signals generated from canonical
+  SAP energy layer + signal translator pipeline.
+  IP validation: 1.45× Stage 8 amplifier, Stage 5 three-way
+  bifurcation, and all canonical stage names confirmed active.
+════════════════════════════════════════════════════════════════════════

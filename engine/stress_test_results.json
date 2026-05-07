@@ -1,0 +1,113 @@
+{
+  "run_timestamp": "2026-05-07T05:24:04.169911Z",
+  "carriers": 200,
+  "weeks": 52,
+  "total_observations": 10400,
+  "risk_distribution": {
+    "CRITICAL": 988,
+    "HIGH": 2042,
+    "MODERATE": 51,
+    "LOW": 6,
+    "STABLE": 7313
+  },
+  "load_assignment_blocked": 3030,
+  "immediate_intervention": 988,
+  "stage_8_chamber_a_illusion_of_arrival": 2042,
+  "stage_8_chamber_b_tension_lock": 45,
+  "stage_5_advance": 975,
+  "stage_5_regression": 6,
+  "stage_5_lock": 147,
+  "archetype_summary": {
+    "Stage1_Ignition": {
+      "observations": 1300,
+      "mean_yield": 100.0,
+      "min_yield": 100.0,
+      "max_yield": 100.0,
+      "label": "Early recovery, high uncertainty"
+    },
+    "Stage5_BifurcationLock": {
+      "observations": 147,
+      "mean_yield": 100.0,
+      "min_yield": 100.0,
+      "max_yield": 100.0,
+      "label": "Stage 5 Path C \u2014 bifurcation lock"
+    },
+    "Stage2_Polarization": {
+      "observations": 934,
+      "mean_yield": 100.0,
+      "min_yield": 100.0,
+      "max_yield": 100.0,
+      "label": "Consolidation, conflicting signals"
+    },
+    "Stage3_Expression": {
+      "observations": 963,
+      "mean_yield": 95.77,
+      "min_yield": 71.3,
+      "max_yield": 100.0,
+      "label": "Breakout, high volume confidence"
+    },
+    "Stage4_Equilibrium": {
+      "observations": 962,
+      "mean_yield": 100.0,
+      "min_yield": 100.0,
+      "max_yield": 100.0,
+      "label": "Sustainable performance, healthy pulls"
+    },
+    "Stage5_BifurcationAdvance": {
+      "observations": 981,
+      "mean_yield": 0.0,
+      "min_yield": 0.0,
+      "max_yield": 0.0,
+      "label": "Stage 5 Path A \u2014 recovery arc"
+    },
+    "Stage0_Collapse": {
+      "observations": 157,
+      "mean_yield": 100.0,
+      "min_yield": 100.0,
+      "max_yield": 100.0,
+      "label": "Total collapse / grid blackout analog"
+    },
+    "Stage6_Harmony": {
+      "observations": 1115,
+      "mean_yield": 100.0,
+      "min_yield": 100.0,
+      "max_yield": 100.0,
+      "label": "Peak integration, all systems synchronized"
+    },
+    "Stage7_Distillation": {
+      "observations": 952,
+      "mean_yield": 78.37,
+      "min_yield": 45.9,
+      "max_yield": 100.0,
+      "label": "Divergences appearing, early distribution"
+    },
+    "Stage8_HealthyTraversal": {
+      "observations": 980,
+      "mean_yield": 69.4,
+      "min_yield": 52.2,
+      "max_yield": 89.8,
+      "label": "Stage 8 healthy traversal \u2014 no trap"
+    },
+    "Stage8_CrystallizedStability": {
+      "observations": 959,
+      "mean_yield": 41.33,
+      "min_yield": 26.3,
+      "max_yield": 58.0,
+      "label": "Stage 8 Chamber A \u2014 Illusion of Arrival"
+    },
+    "Stage9_Dissolution": {
+      "observations": 796,
+      "mean_yield": 12.39,
+      "min_yield": 1.1,
+      "max_yield": 24.5,
+      "label": "Catastrophic release / dissolution"
+    },
+    "Stage8_TensionLock": {
+      "observations": 154,
+      "mean_yield": 79.92,
+      "min_yield": 64.1,
+      "max_yield": 95.6,
+      "label": "Stage 8 Chamber B \u2014 Tension Lock"
+    }
+  }
+}
