@@ -220,7 +220,8 @@ async def classify(
 
         # Run classification through engine factory
         engine = EngineFactory.create(body.build.value)
-        result = engine.analyze(nsdt_vec, system_id=body.system_id or "lase_sdk")
+        result = engine.analyze(nsdt_vec, system_id=body.system_id or "lase_sdk",
+                                prev_stage=body.prev_stage)
 
         # Run canonical energy layer (separate from classifier for auditability)
         sap_stage  = SAPStage(result.stage)

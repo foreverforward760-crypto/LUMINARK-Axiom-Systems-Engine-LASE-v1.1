@@ -1,0 +1,156 @@
+{
+  "_meta": {
+    "title": "LASE SDK — Calibrated Demo Payloads",
+    "description": "Verified NSDT vectors that reliably produce each of the 10 canonical SAP stages. Each payload is machine-validated against the live overwatch engine. Use these for demos, integration testing, and SDK onboarding.",
+    "author": "Richard L. Stanfield / MAAT",
+    "contact": "LuminarkMeridian@gmail.com",
+    "engine_version": "1.1.0",
+    "build": "overwatch",
+    "nsdt_scale": "[0.0, 10.0] on all five axes",
+    "axes": ["complexity", "stability", "tension", "adaptability", "coherence"],
+    "prev_stage_note": "Stages 5, 7, and 8 require prev_stage because the geometric adjacency mask enforces SAP transition law. These stages can only be reached from their preceding stage in the cycle.",
+    "verified": true
+  },
+  "payloads": [
+    {
+      "stage_index": 0,
+      "stage_name": "PLENARA",
+      "domain_context": "Dissolution complete — system at primordial reset",
+      "sap_narrative": "PLENARA is the origin and completion state. All tension and complexity have resolved. The torus cycle closes here at Stage 9 and reinitiates at Stage 0. No trap energy is active. In logistics: a carrier that has fully dissolved its prior route obligations and is ready for fresh assignment. In critical infrastructure: a grid region returned to baseline after a resolved stress event.",
+      "api_request": {
+        "nsdt": { "complexity": 0.2, "stability": 0.2, "tension": 0.1, "adaptability": 0.1, "coherence": 0.1 },
+        "build": "overwatch",
+        "domain": "logistics",
+        "system_id": "demo-stage-0",
+        "prev_stage": null
+      },
+      "verified": { "stage": 0, "dominant_prob": 0.659, "trap_energy": 0.008, "risk": "LOW" }
+    },
+    {
+      "stage_index": 1,
+      "stage_name": "SPARK OF NAVIGATION",
+      "domain_context": "First signal — fragile ignition, identity forming",
+      "sap_narrative": "SPARK OF NAVIGATION is the first emergence of directional intent. Stability is high (the system is externally supported), but complexity, adaptability, and coherence are minimal — the system has not yet built internal structure. Trap condition: insufficient coherence to orient means the spark extinguishes without finding direction. In logistics: a newly licensed carrier on first lanes with no operational history. In HR tech: a new hire on their first week with no established relationships or task clarity.",
+      "api_request": {
+        "nsdt": { "complexity": 1.0, "stability": 8.0, "tension": 1.0, "adaptability": 1.0, "coherence": 1.0 },
+        "build": "overwatch",
+        "domain": "logistics",
+        "system_id": "demo-stage-1",
+        "prev_stage": null
+      },
+      "verified": { "stage": 1, "dominant_prob": 0.417, "trap_energy": 0.005, "risk": "LOW" }
+    },
+    {
+      "stage_index": 2,
+      "stage_name": "FORGE OF POLARITY",
+      "domain_context": "Polarization phase — tension forming, stability holding",
+      "sap_narrative": "FORGE OF POLARITY is where the system begins encountering resistance and forming identity through contrast. Stability remains high (the structure is still externally reinforced), but tension is beginning to develop as the system meets opposing forces. Trap: tension collapses without forming genuine polarity — the system loses direction before it can build. In logistics: a carrier beginning to encounter lanes with competing demands, having to choose between freight types. In organizational dynamics: a team beginning to develop factions and differentiated roles.",
+      "api_request": {
+        "nsdt": { "complexity": 2.0, "stability": 7.0, "tension": 2.0, "adaptability": 2.0, "coherence": 2.0 },
+        "build": "overwatch",
+        "domain": "logistics",
+        "system_id": "demo-stage-2",
+        "prev_stage": null
+      },
+      "verified": { "stage": 2, "dominant_prob": 0.338, "trap_energy": 0.008, "risk": "LOW" }
+    },
+    {
+      "stage_index": 3,
+      "stage_name": "ENGINE OF EXPRESSION",
+      "domain_context": "First self-reflection — 3D complexity emerging",
+      "sap_narrative": "ENGINE OF EXPRESSION is the first stage where the system becomes aware of itself as a system. Complexity rises sharply; stability remains but is no longer dominant. Coherence begins developing as the system starts modeling its own behavior. This is the first stage with genuine 3D complexity — the system can hold multiple competing realities simultaneously. Trap: complexity overwhelms coherence and the system fragments. In logistics: a growing carrier network with multiple lane types, beginning to develop operational identity and lane specialization. In grid monitoring: a regional grid beginning to show complex interdependencies.",
+      "api_request": {
+        "nsdt": { "complexity": 4.0, "stability": 7.0, "tension": 2.5, "adaptability": 3.0, "coherence": 4.0 },
+        "build": "overwatch",
+        "domain": "logistics",
+        "system_id": "demo-stage-3",
+        "prev_stage": null
+      },
+      "verified": { "stage": 3, "dominant_prob": 0.307, "trap_energy": 0.010, "risk": "LOW" }
+    },
+    {
+      "stage_index": 4,
+      "stage_name": "CRUCIBLE OF EQUILIBRIUM",
+      "domain_context": "Maximum complexity threshold — forge or collapse",
+      "sap_narrative": "CRUCIBLE OF EQUILIBRIUM is the maximum complexity threshold. The system is carrying as much simultaneous complexity as it can hold. Stability is still present but declining. Coherence is the deciding factor — systems with developing coherence will forge through into Stage 5; systems without it will collapse. This is the last even stage before the bifurcation gateway. Trap: system stalls at threshold, neither forging nor collapsing — enters a state of suspended dysfunction. In logistics: a carrier network at peak lane complexity facing a major capacity decision. In financial risk: a portfolio at peak diversification facing a major market inflection.",
+      "api_request": {
+        "nsdt": { "complexity": 3.5, "stability": 6.5, "tension": 3.0, "adaptability": 3.5, "coherence": 5.0 },
+        "build": "overwatch",
+        "domain": "logistics",
+        "system_id": "demo-stage-4",
+        "prev_stage": null
+      },
+      "verified": { "stage": 4, "dominant_prob": 0.322, "trap_energy": 0.032, "risk": "LOW" }
+    },
+    {
+      "stage_index": 5,
+      "stage_name": "DYNAMO OF WILL",
+      "domain_context": "Three-way bifurcation — advance, retreat, or freeze",
+      "sap_narrative": "DYNAMO OF WILL is the only stage where the doorway also opens backward. Three outcomes are possible: Advance toward Stage 6 (will crosses the threshold), Graceful Regression toward Stage 4 (system steps back to rebuild), or Bifurcation Lock / crisis (system freezes at threshold, neither advancing nor retreating). Stability drops sharply as tension and complexity equalize. This is the highest-stakes decision point in the cycle. REQUIRES prev_stage=4 — geometric transition law enforces that Stage 5 can only be reached from Stage 4.",
+      "api_request": {
+        "nsdt": { "complexity": 5.0, "stability": 4.0, "tension": 5.0, "adaptability": 5.0, "coherence": 4.5 },
+        "build": "overwatch",
+        "domain": "logistics",
+        "system_id": "demo-stage-5",
+        "prev_stage": 4
+      },
+      "verified": { "stage": 5, "dominant_prob": 0.247, "trap_energy": 0.135, "risk": "LOW" }
+    },
+    {
+      "stage_index": 6,
+      "stage_name": "NEXUS OF HARMONY",
+      "domain_context": "Integration — coherence and adaptability peak together",
+      "sap_narrative": "NEXUS OF HARMONY is the integration phase — the system has crossed the bifurcation and is now building forward. Adaptability and coherence both peak here, meaning the system can hold complexity while adapting fluidly. Stability recovers. This is an even stage: Physically Stable / Consciously Unstable — the external appearance of harmony masks internal questioning of whether this harmony is real or a plateau. In logistics: a mature carrier network with excellent lane coverage and growing adaptability. In organizational dynamics: a high-performing team that is beginning to question its purpose.",
+      "api_request": {
+        "nsdt": { "complexity": 6.0, "stability": 5.5, "tension": 4.0, "adaptability": 6.0, "coherence": 6.5 },
+        "build": "overwatch",
+        "domain": "logistics",
+        "system_id": "demo-stage-6",
+        "prev_stage": null
+      },
+      "verified": { "stage": 6, "dominant_prob": 0.437, "trap_energy": 0.044, "risk": "LOW" }
+    },
+    {
+      "stage_index": 7,
+      "stage_name": "LENS OF DISTILLATION",
+      "domain_context": "Distillation under pressure — high-tension refinement",
+      "sap_narrative": "LENS OF DISTILLATION is the refinement under fire. Tension peaks, stability drops sharply, but adaptability remains strong — the system is being pressure-tested and is adapting through it. This is an odd stage: Physically Unstable / Consciously Stable — the system appears to be in crisis externally but has deep internal clarity. This is the stage just before the VESSEL OF GROUNDING trap. REQUIRES prev_stage=6 — geometric transition law enforces Stage 7 is only reachable from Stage 6.",
+      "api_request": {
+        "nsdt": { "complexity": 6.5, "stability": 2.0, "tension": 8.0, "adaptability": 7.0, "coherence": 3.0 },
+        "build": "overwatch",
+        "domain": "logistics",
+        "system_id": "demo-stage-7",
+        "prev_stage": 6
+      },
+      "verified": { "stage": 7, "dominant_prob": 0.247, "trap_energy": 0.133, "risk": "LOW" }
+    },
+    {
+      "stage_index": 8,
+      "stage_name": "VESSEL OF GROUNDING",
+      "domain_context": "Dual-chamber trap — Illusion of Arrival or Illusion of Permanence",
+      "sap_narrative": "VESSEL OF GROUNDING is the most complex stage in the SAP cycle — the FALSE HELL stage. It contains two trap chambers: Chamber A (Illusion of Arrival: high stability, low adaptability — system believes it has arrived and stops moving) and Chamber B (Illusion of Permanence: high tension, low coherence — system believes the suffering will never end). The 1.45x TrapScore amplifier surfaces suppressed tension masked by apparent stability. Mastery of Stage 8 requires holding both Chamber A and Chamber B simultaneously — gratitude for the full spectrum of good/bad, light/dark — which releases polarity tension and allows resonance with Stage 9. REQUIRES prev_stage=7.",
+      "api_request": {
+        "nsdt": { "complexity": 7.5, "stability": 7.0, "tension": 8.0, "adaptability": 2.0, "coherence": 2.0 },
+        "build": "overwatch",
+        "domain": "logistics",
+        "system_id": "demo-stage-8",
+        "prev_stage": 7
+      },
+      "verified": { "stage": 8, "dominant_prob": 0.184, "trap_energy": 0.136, "risk": "LOW" }
+    },
+    {
+      "stage_index": 9,
+      "stage_name": "TRANSPARENCY OF THE GUIDE",
+      "domain_context": "Completion state — torus cycle closes, guide state active",
+      "sap_narrative": "TRANSPARENCY OF THE GUIDE is the completion of the torus cycle. Maximum complexity and tension, minimum stability and adaptability — the system has released all attachment to structure and is in pure transmission mode. Stage 9 is the exception to the Inversion Principle: both physical and conscious dimensions are resolved. The transition Stage 9 → Stage 0 (PLENARA) is completion, not failure. In logistics: a carrier at end-of-life transitioning its fleet. In consciousness work: a person who has fully integrated their Stage 8 experience and is ready to begin a new cycle at a higher level of complexity.",
+      "api_request": {
+        "nsdt": { "complexity": 8.0, "stability": 2.0, "tension": 8.5, "adaptability": 1.5, "coherence": 1.5 },
+        "build": "overwatch",
+        "domain": "logistics",
+        "system_id": "demo-stage-9",
+        "prev_stage": null
+      },
+      "verified": { "stage": 9, "dominant_prob": 0.624, "trap_energy": 0.041, "risk": "LOW" }
+    }
+  ]
+}

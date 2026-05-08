@@ -119,6 +119,20 @@ class ClassifyRequest(BaseModel):
         description="Optional entity identifier (carrier ID, asset ID, etc.). "
                     "Echoed in response for correlation."
     )
+    prev_stage: Optional[int] = Field(
+        None,
+        ge=0,
+        le=9,
+        description=(
+            "Previous SAP stage of this entity [0–9]. "
+            "Providing this unlocks the geometric adjacency mask so the classifier "
+            "can reach Stages 5, 7, and 8, which require prior stage context. "
+            "Omit for first classification of a new entity. "
+            "Stage 5 (DYNAMO OF WILL) requires prev_stage=4. "
+            "Stage 7 (LENS OF DISTILLATION) requires prev_stage=6. "
+            "Stage 8 (VESSEL OF GROUNDING) requires prev_stage=7."
+        )
+    )
 
     model_config = {"json_schema_extra": {
         "example": {
@@ -132,6 +146,7 @@ class ClassifyRequest(BaseModel):
             "build": "overwatch",
             "domain": "logistics",
             "system_id": "carrier-MC-882341",
+            "prev_stage": 7,
         }
     }}
 

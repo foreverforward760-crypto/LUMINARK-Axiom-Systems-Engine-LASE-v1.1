@@ -161,8 +161,13 @@ class _OverwatchAdapter:
             beta=cfg.beta,
         )
 
-    def analyze(self, nsdt: NSDTVector, system_id: str = "default") -> SAPAnalysisResult:
+    def analyze(self, nsdt: NSDTVector, system_id: str = "default",
+                prev_stage: Optional[int] = None) -> SAPAnalysisResult:
         inner = _nsdt_to_build1(nsdt)
+        # If prev_stage provided, seed history so geometry enforcer opens adjacency mask
+        if prev_stage is not None:
+            from types import SimpleNamespace
+            self._engine._history[system_id] = [SimpleNamespace(stage=prev_stage)]
         d = self._engine.analyze_full(inner, system_id)
         return _dict_to_result("overwatch", d, nsdt)
 
@@ -178,8 +183,12 @@ class _DefenseAdapter:
             beta=cfg.beta,
         )
 
-    def analyze(self, nsdt: NSDTVector, system_id: str = "default") -> SAPAnalysisResult:
+    def analyze(self, nsdt: NSDTVector, system_id: str = "default",
+                prev_stage: Optional[int] = None) -> SAPAnalysisResult:
         inner = _nsdt_to_build3(nsdt)
+        if prev_stage is not None:
+            from types import SimpleNamespace
+            self._engine._history[system_id] = [SimpleNamespace(stage=prev_stage)]
         d = self._engine.analyze_full(inner, system_id)
         return _dict_to_result("defense", d, nsdt)
 
