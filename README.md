@@ -23,6 +23,12 @@ The repository includes demonstration scenarios and baseline/validation-related 
 
 Before describing LASE as a unified production engine, each application and engine path needs reproducible build and integration testing, dependency review, security review, and clear identification of the canonical implementation.
 
+## Conceptual provenance
+
+The project owner states that the underlying concepts, product idea, and 0-9-0 / SAP framework applications in this repository originated with him. AI systems generated the implementation code and suggested technical mechanisms used to express those concepts. NSDT and the Container Rule were introduced by AI as supporting implementation mechanisms within the owner's framework, not as independent conceptual origins.
+
+This records the project owner's account; it is not a legal determination of copyright ownership, inventorship, or exclusive rights.
+
 ## Patent and legal status
 
 **No patent application has been filed for LASE or the projects described in this repository.** Patent-related documents or folders, where present, are unfiled working materials and do not establish patent rights or a pending application.
