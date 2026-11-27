@@ -202,7 +202,7 @@ def _translate_stage_8(
             ),
             broker_note              = (
                 f"Yield Score {yield_score:.0f} — Stage 8 Chamber A rule flag. "
-                "No failure probability or timing has been established. Verify independently.""
+                "No failure probability or timing has been established. Verify independently."
             ),
             build                    = build,
         )
@@ -229,7 +229,7 @@ def _translate_stage_8(
             ),
             broker_note              = (
                 f"Yield Score {yield_score:.0f} — Stage 8 Chamber B rule flag. "
-                "No failure probability or timing has been established. Verify independently.""
+                "No failure probability or timing has been established. Verify independently."
             ),
             build                    = build,
         )
