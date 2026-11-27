@@ -384,7 +384,7 @@ def _translate_stage_9(
         immediate_intervention   = True,
         predictive_window_hours  = None,
         pattern_description      = (
-            "The supplied values triggered the prototype's Stage 9 rule. This does not establish a breakdown, driver departure, accident, or other service failure.""
+            "The supplied values triggered the prototype's Stage 9 rule. This does not establish a breakdown, driver departure, accident, or other service failure."
         ),
         broker_note              = (
             f"Yield Score {yield_score:.0f} — CATASTROPHIC RELEASE DETECTED. "
