@@ -177,7 +177,7 @@ def _translate_stage_8(
     """
     Stage 8 — VESSEL OF GROUNDING
     The most commercially significant stage for Axiom Yield.
-    Two distinct carrier failure patterns, both requiring load protection.
+    Two framework-defined Stage 8 patterns; their relationship to actual carrier outcomes has not been validated.
     """
 
     if chamber == "A":
@@ -192,23 +192,17 @@ def _translate_stage_8(
             signal_code              = "S8_CRYSTALLIZATION",
             signal_label             = "Crystallized Stability",
             recommended_action       = (
-                "Do not assign new high-value or time-sensitive loads. "
-                "The framework rules flagged a stability/adaptability pattern; this has not been validated as a carrier-failure indicator. "
-                "Any disruption — weather, traffic, equipment — will produce "
-                "immediate failure with no recovery buffer."
+                "Treat this as a prototype review flag only. Verify current HOS, ELD telemetry, equipment condition, driver availability, route, and weather independently before making any dispatch decision."
             ),
             load_assignment_blocked  = True,
             immediate_intervention   = False,
             predictive_window_hours  = None,
             pattern_description      = (
-                "Carrier is showing maximum stability with near-zero flexibility. "
-                "This pattern precedes sudden brittle failure — the system looks "
-                "healthy on every standard metric, which is the warning sign."
+                "The supplied values triggered the prototype's Stage 8 Chamber A rules. This pattern has not been validated as a real-world carrier-failure indicator."
             ),
             broker_note              = (
-                f"Yield Score {yield_score:.0f} — CARRIER LOOKS STABLE BUT IS NOT. "
-                "Stage 8 Crystallization detected. 24-hour failure window active. "
-                "Protect your loads now."
+                f"Yield Score {yield_score:.0f} — Stage 8 Chamber A rule flag. "
+                "No failure probability or timing has been established. Verify independently.""
             ),
             build                    = build,
         )
@@ -224,22 +218,18 @@ def _translate_stage_8(
             signal_code              = "S8_TENSION_LOCK",
             signal_label             = "Tension Lock",
             recommended_action       = (
-                "Remove carrier from active load assignments immediately. "
-                "Initiate load recovery protocol for all in-transit freight. "
-                "Contact backup carriers now — do not wait for confirmation of failure."
+                "The rules flagged a Stage 8 Chamber B pattern. Verify the source data and obtain an independent operational assessment before considering any load-protection action."
             ),
             load_assignment_blocked  = True,
             immediate_intervention   = True,
             predictive_window_hours  = None,
             pattern_description      = (
                 "Carrier is under extreme accumulated tension with no coherent "
-                "response signal. System is locked — cannot advance to recovery "
-                "and cannot retreat to a safe state. Failure is imminent."
+                "response signal under the prototype's rule definitions. This classification is not a verified carrier condition or failure prediction."
             ),
             broker_note              = (
-                f"Yield Score {yield_score:.0f} — CRITICAL TENSION LOCK. "
-                "Stage 8 maximum-risk condition. 12-hour failure window. "
-                "Load recovery protocol required NOW."
+                f"Yield Score {yield_score:.0f} — Stage 8 Chamber B rule flag. "
+                "No failure probability or timing has been established. Verify independently.""
             ),
             build                    = build,
         )
@@ -293,9 +283,7 @@ def _translate_stage_5(
             signal_code              = "S5_ADVANCE",
             signal_label             = "Recovery Trajectory",
             recommended_action       = (
-                "Carrier is on a confirmed recovery arc. "
-                "Safe to assign standard and moderate-priority loads. "
-                "Performance improvement expected over next 24-48 hours."
+                "The rules classified the supplied values as the Stage 5 advance path. This is not confirmation of recovery or a forecast of future performance. Verify operational data independently."
             ),
             load_assignment_blocked  = False,
             immediate_intervention   = False,
@@ -305,8 +293,8 @@ def _translate_stage_5(
                 "toward integration and stability."
             ),
             broker_note              = (
-                f"Yield Score {yield_score:.0f} — Recovery arc confirmed. "
-                "Assign standard loads."
+                f"Yield Score {yield_score:.0f} — Stage 5 advance-path rule flag. "
+                "No recovery or performance forecast has been validated."
             ),
             bifurcation_path         = "ADVANCE",
             bifurcation_label        = "Recovery Arc — Advancing",
@@ -315,7 +303,7 @@ def _translate_stage_5(
 
     elif path == "B":
         alert_note = (
-            "HIGH-PRIORITY ALERT — Carrier has entered voluntary pullback. "
+            "Prototype rule flag — Stage 5 pullback classification. "
             if build == "overwatch"
             else "Carrier has entered a strategic reset phase. "
         )
@@ -328,18 +316,13 @@ def _translate_stage_5(
             signal_code              = "S5_REGRESSION",
             signal_label             = "Capacity Pullback",
             recommended_action       = (
-                "Reduce load assignment by 50%. Do not assign high-value or "
-                "time-sensitive freight. Carrier is recalibrating — monitor "
-                "for recovery signal in next 12-24 hours before resuming "
-                "normal assignment."
+                "The rules classified the supplied values as the Stage 5 regression path. Review verified operating data and consult the responsible operations team; do not change assignments solely on this prototype output."
             ),
             load_assignment_blocked  = False,
             immediate_intervention   = False,
             predictive_window_hours  = None,
             pattern_description      = (
-                "Carrier is pulling back from operational overextension. "
-                "This is a self-protective response, not a collapse. "
-                "System retains recovery capacity."
+                "The supplied values triggered the Stage 5 regression rule. The system does not establish why the carrier values occurred or whether recovery capacity is present."
             ),
             broker_note              = (
                 f"Yield Score {yield_score:.0f} — {alert_note}"
@@ -361,10 +344,7 @@ def _translate_stage_5(
             signal_code              = "S5_LOCK",
             signal_label             = "Bifurcation Lock",
             recommended_action       = (
-                "Remove from all active assignments immediately. "
-                "Carrier is locked — cannot advance or safely retreat. "
-                "Initiate emergency load recovery. "
-                "Do not reassign until full system reset is confirmed."
+                "The rules classified the supplied values as the Stage 5 lock path. Escalate for human review and verify the source data; do not remove or reassign loads solely on this prototype output."
             ),
             load_assignment_blocked  = True,
             immediate_intervention   = True,
@@ -377,8 +357,7 @@ def _translate_stage_5(
             ),
             broker_note              = (
                 f"Yield Score {yield_score:.0f} — BIFURCATION LOCK. "
-                "Highest-risk state. Emergency load recovery required. "
-                "6-hour failure window."
+                "Highest rule-severity category in this prototype. No failure timing or probability has been established."
             ),
             bifurcation_path         = "LOCK",
             bifurcation_label        = "Bifurcation Lock — Crisis",
@@ -399,19 +378,13 @@ def _translate_stage_9(
         signal_code              = "S9_CATASTROPHIC_RELEASE",
         signal_label             = "Catastrophic Release",
         recommended_action       = (
-            "Execute immediate load recovery protocol. "
-            "All active loads with this carrier are at risk. "
-            "Contact backup carriers now. "
-            "Do not assign any new freight. "
-            "Document all active shipments for insurance and claims processing."
+            "Verify live operating conditions through established carrier-monitoring procedures and qualified personnel. Do not take dispatch or insurance action solely on this prototype classification."
         ),
         load_assignment_blocked  = True,
         immediate_intervention   = True,
         predictive_window_hours  = None,
         pattern_description      = (
-            "Carrier system has reached dissolution threshold. "
-            "Catastrophic service failure — breakdown, driver quit, accident, "
-            "or total operational collapse — is imminent or already underway."
+            "The supplied values triggered the prototype's Stage 9 rule. This does not establish a breakdown, driver departure, accident, or other service failure.""
         ),
         broker_note              = (
             f"Yield Score {yield_score:.0f} — CATASTROPHIC RELEASE DETECTED. "
@@ -432,53 +405,50 @@ def _translate_general(
         signal_code  = "HIGH_TENSION"
         signal_label = "High System Tension"
         action = (
-            "Hold all new load assignments pending re-evaluation. "
-            "Carrier is approaching a critical threshold."
+            "Treat this rule-severity flag as a prompt for independent review. Verify current carrier data and established operational indicators before changing assignments."
         )
         blocked  = True
         intervene = False
         window   = None
         pattern  = "The framework's rules assigned a high-tension classification to the supplied inputs; real-world meaning has not been validated."
-        note     = f"Yield Score {yield_score:.0f} — High tension detected. Hold assignments."
+        note     = f"Yield Score {yield_score:.0f} — High rule-severity flag. Verify independently before any dispatch decision."
 
     elif trap_energy >= 0.6:
         risk_level = RISK_HIGH
         signal_code  = "EMERGING_INSTABILITY"
         signal_label = "Emerging Instability"
         action = (
-            "Reduce load assignment. Assign standard freight only. "
-            "Re-evaluate in 8 hours."
+            "Review the input data and current operating conditions with the responsible operations team. Do not rely on this prototype score alone."
         )
         blocked  = False
         intervene = False
         window   = None
         pattern  = "The framework's rules assigned an emerging-instability classification to the supplied inputs; real-world meaning has not been validated."
-        note     = f"Yield Score {yield_score:.0f} — Instability emerging. Reduce assignments."
+        note     = f"Yield Score {yield_score:.0f} — Emerging-instability rule flag; human verification required."
 
     elif trap_energy >= 0.4:
         risk_level = RISK_MODERATE
         signal_code  = "MONITOR"
         signal_label = "Monitor"
         action = (
-            "Assign standard loads. "
-            "Monitor for changes in the next 12–24 hours."
+            "Continue using established carrier-monitoring procedures; this prototype does not estimate a validated review interval."
         )
         blocked  = False
         intervene = False
         window   = None
         pattern  = "The framework's rules assigned a transitional classification. This does not establish that the carrier is safe or risk-free."
-        note     = f"Yield Score {yield_score:.0f} — Transitional. Monitor and assign standard loads."
+        note     = f"Yield Score {yield_score:.0f} — Transitional rule classification; not a safety clearance."
 
     else:
         risk_level = RISK_STABLE
         signal_code  = "STABLE"
         signal_label = "Stable"
-        action       = "Normal load assignment. No restrictions."
+        action       = "No high-severity rule was triggered. Continue established carrier checks; this is not a safety clearance."
         blocked      = False
         intervene    = False
         window       = None
         pattern      = "The framework's rules assigned a low-severity classification. This does not establish that the carrier is safe or risk-free."
-        note         = f"Yield Score {yield_score:.0f} — Stable. Normal operations."
+        note         = f"Yield Score {yield_score:.0f} — Low-severity rule classification; not a safety clearance."
 
     return AxiomSignal(
         carrier_id               = carrier_id,
