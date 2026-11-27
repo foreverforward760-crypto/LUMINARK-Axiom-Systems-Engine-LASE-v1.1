@@ -54,7 +54,7 @@ class AxiomSignal:
     stage:             int
     stage_name:        str
     yield_score:       float          # 0–100, inverted from trap_energy
-    risk_level:        str            # STABLE / LOW / MODERATE / HIGH / CRITICAL
+    risk_level:        str            # Rule severity label; not a measured probability or verified carrier risk
 
     # Decision signals
     signal_code:       str            # machine-readable signal identifier
@@ -62,9 +62,9 @@ class AxiomSignal:
     recommended_action: str           # specific broker action
 
     # Alert flags
-    load_assignment_blocked: bool     # True = do not assign new loads
-    immediate_intervention:  bool     # True = active loads at risk now
-    predictive_window_hours: Optional[int]  # estimated hours to failure event
+    load_assignment_blocked: bool     # Prototype review-hold flag only; not an enforced dispatch restriction
+    immediate_intervention:  bool     # Prompt human-review flag; not a verified emergency alert
+    predictive_window_hours: Optional[int]  # Reserved for validated prediction; always None in this prototype
 
     # Supplementary context (buyer-facing, no mechanics exposed)
     pattern_description: str         # what the system is observing
@@ -77,6 +77,7 @@ class AxiomSignal:
     # Metadata
     build:    str = "overwatch"
     version:  str = "1.0"
+    assessment_basis: str = "Rule-based SAP/NSDT prototype output; not independently validated for carrier-risk prediction. Human verification required."
 
 
 # ─────────────────────────────────────────────────────────────────────────────
@@ -192,13 +193,13 @@ def _translate_stage_8(
             signal_label             = "Crystallized Stability",
             recommended_action       = (
                 "Do not assign new high-value or time-sensitive loads. "
-                "Carrier appears fully stable but has lost all adaptive capacity. "
+                "The framework rules flagged a stability/adaptability pattern; this has not been validated as a carrier-failure indicator. "
                 "Any disruption — weather, traffic, equipment — will produce "
                 "immediate failure with no recovery buffer."
             ),
             load_assignment_blocked  = True,
             immediate_intervention   = False,
-            predictive_window_hours  = 24,
+            predictive_window_hours  = None,
             pattern_description      = (
                 "Carrier is showing maximum stability with near-zero flexibility. "
                 "This pattern precedes sudden brittle failure — the system looks "
@@ -229,7 +230,7 @@ def _translate_stage_8(
             ),
             load_assignment_blocked  = True,
             immediate_intervention   = True,
-            predictive_window_hours  = 12,
+            predictive_window_hours  = None,
             pattern_description      = (
                 "Carrier is under extreme accumulated tension with no coherent "
                 "response signal. System is locked — cannot advance to recovery "
@@ -334,7 +335,7 @@ def _translate_stage_5(
             ),
             load_assignment_blocked  = False,
             immediate_intervention   = False,
-            predictive_window_hours  = 24,
+            predictive_window_hours  = None,
             pattern_description      = (
                 "Carrier is pulling back from operational overextension. "
                 "This is a self-protective response, not a collapse. "
@@ -342,7 +343,7 @@ def _translate_stage_5(
             ),
             broker_note              = (
                 f"Yield Score {yield_score:.0f} — {alert_note}"
-                "Reduce assignments. Watch for recovery in 12-24 hours."
+                "Stage 5 regression rule flag; no recovery timing has been established. Verify independently."
             ),
             bifurcation_path         = "REGRESSION",
             bifurcation_label        = "Capacity Pullback — Recalibrating",
@@ -367,7 +368,7 @@ def _translate_stage_5(
             ),
             load_assignment_blocked  = True,
             immediate_intervention   = True,
-            predictive_window_hours  = 6,
+            predictive_window_hours  = None,
             pattern_description      = (
                 "Carrier has entered a bifurcation lock: maximum tension "
                 "with no adaptive capacity remaining. Neither forward "
@@ -388,7 +389,7 @@ def _translate_stage_5(
 def _translate_stage_9(
     stage_name, yield_score, trap_energy, carrier_id, build
 ) -> AxiomSignal:
-    """Stage 9 — TRANSPARENCY OF THE GUIDE: Catastrophic release imminent."""
+    """Stage 9 rule classification; not a prediction of imminent carrier failure."""
     return AxiomSignal(
         carrier_id               = carrier_id,
         stage                    = 9,
@@ -406,7 +407,7 @@ def _translate_stage_9(
         ),
         load_assignment_blocked  = True,
         immediate_intervention   = True,
-        predictive_window_hours  = 2,
+        predictive_window_hours  = None,
         pattern_description      = (
             "Carrier system has reached dissolution threshold. "
             "Catastrophic service failure — breakdown, driver quit, accident, "
@@ -414,7 +415,7 @@ def _translate_stage_9(
         ),
         broker_note              = (
             f"Yield Score {yield_score:.0f} — CATASTROPHIC RELEASE DETECTED. "
-            "2-hour window. Execute load recovery NOW."
+            "No failure timing or probability has been established. Verify current conditions independently."
         ),
         build                    = build,
     )
@@ -436,8 +437,8 @@ def _translate_general(
         )
         blocked  = True
         intervene = False
-        window   = 18
-        pattern  = "System is accumulating tension toward a critical transition point."
+        window   = None
+        pattern  = "The framework's rules assigned a high-tension classification to the supplied inputs; real-world meaning has not been validated."
         note     = f"Yield Score {yield_score:.0f} — High tension detected. Hold assignments."
 
     elif trap_energy >= 0.6:
@@ -450,8 +451,8 @@ def _translate_general(
         )
         blocked  = False
         intervene = False
-        window   = 24
-        pattern  = "System is showing early instability indicators. Monitoring required."
+        window   = None
+        pattern  = "The framework's rules assigned an emerging-instability classification to the supplied inputs; real-world meaning has not been validated."
         note     = f"Yield Score {yield_score:.0f} — Instability emerging. Reduce assignments."
 
     elif trap_energy >= 0.4:
@@ -465,7 +466,7 @@ def _translate_general(
         blocked  = False
         intervene = False
         window   = None
-        pattern  = "System is in a transitional phase. No immediate action required."
+        pattern  = "The framework's rules assigned a transitional classification. This does not establish that the carrier is safe or risk-free."
         note     = f"Yield Score {yield_score:.0f} — Transitional. Monitor and assign standard loads."
 
     else:
@@ -476,7 +477,7 @@ def _translate_general(
         blocked      = False
         intervene    = False
         window       = None
-        pattern      = "System is operating within healthy parameters."
+        pattern      = "The framework's rules assigned a low-severity classification. This does not establish that the carrier is safe or risk-free."
         note         = f"Yield Score {yield_score:.0f} — Stable. Normal operations."
 
     return AxiomSignal(
@@ -541,6 +542,7 @@ def build_api_response(
         "load_assignment_blocked":  signal.load_assignment_blocked,
         "immediate_intervention":   signal.immediate_intervention,
         "predictive_window_hours":  signal.predictive_window_hours,
+        "assessment_basis":          signal.assessment_basis,
         "pattern_description":      signal.pattern_description,
         "broker_note":              signal.broker_note,
     }
